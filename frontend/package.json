@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && cp -R /frontend/build> ../backend/",
+    "build": "react-scripts build && rsync -avu --delete ./build/ ../backend/build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
