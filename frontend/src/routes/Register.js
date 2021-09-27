@@ -1,9 +1,9 @@
 import "../styles/Register.css";
 import useForm from "./useForm";
-import handleChange from "./useForm"
+import validateInfo from "./validate";
 
 function Register() {
-  const { handleChange, values, handleSubmit } = useForm()
+  const { handleChange, values, handleSubmit, errors } = useForm(validateInfo)
   return (
     <>
     <div className="container">
@@ -17,7 +17,8 @@ function Register() {
            placeholder="first name"
            value={values.first_name}
            onChange={handleChange}
-           required></input>
+           ></input>
+
         </div>
         
         <div className="form-group">
@@ -27,7 +28,7 @@ function Register() {
            placeholder="last name"
            value={values.last_name}
            onChange={handleChange}
-           required></input>
+           ></input>
         </div>
        
         <div className="form-group">
@@ -37,7 +38,7 @@ function Register() {
            placeholder="country"
            value={values.country}
            onChange={handleChange}
-           required></input>
+           ></input>
         </div>
         
         <div className="form-group">
@@ -47,7 +48,7 @@ function Register() {
            placeholder="province/state"
            value={values.province_or_state}
            onChange={handleChange} 
-           required></input>
+           ></input>
         </div>
 
         <div className="form-group">
@@ -57,7 +58,7 @@ function Register() {
            placeholder="city"
            value={values.city}
            onChange={handleChange}
-           required>
+           >
 
            </input>
         </div>
@@ -69,7 +70,7 @@ function Register() {
            value={values.street}
            onChange={handleChange} 
            placeholder="street"
-            required>
+            >
 
             </input>
         </div>
@@ -81,7 +82,7 @@ function Register() {
           placeholder="email"
           value={values.email}
           onChange={handleChange}
-          required>
+          >
           </input>
         </div>
 
@@ -92,7 +93,7 @@ function Register() {
           placeholder="password"
           value={values.password}
           onChange={handleChange}
-          required>
+          >
           </input>
         </div>
 
@@ -103,7 +104,7 @@ function Register() {
           placeholder="password"
           value={values.password_confirm}
           onChange={handleChange}
-          required></input>
+          ></input>
         </div>
 
         <div className="button-container">

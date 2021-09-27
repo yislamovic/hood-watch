@@ -1,8 +1,9 @@
 import {useState, useEffect} from 'react'
+import validateInfo from './validate';
 
-function useForm(){
+export default function useForm(validate){
     const [values,setValues] = useState({
-
+    //    when user first loads register page, this is the state of everything
         first_name: '',
         last_name: '',
         country: '',
@@ -29,9 +30,10 @@ function useForm(){
 
     const handleSubmit = e => {
         e.preventDefault();
+
+        setErrors(validateInfo(values))
     }
 
-    return {handleChange, values, handleSubmit}
+    return {handleChange, values, handleSubmit, errors }
 }
 
-export default useForm;
