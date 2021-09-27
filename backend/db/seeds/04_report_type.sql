@@ -1,0 +1,1 @@
+INSERT INTO ReportType (report_id, code_red, category) VALUES(NULL, TRUE, 'Vandilism');
