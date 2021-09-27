@@ -1,6 +1,6 @@
 import "../styles/Register.css";
 import useForm from "./useForm";
-import validateInfo from "./validate";
+import validateInfo from "./validateInfo";
 
 function Register() {
   const { handleChange, values, handleSubmit, errors } = useForm(validateInfo)
@@ -10,6 +10,7 @@ function Register() {
       <h1 className="header">Register a New Account!</h1>
        <div className="form-container">
         <form onSubmit={handleSubmit}>
+         
          <div className="form-group">
           <label>First Name:</label>
           <input type="text"
@@ -17,9 +18,10 @@ function Register() {
            placeholder="first name"
            value={values.first_name}
            onChange={handleChange}
-           ></input>
-
-        </div>
+           >
+           </input>
+           {errors.first_name && <p className="error-message">{errors.first_name}</p>}
+          </div>
         
         <div className="form-group">
           <label>Last Name:</label>
@@ -28,7 +30,9 @@ function Register() {
            placeholder="last name"
            value={values.last_name}
            onChange={handleChange}
-           ></input>
+           >
+          </input>
+          {errors.last_name && <p className="error-message">{errors.last_name}</p>}
         </div>
        
         <div className="form-group">
@@ -39,6 +43,7 @@ function Register() {
            value={values.country}
            onChange={handleChange}
            ></input>
+           {errors.country && <p className="error-message">{errors.country}</p>}
         </div>
         
         <div className="form-group">
@@ -49,6 +54,7 @@ function Register() {
            value={values.province_or_state}
            onChange={handleChange} 
            ></input>
+           {errors.province_or_state && <p className="error-message">{errors.province_or_state}</p>}
         </div>
 
         <div className="form-group">
@@ -59,8 +65,8 @@ function Register() {
            value={values.city}
            onChange={handleChange}
            >
-
-           </input>
+          </input>
+          {errors.city && <p className="error-message">{errors.city}</p>}
         </div>
 
         <div className="form-group">
@@ -71,8 +77,8 @@ function Register() {
            onChange={handleChange} 
            placeholder="street"
             >
-
             </input>
+            {errors.street && <p className="error-message">{errors.street}</p>}
         </div>
         
         <div className="form-group">
@@ -84,6 +90,7 @@ function Register() {
           onChange={handleChange}
           >
           </input>
+          {errors.email && <p className="error-message">{errors.email}</p>}
         </div>
 
         <div className="form-group">
@@ -95,6 +102,7 @@ function Register() {
           onChange={handleChange}
           >
           </input>
+          {errors.password && <p className="error-message">{errors.password}</p>}
         </div>
 
         <div className="form-group">
@@ -105,6 +113,7 @@ function Register() {
           value={values.password_confirm}
           onChange={handleChange}
           ></input>
+          {errors.password_confirm && <p className="error-message">{errors.password_confirm}</p>}
         </div>
 
         <div className="button-container">

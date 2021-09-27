@@ -2,7 +2,7 @@ export default function validateInfo(values) {
     let errors = {};
     // First Name
     if (!values.first_name.trim()) {
-        errors.username = "First Name is Required"
+        errors.first_name = "First Name is Required"
     }
     
     // Last Name
@@ -12,15 +12,15 @@ export default function validateInfo(values) {
     
     // Country
     if (!values.country.trim()) {
-        errors.last_name = "Country is Required"
+        errors.country = "Country is Required"
     }
     // Province/State
     if (!values.province_or_state.trim()) {
-        errors.last_name = "Province/State is Required"
+        errors.province_or_state = "Province/State is Required"
     }
     // City
     if (!values.city.trim()) {
-        errors.last_name = "City is Required"
+        errors.city = "City is Required"
     }
 
     // Street
@@ -38,7 +38,7 @@ export default function validateInfo(values) {
     // Password
     if (!values.password) {
         errors.password = "Password Required"
-    } else if (values.password.length < 10) {
+    } else if (values.password.length < 8) {
         errors.password = "Password must be at least 10 characters long"
     }
     // Password Confirm
