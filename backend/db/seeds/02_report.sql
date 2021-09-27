@@ -1,0 +1,1 @@
+INSERT INTO Report (report_description, character_amount, gps_coordinates) VALUES(, 'Car Accident Runaway plus Vandalism', 35, 'Latitude:43.642772, Longitude: -79.426051);

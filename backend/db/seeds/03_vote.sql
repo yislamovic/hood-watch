@@ -1,0 +1,1 @@
+INSERT INTO Vote (user_id, report_id, up_vote, down_vote) VALUES(NULL, NULL, 12, 3);
