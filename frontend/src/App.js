@@ -1,11 +1,11 @@
-import './App.css';
+import './styles/App.css';
 import Nav from './component/Nav'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Home from './routes/Home'
 import About from './routes/About'
-import Login from './routes/login/Login'
-import Register from './routes/login/Register'
+import Login from './routes/Login'
+import Register from './routes/Register'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 function App() {
   //** USE THIS USEEFECT AND USESTATE FOR A TEMPLATE **
