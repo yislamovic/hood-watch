@@ -6,7 +6,7 @@ import Home from './routes/Home'
 import About from './routes/About'
 import Login from './routes/Login'
 import Register from './routes/Register'
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 function App() {
   //** USE THIS USEEFECT AND USESTATE FOR A TEMPLATE **
   // const [msg, setMsg] = useState('nil');
