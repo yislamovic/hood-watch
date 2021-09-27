@@ -49,8 +49,14 @@ function Register() {
           <input type="password" name="password" placeholder="password" required></input>
         </div>
 
+        <div className="form-group">
+          <label>Confirm Password:</label>
+          <input type="password" name="password" placeholder="password" required></input>
+        </div>
+
         <div className="button-container">
           <button type="submit" className="btn">Register</button>
+          <p>Already have an account? <a href="/login">Login here</a></p>
         </div>
       </form>
       </div>
