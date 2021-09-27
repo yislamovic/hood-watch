@@ -5,14 +5,14 @@ function Login() {
   return (
     <>
     <div className="container">
-      <div className="header">Login</div>
-       <div class="form-container">
+      <h1 className="header">Login</h1>
+      <div className="form-container">
         <form>
-        <div class="form-group">
+        <div className="form-group">
           <label>Email:</label>
           <input type="email" name="email" placeholder="email" required></input>
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <label>Password:</label>
           <input type="password" name="password" placeholder="password" required></input>
         </div>
