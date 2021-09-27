@@ -1,6 +1,7 @@
 import "../styles/Register.css";
 import useForm from "./useForm";
 import validateInfo from "./validateInfo";
+import Form from "./Form";
 
 function Register() {
   const { handleChange, values, handleSubmit, errors } = useForm(validateInfo)
