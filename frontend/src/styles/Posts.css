@@ -4,5 +4,6 @@
    align-items: center;
    border-radius: 20px;
    border: 0.25rem solid;
-   
+   max-width: 90%;
+   margin-top: 2%;
 }

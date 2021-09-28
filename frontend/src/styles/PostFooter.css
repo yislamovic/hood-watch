@@ -1,5 +1,7 @@
 .post-footer{
   display: flex;
   flex-direction: row;
-  align-items: space-evenly;
+  justify-content: space-evenly;
+  border: 2px solid black;
+  width: 100%;
 }

@@ -1,4 +1,5 @@
 import './styles/App.css';
+import './styles/Nav.css';
 import Nav from './component/Nav'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -31,8 +32,8 @@ function App() {
 
   return (
     <Router>
+      <Nav className="nav"/>
       <div className="App">
-        <Nav/>
         <Switch>
           <Route path='/' exact component={Home}/>
           <Route path="/about" component={About}/>
