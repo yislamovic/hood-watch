@@ -19,14 +19,12 @@ function Comment(props){
   return (
   <div className="comment-form">
     <form onSubmit={event => event.preventDefault()}>
-      <label>
-       Leave your comment:
        <input
             type="text"
+            placeholder={'Write your comment here'}
             value={comment}
             onChange={(e) => setComment(e.target.value)}
           />
-      </label>
       <Button disabled={isCommentEmpty()}>Submit</Button>
     </form>
   </div>

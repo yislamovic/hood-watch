@@ -8,7 +8,7 @@ import About from './routes/About'
 import Login from './routes/Login'
 import Register from './routes/Register'
 import Posts from './routes/Posts'
-import Comment from './component/Comment';
+import CommentList from './component/CommentList';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 function App() {
   //** USE THIS USEEFECT AND USESTATE FOR A TEMPLATE **
@@ -34,7 +34,7 @@ function App() {
   return (
     <Router>
       <Nav className="nav"/>
-      <Comment/>
+      <CommentList/>
       <div className="App">
         <Switch>
           <Route path='/' exact component={Home}/>
