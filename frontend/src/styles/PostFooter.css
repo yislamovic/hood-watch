@@ -1,0 +1,7 @@
+.post-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  padding-left: 8%;
+}

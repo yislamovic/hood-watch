@@ -1,4 +1,4 @@
-import "../styles/Register.css";
+import "../styles/register.css";
 import useForm from "./useForm";
 import validateInfo from "./validateInfo";
 import Form from "./Form";

@@ -1,0 +1,1 @@
+INSERT INTO User (first_name, last_name, email, user_password, country, province_or_state, city, street) VALUES(, 'Jeff', 'Baker', 'jeff@gmail.com', '1234', 'Canada', 'Ontario', 'Toronto', 'Queens Street');
