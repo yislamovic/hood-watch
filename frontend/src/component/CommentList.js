@@ -5,13 +5,15 @@ const commentData = [{
   comment: "This is appaling!",
   date: "Sep-28-6:48PM",
   firstName: "Bob",
-  lastName: "Saget"
+  lastName: "Saget",
+  reportId: 1
 },
 {
   comment: "Why is this happening to our community!? This is sickening!",
   date: "Sep-28-7:18PM",
   firstName: "John",
-  lastName: "Wayne"
+  lastName: "Wayne",
+  reportId: 2
 }
 ];
 
@@ -29,17 +31,19 @@ function CommentList(props) {
   }, []);
 
   const commentList = state.map(comment => {
-   
-    return (
-      <div className='comment'>
-        <div className='list-header'>
-          <span>{`${comment.firstName} ${comment.lastName}`}</span>
-          <span>{comment.date}</span>
-        </div>
-        {comment.comment}
-      </div>
-    );
+    if (comment.reportId === props.id) {
 
+      return (
+        <div className='comment'>
+          <div className='list-header'>
+            <span>{`${comment.firstName} ${comment.lastName}`}</span>
+            <span>{comment.date}</span>
+          </div>
+          {comment.comment}
+        </div>
+      );
+
+    }
   });
 
   return (
