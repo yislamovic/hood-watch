@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 
 module.exports = (db) => {
 
-  router.get('/register', (req, res) => {
+  router.post('/register', (req, res) => {
     const { firstName, email, password } = req.body;
 
     let selectString = `
@@ -42,7 +42,7 @@ module.exports = (db) => {
     }
   });
 
-  router.post('/login', (req, res) => {
+  router.get('/login', (req, res) => {
     const { email, password } = req.body;
 
     let queryString = `
