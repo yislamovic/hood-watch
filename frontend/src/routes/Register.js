@@ -1,10 +1,24 @@
 import "../styles/register.css";
 import useForm from "./useForm";
 import validateInfo from "./validateInfo";
-import Form from "./Form";
+import { useState } from 'react';
+
 
 function Register() {
   const { handleChange, values, handleSubmit, errors } = useForm(validateInfo)
+   
+  const [button, setButton] = useState({
+    disabled: "true"
+  })
+
+  const handleButton = e => {
+      if (values) {
+        this.setButton({
+          disabled: "false"
+        })
+      }
+  }
+
   return (
     <>
     <div className="container">
@@ -118,7 +132,7 @@ function Register() {
         </div>
 
         <div className="button-container">
-          <button type="submit" className="btn">Register</button>
+          <button type="submit" className="btn" disabled="true" onChange={this.handleButton}>Register</button>
           <p>Already have an account? <a href="/login">Login here</a></p>
         </div>
       </form>

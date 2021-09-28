@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import { useState } from 'react'
 import validateInfo from './validateInfo';
 
 export default function useForm(validate){
@@ -16,7 +16,7 @@ export default function useForm(validate){
     })
 
     const [errors, setErrors] = useState({})
-    const [isSubmitted, setIsSubmitted] = useState(false)
+     
     const handleChange = e => {
         // grabbing the values of the inputs we put in, this works because of the 'name' in the register form
         const { name, value } = e.target
@@ -32,7 +32,6 @@ export default function useForm(validate){
         e.preventDefault();
 
         setErrors(validateInfo(values))
-        setIsSubmitted(true)
     }
 
     return {handleChange, values, handleSubmit, errors }
