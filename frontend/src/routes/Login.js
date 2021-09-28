@@ -4,7 +4,7 @@ function Login() {
 
   return (
     <>
-    <div className="container">
+    <div className="login-container">
       <h1 className="header">Login</h1>
       <div className="form-container">
         <form>
