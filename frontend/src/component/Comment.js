@@ -1,27 +1,33 @@
-import { checkPropTypes } from 'prop-types';
-import { useState } from 'react'
-
+import { useEffect, useState } from 'react'
 import Button from './Button';
+
 function Comment(props){
 
-  const [comment, setComment] = commentState('')
-
+  const [comment, setComment] = useState('')
+  
   function isCommentEmpty(){
-    const input = document.getElementsByTagName("input")
-    if (!input.value){
-      return disabled = true
+    if (comment === ''){
+      return true
     }
+    return false
   }
+  //** this useEffect is for debugging */
+  useEffect(() => {
+    console.log(comment)
+  }, [comment])
 
   return (
   <div className="comment-form">
-    <form>
+    <form onSubmit={event => event.preventDefault()}>
       <label>
        Leave your comment:
-        <input type="text" name="name" />
+       <input
+            type="text"
+            value={comment}
+            onChange={(e) => setComment(e.target.value)}
+          />
       </label>
-      <input type="submit" value="Submit" />
-      <Button>Submit</Button>
+      <Button disabled={isCommentEmpty()}>Submit</Button>
     </form>
   </div>
   );
