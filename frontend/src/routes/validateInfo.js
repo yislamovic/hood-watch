@@ -39,12 +39,12 @@ export default function validateInfo(values) {
     if (!values.password) {
         errors.password = "Password Required"
     } else if (values.password.length < 8) {
-        errors.password = "Password must be at least 10 characters long"
+        errors.password = "Password must be at least 8 characters long"
     }
     // Password Confirm
     if (!values.password_confirm) {
-        errors.password_confirm = "Password Required"
-    } else if (values.password_confirm.length !== values.password) {
+        errors.password_confirm = "Confirm your Password"
+    } else if (values.password_confirm !== values.password) {
         errors.password_confirm = "Passwords do not match"
     }
     return errors;
