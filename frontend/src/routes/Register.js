@@ -1,22 +1,40 @@
 import "../styles/register.css";
-import useForm from "./useForm";
-import validateInfo from "./validateInfo";
+import useForm from "../hooks/useForm";
 import { useState } from 'react';
 
-
 function Register() {
-  const { handleChange, values, handleSubmit, errors } = useForm(validateInfo)
-   
-  const [button, setButton] = useState({
-    disabled: "true"
-  })
+  const { handleChange, values, handleSubmit, setValues } = useForm(handleRegisterForm)
+  const [isDisabled, setIsDisabled] = useState(true)
+  const [errors, setErrors] = useState({})
 
-  const handleButton = e => {
-      if (values) {
-        this.setButton({
-          disabled: "false"
-        })
-      }
+  function handleRegisterForm(){
+    // Email
+    if (!values.email) {
+        return setErrors({email: "Email is required"})
+    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+      return setErrors({email: "Email is invalid"})
+    }
+    
+    // Password
+    if (!values.password) {
+      return setErrors({password: "Password is required"})
+    } else if (values.password.length < 8) {
+      return setErrors({password: "Password must be 8 characters long"})
+    }
+    // Password Confirm
+    if (!values.password_confirm) {
+        return setErrors({password_confirm: "Password Confirmation is required"})
+    } else if (values.password_confirm !== values.password) {
+        return setErrors({password_confirm: "Passwords do not match"})
+    }
+    console.log("Form Submitted!!")
+    setValues({});
+  }
+
+  function handleButtonState(){
+     if (Object.keys(values).length === 9){
+       setIsDisabled(false)
+     }
   }
 
   return (
@@ -24,7 +42,7 @@ function Register() {
     <div className="container">
       <h1 className="header">Register a New Account!</h1>
        <div className="form-container">
-        <form onSubmit={handleSubmit}>
+        <form onChange={handleButtonState} onSubmit={handleSubmit}>
          
          <div className="form-group">
           <label>First Name:</label>
@@ -33,9 +51,9 @@ function Register() {
            placeholder="first name"
            value={values.first_name}
            onChange={handleChange}
+           required
            >
            </input>
-           {errors.first_name && <p className="error-message">{errors.first_name}</p>}
           </div>
         
         <div className="form-group">
@@ -45,9 +63,9 @@ function Register() {
            placeholder="last name"
            value={values.last_name}
            onChange={handleChange}
+           required
            >
           </input>
-          {errors.last_name && <p className="error-message">{errors.last_name}</p>}
         </div>
        
         <div className="form-group">
@@ -57,8 +75,8 @@ function Register() {
            placeholder="country"
            value={values.country}
            onChange={handleChange}
+           required
            ></input>
-           {errors.country && <p className="error-message">{errors.country}</p>}
         </div>
         
         <div className="form-group">
@@ -67,9 +85,9 @@ function Register() {
            name="province_or_state" 
            placeholder="province/state"
            value={values.province_or_state}
-           onChange={handleChange} 
+           onChange={handleChange}
+           required 
            ></input>
-           {errors.province_or_state && <p className="error-message">{errors.province_or_state}</p>}
         </div>
 
         <div className="form-group">
@@ -79,9 +97,9 @@ function Register() {
            placeholder="city"
            value={values.city}
            onChange={handleChange}
+           required
            >
           </input>
-          {errors.city && <p className="error-message">{errors.city}</p>}
         </div>
 
         <div className="form-group">
@@ -89,11 +107,11 @@ function Register() {
           <input type="text"
            name="street"
            value={values.street}
-           onChange={handleChange} 
+           onChange={handleChange}
            placeholder="street"
+           required 
             >
             </input>
-            {errors.street && <p className="error-message">{errors.street}</p>}
         </div>
         
         <div className="form-group">
@@ -103,6 +121,7 @@ function Register() {
           placeholder="email"
           value={values.email}
           onChange={handleChange}
+          required
           >
           </input>
           {errors.email && <p className="error-message">{errors.email}</p>}
@@ -115,6 +134,7 @@ function Register() {
           placeholder="password"
           value={values.password}
           onChange={handleChange}
+          required
           >
           </input>
           {errors.password && <p className="error-message">{errors.password}</p>}
@@ -127,12 +147,13 @@ function Register() {
           placeholder="password"
           value={values.password_confirm}
           onChange={handleChange}
+          required
           ></input>
           {errors.password_confirm && <p className="error-message">{errors.password_confirm}</p>}
         </div>
 
         <div className="button-container">
-          <button type="submit" className="btn" disabled="true" onChange={this.handleButton}>Register</button>
+          <button type="submit" className="btn" disabled={isDisabled}>Register</button>
           <p>Already have an account? <a href="/login">Login here</a></p>
         </div>
       </form>
