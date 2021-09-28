@@ -18,6 +18,8 @@ CREATE TABLE User (
 
 CREATE TABLE Report (
   id SERIAL PRIMARY KEY NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  date_time DATETIME(fsp) NOT NULL,
   report_description TEXT NOT NULL,
   character_amount INTEGER NOT NULL,
   gps_coordinates VARCHAR(255) NOT NULL,
