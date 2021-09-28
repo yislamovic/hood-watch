@@ -1,6 +1,6 @@
 import "../styles/register.css";
 import useForm from "../hooks/useForm";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Register() {
   const { handleChange, values, handleSubmit, setValues } = useForm(handleRegisterForm)
@@ -31,18 +31,23 @@ function Register() {
     setValues({});
   }
 
-  function handleButtonState(){
-     if (Object.keys(values).length === 9){
-       setIsDisabled(false)
+  // anytime the value changes, want to run this function
+  // you change the state, instead of react changing right away, it changes on the next render => immutability
+  // rerun the component with the new value
+  useEffect(() => {
+    if (Object.values(values).filter(value => value !== "").length === 9) {
+      setIsDisabled(false)
+     } else {
+       setIsDisabled(true)
      }
-  }
+  }, [values])
 
   return (
     <>
     <div className="container">
       <h1 className="header">Register a New Account!</h1>
        <div className="form-container">
-        <form onChange={handleButtonState} onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
          
          <div className="form-group">
           <label>First Name:</label>
