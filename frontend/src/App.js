@@ -6,6 +6,7 @@ import Home from './routes/Home'
 import About from './routes/About'
 import Login from './routes/Login'
 import Register from './routes/Register'
+import Posts from './routes/Posts'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 function App() {
   //** USE THIS USEEFECT AND USESTATE FOR A TEMPLATE **
@@ -37,6 +38,7 @@ function App() {
           <Route path="/about" component={About}/>
           <Route path="/login" component={Login}/>
           <Route path="/register" component={Register}/>
+          <Route path="/posts" component={Posts}/>
         </Switch>  
       </div>
     </Router>
