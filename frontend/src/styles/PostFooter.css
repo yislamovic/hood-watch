@@ -1,0 +1,5 @@
+.post-footer{
+  display: flex;
+  flex-direction: row;
+  align-items: space-evenly;
+}
