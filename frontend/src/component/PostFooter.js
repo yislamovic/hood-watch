@@ -7,7 +7,7 @@ function PostFooter(props) {
 
    return (
       <div className="post-footer">
-        <p>Likes: 50 </p>
+        <p>Likes: {props.likes}</p>
         <p>Expand Comments</p>
         <ButtonGroup/>
       </div>
