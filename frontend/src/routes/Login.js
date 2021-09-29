@@ -9,11 +9,11 @@ export default function Login() {
       <div className="form-container">
         <form>
         <div className="form-group">
-          <label>Email:</label>
+          <label>Email: </label>
           <input type="email" name="email" placeholder="email" required></input>
         </div>
         <div className="form-group">
-          <label>Password:</label>
+          <label>Password: </label>
           <input type="password" name="password" placeholder="password" required></input>
         </div>
         <div className="button-container">

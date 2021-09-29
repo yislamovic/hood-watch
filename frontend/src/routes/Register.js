@@ -1,9 +1,9 @@
-import "../styles/register.css";
+import "../styles/Register.css";
 import useForm from "../hooks/useForm";
 import { useState, useEffect } from 'react';
 
 function Register() {
-  const { handleChange, values, handleSubmit, setValues } = useForm(handleRegisterForm)
+  const { handleChange, handleSubmit, values, setValues } = useForm(handleRegisterForm)
   const [isDisabled, setIsDisabled] = useState(true)
   const [errors, setErrors] = useState({})
 
@@ -46,11 +46,11 @@ function Register() {
     <>
     <div className="register-container">
       <h1 className="header">Register a New Account!</h1>
-       <div className="form-container">
+       <div className="register-form-container">
         <form onSubmit={handleSubmit}>
          
          <div className="form-group">
-          <label>First Name:</label>
+          <label>First Name: </label>
           <input type="text"
            name="first_name" 
            placeholder="first name"
@@ -62,7 +62,7 @@ function Register() {
           </div>
         
         <div className="form-group">
-          <label>Last Name:</label>
+          <label>Last Name: </label>
           <input type="text"
            name="last_name" 
            placeholder="last name"
@@ -74,7 +74,7 @@ function Register() {
         </div>
        
         <div className="form-group">
-          <label>Country:</label>
+          <label>Country: </label>
           <input type="text"
            name="country" 
            placeholder="country"
@@ -85,7 +85,7 @@ function Register() {
         </div>
         
         <div className="form-group">
-          <label>Province/State:</label>
+          <label>Province/State: </label>
           <input type="text"
            name="province_or_state" 
            placeholder="province/state"
@@ -96,7 +96,7 @@ function Register() {
         </div>
 
         <div className="form-group">
-          <label>City:</label>
+          <label>City: </label>
           <input type="text"
            name="city" 
            placeholder="city"
@@ -108,7 +108,7 @@ function Register() {
         </div>
 
         <div className="form-group">
-          <label>Street:</label>
+          <label>Street: </label>
           <input type="text"
            name="street"
            value={values.street}
@@ -120,7 +120,7 @@ function Register() {
         </div>
         
         <div className="form-group">
-          <label>Email:</label>
+          <label>Email: </label>
           <input type="email"
            name="email" 
           placeholder="email"
@@ -133,7 +133,7 @@ function Register() {
         </div>
 
         <div className="form-group">
-          <label>Password:</label>
+          <label>Password: </label>
           <input type="password"
            name="password" 
           placeholder="password"
@@ -146,7 +146,7 @@ function Register() {
         </div>
 
         <div className="form-group">
-          <label>Confirm Password:</label>
+          <label>Confirm Password: </label>
           <input type="password"
            name="password_confirm" 
           placeholder="password"
