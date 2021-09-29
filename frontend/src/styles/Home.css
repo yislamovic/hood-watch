@@ -7,9 +7,6 @@
     align-items: center;
     background-color: #9ab5e1;
     background-image: linear-gradient(315deg, #9ab5e1 0%, #f39fdc 74%);
-
-
-
 }
 
 .home-header {
@@ -49,8 +46,8 @@
 }
 
 .home-ref {
-    width: 100%;
-    height: 100%;
+    width: 88%;
+    height: 50%;
     /* border: 2px solid green; */
     margin: 1%;
     display: flex;
@@ -62,7 +59,7 @@
 .visit-header {
   width: 30%;
   height: 50px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,7 +70,7 @@
 
 .visit-container {
     width: 98%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: 550px;
     display: flex;
     justify-content: space-around;
@@ -119,18 +116,20 @@
    transition: height 0.7s ease;
 }
  
- .report-box:hover,
- .delete-box:hover {
-     height: 480px;
- }
 
+ .report-box:hover,
+ .delete-box:hover,
  .heatmap-box:hover,
  .update-box:hover {
-     height: 480px;
+    height: 480px;
  }
 
- .visit-title:hover {
-   opacity: 1;
+ 
+ .report-box:hover .visit-title,
+ .delete-box:hover .visit-title,
+ .heatmap-box:hover .visit-title,
+ .update-box:hover .visit-title {
+    opacity: 1;
  }
 
 .report-box,
@@ -141,10 +140,4 @@
 .heatmap-box,
 .update-box {
     align-self: flex-end;
-}
-
-.home-footer {
-    width: 90%;
-    height: 200px;
-    border: 2px solid navy;
 }
