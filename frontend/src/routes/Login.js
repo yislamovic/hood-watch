@@ -1,6 +1,6 @@
 import "../styles/Login.css";
 
-function Login() {
+export default function Login() {
 
   return (
     <>
@@ -25,5 +25,3 @@ function Login() {
    </>
   );
 }
-
-export default Login;
