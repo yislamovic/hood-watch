@@ -10,11 +10,11 @@ export default function New(){
 
     // the callback function is already doing our console.logs
     function handleNewPost(){
-        if (values.title.length < 5) {
-           return setErrors({ title: "Title must be more than 5 characters"})
+        if (values.title.length > 30) {
+           return setErrors({ title: "Title must be less than 30 characters"})
        }
-       if (values.post.length > 20) {
-        return setErrors({ post: "Description must be less than 20 characters"})
+       if (values.post.length > 500) {
+        return setErrors({ post: "Description must be less than 500 characters"})
     }
        
        setValues({})
