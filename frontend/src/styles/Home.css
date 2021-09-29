@@ -1,12 +1,14 @@
 .home-container {
     width: 100%;
     height: 1400px;
-    border: 8px solid black;
+    /* border: 8px solid black; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f8ceec;
-    background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
+    background-color: #9ab5e1;
+    background-image: linear-gradient(315deg, #9ab5e1 0%, #f39fdc 74%);
+
+
 
 }
 
@@ -28,7 +30,8 @@
     /* border: 2px solid blue; */
     display: flex;
     justify-content: center;
-    background-color: rgb(237, 183, 234);
+    align-items: center;
+    background-color: rgb(218, 112, 212);
     border-radius: 20px;
 }
 
@@ -42,10 +45,11 @@
     padding: 2.5%;
     background-color: rgb(237, 183, 234);
     border-radius: 20px;
+    transition: transform 0.6s ease;
 }
 
 .home-ref {
-    width: 90%;
+    width: 100%;
     height: 100%;
     /* border: 2px solid green; */
     margin: 1%;
@@ -64,11 +68,11 @@
   align-items: center;
   margin: 10px 0;
   border-radius: 20px;
-  background-color: rgb(237, 183, 234);
+  background-color: rgb(218, 112, 212);
 }
 
 .visit-container {
-    width: 100%;
+    width: 98%;
     /* border: 2px solid black; */
     height: 550px;
     display: flex;
