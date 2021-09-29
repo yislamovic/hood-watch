@@ -29,11 +29,15 @@ function Home() {
       <div className="heatmap-box">
        <p>Click <a href="/map">here</a> view a map that highlights areas as 'safe' or 'concerning' based on the reports that've been sent in.</p>
       </div>
+      <div className="delete-box">
+       <p>Click <a href="/delete">here</a> to delete any reports you have submitted.</p>
       </div>
-
+      <div className="update-box">
+       <p>Click <a href="/update">here</a> to update any reports you have submitted</p>
       </div>
-      <div className="home-footer"></div>
-    </div>
+      </div>
+      </div>
+      </div>
     </>
   );
 }
