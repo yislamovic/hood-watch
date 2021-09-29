@@ -4,7 +4,7 @@ import Nav from './component/Nav'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Home from './routes/Home'
-import About from './routes/About'
+import New from './routes/New'
 import Login from './routes/Login'
 import Register from './routes/Register'
 import Posts from './routes/Posts'
@@ -36,9 +36,9 @@ function App() {
       <div className="App">
         <Switch>
           <Route path='/' exact component={Home}/>
-          <Route path="/about" component={About}/>
           <Route path="/login" component={Login}/>
           <Route path="/register" component={Register}/>
+          <Route path="/new" component={New}/>
           <Route path="/posts" component={Posts}/>
         </Switch>  
       </div>
