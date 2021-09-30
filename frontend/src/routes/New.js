@@ -31,9 +31,8 @@ export default function New(){
         setTextLength(values.post.length)
       }
     }, [values])
-
-
-    return (
+  
+     return (
         <>
          <div className="new-post-container">
             
@@ -89,7 +88,7 @@ export default function New(){
              <input type="text"
              name="street_one" 
              className="box" 
-             placeholder="Title of Report"
+             placeholder=""
              value={values.street_one}
              onChange={handleChange}
              required
@@ -102,7 +101,7 @@ export default function New(){
              <input type="text"
              name="street_name_two" 
              className="box" 
-             placeholder="Title of Report"
+             placeholder=""
              value={values.street_two}
              onChange={handleChange}
              required
@@ -115,7 +114,7 @@ export default function New(){
              <input type="text"
              name="postal_code"
              className="box"  
-             placeholder="Title of Report"
+             placeholder=""
              value={values.postal_code}
              onChange={handleChange}
              required
