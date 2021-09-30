@@ -28,7 +28,13 @@ function Home() {
                <h3>Post Report</h3>
             </div>
             <div className="visit-text">
-              <p>Click <a href="/new">here</a> to post a report that everyone can see!</p>
+              <p class="click-here">Click <a href="/new">here</a> to post a report that everyone can see!</p>
+              <ul class="info-list">
+                <ol>hello</ol>
+                <ol>hello</ol>
+                <ol>hello</ol>
+                <ol>hello</ol>
+              </ul>
             </div>
         </div>
 
