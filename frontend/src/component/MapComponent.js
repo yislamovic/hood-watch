@@ -1,5 +1,6 @@
-import ReactMapGL from "react-map-gl"
+import ReactMapGL, { Marker } from "react-map-gl"
 import React, { useState } from "react";
+import * as parkData from "../data/Skateboard_Parks.json"
 function MapComponent(props){
   const [viewport, setViewport] = useState({
     latitude: 45.4211,
@@ -17,6 +18,14 @@ function MapComponent(props){
       onViewportChange={(viewport) => {
         setViewport(viewport);
       }}>
+        {parkData.features.map((park) => (
+          <Marker 
+          key={park.properties.PARK_ID} 
+          latitude={park.geometry.coordinates[1]} 
+          longitude={park.geometry.coordinates[0]}>
+            <div>SKATE</div>
+          </Marker>
+        ))}
       </ReactMapGL>
     </div>
   );
