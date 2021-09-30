@@ -2,7 +2,8 @@ import "../styles/New.css";
 import useForm from "../hooks/useForm";
 import { useState, useEffect } from 'react';
 
-export default function New(){
+
+export default function New(props){
     const { handleChange, handleSubmit, values, setValues } = useForm(handleNewPost)
     const [textLength, setTextLength] = useState(0)
     const [isDisabled, setIsDisabled] = useState(true)
@@ -21,7 +22,7 @@ export default function New(){
        console.log("Form Submitted")
     }
 
-    useEffect(() => {
+   useEffect(() => {
       if (Object.values(values).filter(value => value !== "").length === 6) {
         setIsDisabled(false)
       } else {
@@ -94,6 +95,7 @@ export default function New(){
              required
              >
              </input>
+             {/* <span className="street-holder"></span> */}
           </div>
 
           <div className="new-form-group">
