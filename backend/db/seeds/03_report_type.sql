@@ -1,0 +1,1 @@
+INSERT INTO report_type(category,report_id)

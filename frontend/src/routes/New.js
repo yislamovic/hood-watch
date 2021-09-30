@@ -2,7 +2,8 @@ import "../styles/New.css";
 import useForm from "../hooks/useForm";
 import { useState, useEffect } from 'react';
 
-export default function New(){
+
+export default function New(props){
     const { handleChange, handleSubmit, values, setValues } = useForm(handleNewPost)
     const [textLength, setTextLength] = useState(0)
     const [isDisabled, setIsDisabled] = useState(true)
@@ -10,7 +11,7 @@ export default function New(){
 
     // the callback function is already doing our console.logs
     function handleNewPost(){
-        if (values.title.length > 30) {
+        if (values.title.length > 50) {
            return setErrors({ title: "Title must be less than 30 characters"})
        }
        if (values.post.length > 500) {
@@ -21,8 +22,8 @@ export default function New(){
        console.log("Form Submitted")
     }
 
-    useEffect(() => {
-      if (Object.values(values).filter(value => value !== "").length === 3) {
+   useEffect(() => {
+      if (Object.values(values).filter(value => value !== "").length === 6) {
         setIsDisabled(false)
       } else {
         setIsDisabled(true)
@@ -31,17 +32,19 @@ export default function New(){
         setTextLength(values.post.length)
       }
     }, [values])
-
-
-    return (
+  
+     return (
         <>
          <div className="new-post-container">
+            
              <form onSubmit={handleSubmit} className="new-post-form">
              <h1>New Report</h1>
-           <div className="form-group">
-             <label>Title: </label>
+
+            <div className="new-form-group">
+             <label className="input-label">Title</label>
              <input type="text"
-             name="title" 
+             name="title"
+             className="box" 
              placeholder="Title of Report"
              value={values.title}
              onChange={handleChange}
@@ -51,27 +54,26 @@ export default function New(){
              {errors.title && <p className="error-message">{errors.title}</p>}
            </div>
 
-         <div className="form-group">
-             <label>{textLength}/500</label>
-             <p>Post: </p>
+         <div className="new-form-group">
+             <label className="input-label">Whats on Your Mind 🤔 </label>
             <textarea
             className="description-box"
              name="post"
              rows="10"
              cols="10"
-             placeholder="Insert Description"
+             placeholder="Type Your Report Here"
              value={values.post}
              onChange={handleChange}
              required
             >
             </textarea>
-             <p></p>
-            {errors.post && <p className="error-message">{errors.post}</p>}
-            </div>
+             <p id="counter"><label>{textLength}/500</label></p>
+            {errors.post && <span className="error-message">{errors.post}</span>}
+         </div>
 
-         <div className="form-group">
-            <label>Category: </label>
-            <select name="category" value={values.category} onChange={handleChange} required>
+         <div className="new-form-group">
+            <label className="input-label">Category</label>
+            <select name="category" className="category-box" value={values.category} onChange={handleChange} required>
               <option value="trending">Trending</option>
               <option value="celebrate">Celebrate</option>
               <option value="caution">Cautio</option>
@@ -80,11 +82,52 @@ export default function New(){
               <option value="community-question">Question</option>
               <option value="other">Other</option>
           </select>
-            {errors.category && <p className="error-message">{errors.category}</p>}
          </div>
+
+         <div className="new-form-group">
+             <label className="input-label">Street Name One</label>
+             <input type="text"
+             name="street_one" 
+             className="box" 
+             placeholder=""
+             value={values.street_one}
+             onChange={handleChange}
+             required
+             >
+             </input>
+             {/* <span className="street-holder"></span> */}
+          </div>
+
+          <div className="new-form-group">
+             <label className="input-label">Street Name Two</label>
+             <input type="text"
+             name="street_name_two" 
+             className="box" 
+             placeholder=""
+             value={values.street_two}
+             onChange={handleChange}
+             required
+             >
+             </input>
+          </div>
+
+           <div className="new-form-group">
+             <label className="input-label">Postal Code</label>
+             <input type="text"
+             name="postal_code"
+             className="box"  
+             placeholder=""
+             value={values.postal_code}
+             onChange={handleChange}
+             required
+             >
+             </input>
+          </div>
+
          <div className="button-container">
           <button type="submit" className="btn" disabled={isDisabled}>Post</button>
         </div>
+
           </form>
           </div>
        </>

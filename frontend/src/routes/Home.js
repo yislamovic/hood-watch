@@ -24,27 +24,42 @@ function Home() {
       <div className="visit-container">
         
         <div className="report-box">
-            <div className="visit-title">
+            <div className="visit-title-down">
                <h3>Post Report</h3>
             </div>
-            <div className="visit-text">
-              <p>Click <a href="/new">here</a> to post a report that everyone can see!</p>
+            <div className="visit-text-down">
+              <p className>Click <a href="/new">here</a> to post a report that everyone can see!</p>
+              <p className="more-info" id="new-point-1">Make your own report about anything in your community! 🖊</p>
+              <p className="more-info" id="new-point-2">View reports of other users from around the world! 🌎 </p>
+              <p className="more-info" id="new-point-3">Comment and Leave a Like on other reports! 🗣</p>
+              <p className="more-info" id="new-point-4">Make Meaningful Relationships! 😊 💕</p>
             </div>
         </div>
 
-      <div className="heatmap-box">
-      <div className="visit-title">
+      <div className="map-box">
+      <div className="visit-title-up">
       <h3>View Map</h3>
       </div>
-      <p>Click <a href="/map">here</a> view a map that highlights areas as 'safe' or 'concerning' based on the reports that've been sent in.</p>
+      
+      <div className="visit-text-up">
+         <p className="more-info" id="map-point-1">Make your own report about anything in your community! 🖊</p>
+         <p className="more-info" id="map-point-2">View reports of other users from around the world! 🌎 </p>
+         <p className="more-info" id="map-point-3">View reports of other users from around the world! 🌎 </p>
+         <p className="more-info" id="map-point-4">View reports of other users from around the world! 🌎 </p>
+      </div>
+      <p className="click-here">Click <a href="/map">here</a> view a map of where reports were based on.</p>
+         
+
       </div>
       <div className="delete-box">
-      <div className="visit-title">
+      <div className="visit-title-down">
       <h3>Delete Report</h3>
       </div>
-      <div className="visit-text">
+      <div className="visit-text-down">
        <p>Click <a href="/delete">here</a> to delete any reports you have submitted.</p>
-       </div>
+       <p className="more-info" id="delete-point-1">Delete A Report That You Don't Want Posted Anymore 🚫</p>
+       <p className="more-info" id="delete-point-2">Sometimes We Make Mistakes and That's Ok 🙂 </p>
+      </div>
       </div>
       <div className="update-box">
       <div className="visit-title">
