@@ -1,4 +1,4 @@
-INSERT INTO user (first_name, last_name, email, user_password, user_address)
+INSERT INTO person (first_name, last_name, email, person_password, person_address)
 VALUES ('Jeff', 'Baker', 'jeff@gmail.com', '1234', 'Toronto, Ontario, 34 London Dr'),
 ('Lonzo', 'Ball', 'baller12@gmail.com','1234', 'Toronto, Ontario, 86 Spadina Av '),
 ('Hot', 'Coco', 'chocolate@gmail.com','1234', 'Toronto, Ontario, 45 Rosedale Blvd'),

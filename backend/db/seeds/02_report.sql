@@ -1,4 +1,4 @@
-INSERT INTO report (title, date_time, report, report_address, user_id)
+INSERT INTO report (title, date_time, report, report_address, person_id)
 VALUES 
 ("Job Posting", "2018-7-28 13:11:11", "Anyone look for a job for the month of August? Our company has been having issues with birds pooping on our windows. If you're interested shoot me a message on Slack @Jeff Baker or call me at (416)-123-456","1251 - 10 Yonge St, Toronto ON M5E 1R4", 1),
 

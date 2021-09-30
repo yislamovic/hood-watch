@@ -1,4 +1,4 @@
-INSERT INTO vote (up_vote, down_vote, user_id, report_id)
+INSERT INTO vote (up_vote, down_vote, person_id, report_id)
 
 VALUES
 
