@@ -22,7 +22,7 @@ export default function New(){
     }
 
     useEffect(() => {
-      if (Object.values(values).filter(value => value !== "").length === 3) {
+      if (Object.values(values).filter(value => value !== "").length === 6) {
         setIsDisabled(false)
       } else {
         setIsDisabled(true)
@@ -43,7 +43,8 @@ export default function New(){
             <div className="new-form-group">
              <label>Title: </label>
              <input type="text"
-             name="title" 
+             name="title"
+             className="box" 
              placeholder="Title of Report"
              value={values.title}
              onChange={handleChange}
@@ -54,7 +55,7 @@ export default function New(){
            </div>
 
          <div className="new-form-group">
-             <p>Post: </p>
+             <p>Whats Your Report ? </p>
             <textarea
             className="description-box"
              name="post"
@@ -66,13 +67,13 @@ export default function New(){
              required
             >
             </textarea>
-             <p><label>{textLength}/500</label></p>
+             <p id="counter"><label>{textLength}/500</label></p>
             {errors.post && <p className="error-message">{errors.post}</p>}
          </div>
 
          <div className="new-form-group">
             <label>Category: </label>
-            <select name="category" value={values.category} onChange={handleChange} required>
+            <select name="category" className="box" value={values.category} onChange={handleChange} required>
               <option value="trending">Trending</option>
               <option value="celebrate">Celebrate</option>
               <option value="caution">Cautio</option>
@@ -88,6 +89,7 @@ export default function New(){
              <label>Street Name One: </label>
              <input type="text"
              name="street_one" 
+             className="box" 
              placeholder="Title of Report"
              value={values.street_one}
              onChange={handleChange}
@@ -101,6 +103,7 @@ export default function New(){
              <label>Street Name Two: </label>
              <input type="text"
              name="street_name_two" 
+             className="box" 
              placeholder="Title of Report"
              value={values.street_two}
              onChange={handleChange}
@@ -113,7 +116,8 @@ export default function New(){
            <div className="new-form-group">
              <label>Postal Code: </label>
              <input type="text"
-             name="post_code" 
+             name="post_code"
+             className="box"  
              placeholder="Title of Report"
              value={values.postal_code}
              onChange={handleChange}
