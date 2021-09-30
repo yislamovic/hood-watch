@@ -41,7 +41,7 @@ export default function New(){
              <h1>New Report</h1>
 
             <div className="new-form-group">
-             <label>Title</label>
+             <label className="input-label">Title</label>
              <input type="text"
              name="title"
              className="box" 
@@ -55,7 +55,7 @@ export default function New(){
            </div>
 
          <div className="new-form-group">
-             <label>Whats on Your Mind 🤔 </label>
+             <label className="input-label">Whats on Your Mind 🤔 </label>
             <textarea
             className="description-box"
              name="post"
@@ -72,7 +72,7 @@ export default function New(){
          </div>
 
          <div className="new-form-group">
-            <label>Category</label>
+            <label className="input-label">Category</label>
             <select name="category" className="category-box" value={values.category} onChange={handleChange} required>
               <option value="trending">Trending</option>
               <option value="celebrate">Celebrate</option>
@@ -85,7 +85,7 @@ export default function New(){
          </div>
 
          <div className="new-form-group">
-             <label>Street Name One</label>
+             <label className="input-label">Street Name One</label>
              <input type="text"
              name="street_one" 
              className="box" 
@@ -98,7 +98,7 @@ export default function New(){
           </div>
 
           <div className="new-form-group">
-             <label>Street Name Two</label>
+             <label className="input-label">Street Name Two</label>
              <input type="text"
              name="street_name_two" 
              className="box" 
@@ -111,7 +111,7 @@ export default function New(){
           </div>
 
            <div className="new-form-group">
-             <label>Postal Code</label>
+             <label className="input-label">Postal Code</label>
              <input type="text"
              name="postal_code"
              className="box"  
