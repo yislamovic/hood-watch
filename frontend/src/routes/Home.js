@@ -28,7 +28,7 @@ function Home() {
                <h3>Post Report</h3>
             </div>
             <div className="visit-text-down">
-              <p className="click-here">Click <a href="/new">here</a> to post a report that everyone can see!</p>
+              <p className>Click <a href="/new">here</a> to post a report that everyone can see!</p>
               <p className="more-info" id="new-point-1">Make your own report about anything in your community! 🖊</p>
               <p className="more-info" id="new-point-2">View reports of other users from around the world! 🌎 </p>
               <p className="more-info" id="new-point-3">Comment and Leave a Like on other reports! 🗣</p>
@@ -36,17 +36,20 @@ function Home() {
             </div>
         </div>
 
-      <div className="heatmap-box">
+      <div className="map-box">
       <div className="visit-title-up">
       <h3>View Map</h3>
       </div>
+      
       <div className="visit-text-up">
          <p className="more-info" id="map-point-1">Make your own report about anything in your community! 🖊</p>
          <p className="more-info" id="map-point-2">View reports of other users from around the world! 🌎 </p>
-         <p className="more-info" id="map-point-3">Comment and Leave a Like on other reports! 🗣</p>
-         <p className="more-info" id="map-point-4">Make Meaningful Relationships! 😊 💕</p>
-         <p>Click <a href="/map">here</a> view a map that highlights areas as 'safe' or 'concerning' based on the reports that've been sent in.</p>
+         <p className="more-info" id="map-point-3">View reports of other users from around the world! 🌎 </p>
+         <p className="more-info" id="map-point-4">View reports of other users from around the world! 🌎 </p>
       </div>
+      <p className="click-here">Click <a href="/map">here</a> view a map of where reports were based on.</p>
+         
+
       </div>
       <div className="delete-box">
       <div className="visit-title-down">

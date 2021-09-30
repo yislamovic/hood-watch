@@ -21,7 +21,7 @@
     background-size: cover;
 }
 
-.home-title-down {
+.home-title {
     width: 70%;
     height: 20%;
     /* border: 2px solid blue; */
@@ -79,19 +79,43 @@
 }
 
 .visit-title-down {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     width: 100%;
     height: 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: opacity 0.19s ease;
+    transition: opacity 0.19s ease-out;
     opacity: 0;
 }
 
+.visit-title-up {
+    /* border: 2px solid black; */
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.15s ease-out;
+    opacity: 0;
+}
+
+.visit-text-up {
+    /* border: 2px solid purple; */
+    padding: 0 10px 12px 10px;
+    height: 50%;
+}
+
+.click-here {
+    /* border: 2px solid black; */
+    margin-bottom: 33%;
+
+}
+
 .visit-text-down {
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
     width: 100%;
     height: 75%;
     padding: 5px;
@@ -99,6 +123,7 @@
     flex-direction: column;
     align-items: center;
 }
+
 
 .more-info {
     width: 240px;
@@ -117,13 +142,31 @@
 #delete-point-2 {
     transition: opacity 0.68s ease;
 }
-#new-point-3,
-#delete-point-3 {
+#new-point-3 {
     transition: opacity 0.89s ease;
 }
-#new-point-4,
-#delete-point-4 {
+#new-point-4 {
     transition: opacity 1.05s ease;
+}
+
+#map-point-1 {
+    transition: opacity 0.12s ease;
+    margin: 5% 0;
+}
+
+#map-point-2 {
+    transition: opacity 0.14s ease;
+    margin: 5% 0;
+}
+
+#map-point-3 {
+    transition: opacity 0.14s ease;
+    margin: 5% 0;
+}
+
+#map-point-4 {
+    transition: opacity 0.14s ease;
+    margin: 5% 0;
 }
 
 .report-box:hover #new-point-1,
@@ -132,14 +175,16 @@
 .report-box:hover #new-point-4,
 .delete-box:hover #delete-point-1,
 .delete-box:hover #delete-point-2,
-.delete-box:hover #delete-point-3,
-.delete-box:hover #delete-point-4 {
+.map-box:hover #map-point-1,
+.map-box:hover #map-point-2,
+.map-box:hover #map-point-3,
+.map-box:hover #map-point-4 {
     opacity: 1;
     z-index: 0;
 }
 
 .report-box,
-.heatmap-box,
+.map-box,
 .delete-box,
 .update-box {
    width: 70%;
@@ -154,11 +199,10 @@
    background-color: rgb(237, 183, 234);
    transition: height 0.23s ease;
 }
- 
 
- .report-box:hover,
+.report-box:hover,
  .delete-box:hover,
- .heatmap-box:hover,
+ .map-box:hover,
  .update-box:hover {
     height: 480px;
  }
@@ -166,9 +210,13 @@
  
  .report-box:hover .visit-title-down,
  .delete-box:hover .visit-title-down,
- .heatmap-box:hover .visit-title-down,
- .update-box:hover .visit-title-down {
+ .map-box:hover .visit-title-up,
+ .update-box:hover .visit-title-up {
     opacity: 1;
+ }
+
+ .map-box:hover .visit-title-up{
+     margin-top: 5px;
  }
 
 .report-box,
@@ -176,7 +224,7 @@
     align-self: flex-start;
 }
 
-.heatmap-box,
+.map-box,
 .update-box {
     align-self: flex-end;
 }
