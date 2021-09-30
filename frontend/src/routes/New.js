@@ -11,7 +11,7 @@ export default function New(props){
 
     // the callback function is already doing our console.logs
     function handleNewPost(){
-        if (values.title.length > 30) {
+        if (values.title.length > 50) {
            return setErrors({ title: "Title must be less than 30 characters"})
        }
        if (values.post.length > 500) {
