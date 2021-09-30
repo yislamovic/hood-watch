@@ -13,6 +13,7 @@ function MapComponent(props){
       <ReactMapGL 
       {...viewport} 
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+      mapStyle="mapbox://styles/yayai/cku67dk643aw417l4lihf6ueq"
       onViewportChange={(viewport) => {
         setViewport(viewport);
       }}>
