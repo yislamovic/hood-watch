@@ -25,16 +25,13 @@ function Home() {
         
         <div className="report-box">
             <div className="visit-title">
-               <h3>Post Report</h3>
+               <h4>Post Report</h4>
             </div>
             <div className="visit-text">
-              <p class="click-here">Click <a href="/new">here</a> to post a report that everyone can see!</p>
-              <ul class="info-list">
-                <ol>hello</ol>
-                <ol>hello</ol>
-                <ol>hello</ol>
-                <ol>hello</ol>
-              </ul>
+              <p className="click-here">Click <a href="/new">here</a> to post a report that everyone can see!</p>
+              <p className="more-info"></p>
+              <p className="more-info"></p>
+              <p className="more-info"></p>
             </div>
         </div>
 
