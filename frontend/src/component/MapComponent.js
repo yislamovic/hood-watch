@@ -1,14 +1,17 @@
-import ReactMapGL, { Marker } from "react-map-gl"
+import ReactMapGL, { Marker, Popup } from "react-map-gl"
 import React, { useState } from "react";
 import * as parkData from "../data/Skateboard_Parks.json"
+import Image from "../assets/map-pin.svg"
+import "../styles/Map.css"
 function MapComponent(props){
   const [viewport, setViewport] = useState({
     latitude: 45.4211,
     longitude: -75.6903,
-    width: "100vw",
-    height: "100vw",
+    width: "50vw",
+    height: "50vh",
     zoom: 10
   });
+  const [selected, setSelected] = useState(null);
   return(
     <div id='map_id'>
       <ReactMapGL 
@@ -23,9 +26,29 @@ function MapComponent(props){
           key={park.properties.PARK_ID} 
           latitude={park.geometry.coordinates[1]} 
           longitude={park.geometry.coordinates[0]}>
-            <div>SKATE</div>
+            <button 
+            className="button-pin"
+            onClick={e => {
+              e.preventDefault();
+              setSelected(park)
+            }}>
+              <img src={Image} alt="pin" />
+            </button>
           </Marker>
         ))}
+        {selected && 
+        <Popup latitude={selected.geometry.coordinates[1]} 
+               longitude={selected.geometry.coordinates[0]}
+               onClose={() =>{
+                 setSelected(null)
+               }}
+               >
+          <div>
+            <h2>{selected.properties.NAME}</h2>
+            <p>{selected.properties.DESCRIPTION}</p>
+          </div>
+        </Popup>
+        }
       </ReactMapGL>
     </div>
   );
