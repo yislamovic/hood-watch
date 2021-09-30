@@ -41,7 +41,7 @@ export default function New(){
              <h1>New Report</h1>
 
             <div className="new-form-group">
-             <label>Title: </label>
+             <label>Title</label>
              <input type="text"
              name="title"
              className="box" 
@@ -55,13 +55,13 @@ export default function New(){
            </div>
 
          <div className="new-form-group">
-             <p>Whats on Your Mind 🤔 </p>
+             <label>Whats on Your Mind 🤔 </label>
             <textarea
             className="description-box"
              name="post"
              rows="10"
              cols="10"
-             placeholder="Insert Description"
+             placeholder="Type Your Report Here"
              value={values.post}
              onChange={handleChange}
              required
@@ -72,8 +72,8 @@ export default function New(){
          </div>
 
          <div className="new-form-group">
-            <label>Category: </label>
-            <select name="category" className="box" value={values.category} onChange={handleChange} required>
+            <label>Category</label>
+            <select name="category" className="category-box" value={values.category} onChange={handleChange} required>
               <option value="trending">Trending</option>
               <option value="celebrate">Celebrate</option>
               <option value="caution">Cautio</option>
@@ -85,7 +85,7 @@ export default function New(){
          </div>
 
          <div className="new-form-group">
-             <label>Street Name One: </label>
+             <label>Street Name One</label>
              <input type="text"
              name="street_one" 
              className="box" 
@@ -98,7 +98,7 @@ export default function New(){
           </div>
 
           <div className="new-form-group">
-             <label>Street Name Two: </label>
+             <label>Street Name Two</label>
              <input type="text"
              name="street_name_two" 
              className="box" 
@@ -111,7 +111,7 @@ export default function New(){
           </div>
 
            <div className="new-form-group">
-             <label>Postal Code: </label>
+             <label>Postal Code</label>
              <input type="text"
              name="postal_code"
              className="box"  

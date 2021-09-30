@@ -112,8 +112,7 @@
    align-items: center; 
    border-radius: 20px;
    background-color: rgb(237, 183, 234);
-   transition: width 0.7s ease;
-   transition: height 0.7s ease;
+   transition: height 1s ease;
 }
  
 
