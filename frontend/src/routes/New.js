@@ -36,9 +36,11 @@ export default function New(){
     return (
         <>
          <div className="new-post-container">
+            
              <form onSubmit={handleSubmit} className="new-post-form">
              <h1>New Report</h1>
-           <div className="form-group">
+
+            <div className="new-form-group">
              <label>Title: </label>
              <input type="text"
              name="title" 
@@ -51,7 +53,7 @@ export default function New(){
              {errors.title && <p className="error-message">{errors.title}</p>}
            </div>
 
-         <div className="form-group">
+         <div className="new-form-group">
              <label>{textLength}/500</label>
              <p>Post: </p>
             <textarea
@@ -67,9 +69,9 @@ export default function New(){
             </textarea>
              <p></p>
             {errors.post && <p className="error-message">{errors.post}</p>}
-            </div>
+         </div>
 
-         <div className="form-group">
+         <div className="new-form-group">
             <label>Category: </label>
             <select name="category" value={values.category} onChange={handleChange} required>
               <option value="trending">Trending</option>
@@ -82,9 +84,50 @@ export default function New(){
           </select>
             {errors.category && <p className="error-message">{errors.category}</p>}
          </div>
+
+         <div className="new-form-group">
+             <label>Street Name One: </label>
+             <input type="text"
+             name="street_one" 
+             placeholder="Title of Report"
+             value={values.street_one}
+             onChange={handleChange}
+             required
+             >
+             </input>
+             {errors.title && <p className="error-message">{errors.title}</p>}
+          </div>
+
+          <div className="new-form-group">
+             <label>Street Name Two: </label>
+             <input type="text"
+             name="street_name_two" 
+             placeholder="Title of Report"
+             value={values.street_two}
+             onChange={handleChange}
+             required
+             >
+             </input>
+             {errors.title && <p className="error-message">{errors.title}</p>}
+          </div>
+
+           <div className="new-form-group">
+             <label>Postal Code: </label>
+             <input type="text"
+             name="post_code" 
+             placeholder="Title of Report"
+             value={values.postal_code}
+             onChange={handleChange}
+             required
+             >
+             </input>
+             {errors.title && <p className="error-message">{errors.title}</p>}
+          </div>
+
          <div className="button-container">
           <button type="submit" className="btn" disabled={isDisabled}>Post</button>
         </div>
+
           </form>
           </div>
        </>

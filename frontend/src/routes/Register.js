@@ -49,7 +49,7 @@ function Register() {
        <div className="register-form-container">
         <form onSubmit={handleSubmit}>
          
-         <div className="form-group">
+         <div className="register-form-group">
           <label>First Name: </label>
           <input type="text"
            name="first_name" 
@@ -61,7 +61,7 @@ function Register() {
            </input>
           </div>
         
-        <div className="form-group">
+        <div className="register-form-group">
           <label>Last Name: </label>
           <input type="text"
            name="last_name" 
@@ -73,7 +73,7 @@ function Register() {
           </input>
         </div>
        
-        <div className="form-group">
+        <div className="register-form-group">
           <label>Country: </label>
           <input type="text"
            name="country" 
@@ -84,7 +84,7 @@ function Register() {
            ></input>
         </div>
         
-        <div className="form-group">
+        <div className="register-form-group">
           <label>Province/State: </label>
           <input type="text"
            name="province_or_state" 
@@ -95,7 +95,7 @@ function Register() {
            ></input>
         </div>
 
-        <div className="form-group">
+        <div className="register-form-group">
           <label>City: </label>
           <input type="text"
            name="city" 
@@ -107,7 +107,7 @@ function Register() {
           </input>
         </div>
 
-        <div className="form-group">
+        <div className="register-form-group">
           <label>Street: </label>
           <input type="text"
            name="street"
@@ -119,7 +119,7 @@ function Register() {
             </input>
         </div>
         
-        <div className="form-group">
+        <div className="register-form-group">
           <label>Email: </label>
           <input type="email"
            name="email" 
@@ -132,7 +132,7 @@ function Register() {
           {errors.email && <p className="error-message">{errors.email}</p>}
         </div>
 
-        <div className="form-group">
+        <div className="register-form-group">
           <label>Password: </label>
           <input type="password"
            name="password" 
@@ -145,7 +145,7 @@ function Register() {
           {errors.password && <p className="error-message">{errors.password}</p>}
         </div>
 
-        <div className="form-group">
+        <div className="register-form-group">
           <label>Confirm Password: </label>
           <input type="password"
            name="password_confirm" 
