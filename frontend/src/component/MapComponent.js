@@ -7,8 +7,8 @@ function MapComponent(props){
   const [viewport, setViewport] = useState({
     latitude: 45.4211,
     longitude: -75.6903,
-    width: "50vw",
-    height: "50vh",
+    width: "75vw",
+    height: "75vh",
     zoom: 10
   });
   const [selected, setSelected] = useState(null);
@@ -26,14 +26,14 @@ function MapComponent(props){
           key={park.properties.PARK_ID} 
           latitude={park.geometry.coordinates[1]} 
           longitude={park.geometry.coordinates[0]}>
-            <button 
+            <a 
             className="button-pin"
             onClick={e => {
               e.preventDefault();
               setSelected(park)
             }}>
               <img src={Image} alt="pin" />
-            </button>
+            </a>
           </Marker>
         ))}
         {selected && 
