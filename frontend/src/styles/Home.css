@@ -59,7 +59,7 @@
 .visit-header {
   width: 30%;
   height: 50px;
-  /* border: 2px solid black; */
+  border: 2px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,7 +79,7 @@
 }
 
 .visit-title {
-    /* border: 2px solid black; */
+    border: 2px solid black;
     width: 100%;
     height: 10%;
     display: flex;
@@ -91,7 +91,7 @@
 }
 
 .visit-text {
-    /* border: 2px solid purple; */
+    border: 2px solid purple;
     width: 100%;
     height: 75%;
     padding: 5px;
@@ -108,26 +108,32 @@
     z-index: -1;
 }
 
-
-
-#point-1 {
+#new-point-1,
+#delete-point-1 {
     transition: opacity 0.38s ease;
 }
 
-#point-2 {
+#new-point-2,
+#delete-point-2 {
     transition: opacity 0.68s ease;
 }
-#point-3 {
+#new-point-3,
+#delete-point-3 {
     transition: opacity 0.89s ease;
 }
-#point-4 {
+#new-point-4,
+#delete-point-4 {
     transition: opacity 1.05s ease;
 }
 
-.report-box:hover #point-1,
-.report-box:hover #point-2,
-.report-box:hover #point-3,
-.report-box:hover #point-4 {
+.report-box:hover #new-point-1,
+.report-box:hover #new-point-2,
+.report-box:hover #new-point-3,
+.report-box:hover #new-point-4,
+.delete-box:hover #delete-point-1,
+.delete-box:hover #delete-point-2,
+.delete-box:hover #delete-point-3,
+.delete-box:hover #delete-point-4 {
     opacity: 1;
     z-index: 0;
 }
@@ -146,7 +152,7 @@
    align-items: center; 
    border-radius: 20px;
    background-color: rgb(237, 183, 234);
-   transition: height 0.19s ease;
+   transition: height 0.23s ease;
 }
  
 
