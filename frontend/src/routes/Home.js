@@ -29,10 +29,10 @@ function Home() {
             </div>
             <div className="visit-text">
               <p className="click-here">Click <a href="/new">here</a> to post a report that everyone can see!</p>
-              <p className="more-info">Make your own report about anything in your community! 🖊</p>
-              <p className="more-info">View reports of other users from around the world! 🌎 </p>
-              <p className="more-info">Comment and Leave a Like on other reports! 🗣</p>
-              <p className="more-info">Make Meaningful relationships! 🗣</p>
+              <p className="more-info" id="point-1">Make your own report about anything in your community! 🖊</p>
+              <p className="more-info" id="point-2">View reports of other users from around the world! 🌎 </p>
+              <p className="more-info" id="point-3">Comment and Leave a Like on other reports! 🗣</p>
+              <p className="more-info" id="point-4">Make Meaningful relationships! 😊 💕</p>
             </div>
         </div>
 

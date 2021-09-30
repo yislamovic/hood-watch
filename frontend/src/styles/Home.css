@@ -79,19 +79,19 @@
 }
 
 .visit-title {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     width: 100%;
     height: 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.19s ease;
     opacity: 0;
 }
 
 .visit-text {
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
     width: 100%;
     height: 75%;
     padding: 5px;
@@ -103,24 +103,34 @@
 .more-info {
     width: 240px;
     height: 40px;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     opacity: 0;
     z-index: -1;
-    transition: opacity 0.4s ease;
 }
 
- 
 
-.report-box:hover .more-info {
+
+#point-1 {
+    transition: opacity 0.38s ease;
+}
+
+#point-2 {
+    transition: opacity 0.68s ease;
+}
+#point-3 {
+    transition: opacity 0.89s ease;
+}
+#point-4 {
+    transition: opacity 1.05s ease;
+}
+
+.report-box:hover #point-1,
+.report-box:hover #point-2,
+.report-box:hover #point-3,
+.report-box:hover #point-4 {
     opacity: 1;
     z-index: 0;
 }
-
-/* .click-here {
-    border: 2px solid red;
-    width: 200px;
-    height: 50px;
-} */
 
 .report-box,
 .heatmap-box,
@@ -136,7 +146,7 @@
    align-items: center; 
    border-radius: 20px;
    background-color: rgb(237, 183, 234);
-   transition: height 0.4s ease;
+   transition: height 0.19s ease;
 }
  
 
