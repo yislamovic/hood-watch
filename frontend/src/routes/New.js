@@ -54,7 +54,6 @@ export default function New(){
            </div>
 
          <div className="new-form-group">
-             <label>{textLength}/500</label>
              <p>Post: </p>
             <textarea
             className="description-box"
@@ -67,7 +66,7 @@ export default function New(){
              required
             >
             </textarea>
-             <p></p>
+             <p><label>{textLength}/500</label></p>
             {errors.post && <p className="error-message">{errors.post}</p>}
          </div>
 

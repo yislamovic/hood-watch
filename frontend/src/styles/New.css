@@ -1,16 +1,35 @@
 .new-post-container {
-   
-
+   width: 100%;
+   height: 1050px;
+   border: 2px solid black;
+   display: flex;
+   justify-content: center;
 }
 
 .new-post-form {
- 
+  border: 2px solid red;
+  width: 80%;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1.5%;
+
 }
 
-.form-group {
-
+.new-form-group {
+  padding: 2%;
+  border: 2px solid blue;
 }
 
 .description-box {
-   
+   width: 500px;
+   height: 200px;
+}
+
+.btn {
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
 }
