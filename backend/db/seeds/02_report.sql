@@ -10,7 +10,11 @@ VALUES
 
 ("Stanely Park Basketball Tournament", "2021-6-25 5:30:01", "Anyone in the area that wants to participate in a 5v5 basketball tournament can come down next week to Stanley Park. Signups are available on our website, and we will be providing pizza and prizes!!! Whether you want to participate or just come down to watch, this is a great event to bring people together.", "890 King St W, Toronto, ON M5V 1P2", 2),
 
-("Strange Dude in Walmart", "2021-9-3 20:50:34", "So is it just me, or whenever I go to Walmart on a Friday night, there's a guy shoving Cheetos down his pants and leaving. He looks a bit sketchy to me...", "Dufferin Mall Supercentre, 900 Dufferin St, Toronto, ON M6H 4A9", 8),
+("Strange Dude in Walmart", "2021-6-30 20:50:34", "So is it just me, or whenever I go to Walmart on a Friday night, there's a guy shoving Cheetos down his pants and leaving. He looks a bit sketchy to me...", "Dufferin Mall Supercentre, 900 Dufferin St, Toronto, ON M6H 4A9", 8),
 
-("The New Book Club", "2021-9-20", "Intoducing The York University's Book Club opened by me 😉 !!! I am still looking for members, so would it be ok if you guys hit that like button so this report could gain acknowledgement in this app. If you know anyone who loves reading, send them my way.","4700 Keele Street, Toronto Ontario M3J 1P3", 12)
+("The New Book Club", "2021-8-15 14:06:14", "Intoducing The York University's Book Club opened by me 😉 !!! I am still looking for members, so would it be ok if you guys hit that like button so this report could gain acknowledgement in this app. If you know anyone who loves reading, send them my way.","4700 Keele Street, Toronto Ontario M3J 1P3", 12),
+
+("ITS ALEXANDRA PARKS BIRTHDAY 🎂 🎊 🎊","2021-8-19 00:00:00","Lets us celebrate 46 years of growth, community, and prosperity within our neighbourhood. We, at the community services, would like to thank all of the workers, volunteers, and committees who've helped nurture the Alexandra Park Community!!!!! Let us continue to move forward while keeping our rich history in both mind and heart..Bless you all.❤️‍🔥","105 Grange Ct, Toronto, ON M5T 2J6", 6),
+
+("What is it like choking?", "2021-8-23 10:10:10","It can't be just me that's wondering what choking is like?Common...anyone, enlighten me?", "801 Bay St Ste 1, Toronto ON M5S1Y9",10);
 

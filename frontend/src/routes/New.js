@@ -76,7 +76,7 @@ export default function New(props){
             <select name="category" className="category-box" value={values.category} onChange={handleChange} required>
               <option value="trending">Trending</option>
               <option value="celebrate">Celebrate</option>
-              <option value="caution">Cautio</option>
+              <option value="caution">Caution</option>
               <option value="report-crime">Report A Petty Crime</option>
               <option value="community-news">Community News</option>
               <option value="community-question">Question</option>
