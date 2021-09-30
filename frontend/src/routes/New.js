@@ -55,7 +55,7 @@ export default function New(){
            </div>
 
          <div className="new-form-group">
-             <p>Whats Your Report ? </p>
+             <p>Whats on Your Mind 🤔 </p>
             <textarea
             className="description-box"
              name="post"
@@ -68,7 +68,7 @@ export default function New(){
             >
             </textarea>
              <p id="counter"><label>{textLength}/500</label></p>
-            {errors.post && <p className="error-message">{errors.post}</p>}
+            {errors.post && <span className="error-message">{errors.post}</span>}
          </div>
 
          <div className="new-form-group">
@@ -82,7 +82,6 @@ export default function New(){
               <option value="community-question">Question</option>
               <option value="other">Other</option>
           </select>
-            {errors.category && <p className="error-message">{errors.category}</p>}
          </div>
 
          <div className="new-form-group">
@@ -96,7 +95,6 @@ export default function New(){
              required
              >
              </input>
-             {errors.title && <p className="error-message">{errors.title}</p>}
           </div>
 
           <div className="new-form-group">
@@ -110,13 +108,12 @@ export default function New(){
              required
              >
              </input>
-             {errors.title && <p className="error-message">{errors.title}</p>}
           </div>
 
            <div className="new-form-group">
              <label>Postal Code: </label>
              <input type="text"
-             name="post_code"
+             name="postal_code"
              className="box"  
              placeholder="Title of Report"
              value={values.postal_code}
@@ -124,7 +121,6 @@ export default function New(){
              required
              >
              </input>
-             {errors.title && <p className="error-message">{errors.title}</p>}
           </div>
 
          <div className="button-container">
