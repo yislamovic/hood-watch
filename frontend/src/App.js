@@ -7,22 +7,32 @@ import Login from './routes/Login'
 import Register from './routes/Register'
 import Posts from './routes/Posts'
 import Map from './routes/Map'
-import Typical from 'react-typical'
+//import Typical from 'react-typical'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 function App() {
   //** USE THIS USEEFECT AND USESTATE FOR A TEMPLATE **
-  // const [msg, setMsg] = useState('nil');
+  // const [info, setInfo] = useState({
+  //   id: null,
+  //   first_name: '',
+  //   last_name: '',
+  //   email: '',
+  //   person_password: '',
+  //   person_address: ''
+  // });
 
   // useEffect(() => {
   //   const getData = async () => {
-  //   try {
+  //     try {
   //       const [message] = await Promise.all([
-  //         axios.get(`http://localhost:3000/home`).then((response) => {
-  //           console.log(response.data)
-  //           return response.data.username
+  //         axios.get(`http://localhost:8000/users`).then((response) => {
+  //           console.log('im response.data', response.data)
+  //           return response.data
   //         })
   //       ]);
-  //       setMsg(message)
+  //       setInfo(message)
+  //       console.log('this is from the backend', info)
   //     } catch (err) {
   //       console.log(err)
   //     }
@@ -32,17 +42,17 @@ function App() {
 
   return (
     <Router>
-      <Nav className="nav"/>
+      <Nav className="nav" />
       {/* <Typical loop={Infinity} wrapper="b" steps={["a",1000,"b",1000,"c",1000]} /> */}
       <div className="App">
         <Switch>
-          <Route path='/' exact component={Home}/>
-          <Route path="/login" component={Login}/>
-          <Route path="/register" component={Register}/>
-          <Route path="/new" component={New}/>
-          <Route path="/posts" component={Posts}/>
-          <Route path="/map" component={Map}/>
-        </Switch>  
+          <Route path='/' exact component={Home} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+          <Route path="/new" component={New} />
+          <Route path="/posts" component={Posts} />
+          <Route path="/map" component={Map} />
+        </Switch>
       </div>
     </Router>
   );
