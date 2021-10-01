@@ -28,48 +28,51 @@ function Home() {
                <h3>Post Report</h3>
             </div>
             <div className="visit-text-down">
-              <p className>Click <a href="/new">here</a> to post a report that everyone can see!</p>
-              <p className="more-info" id="new-point-1">Make your own report about anything in your community! 🖊</p>
-              <p className="more-info" id="new-point-2">View reports of other users from around the world! 🌎 </p>
-              <p className="more-info" id="new-point-3">Comment and Leave a Like on other reports! 🗣</p>
-              <p className="more-info" id="new-point-4">Make Meaningful Relationships! 😊 💕</p>
+              <p className="more-info" id="new-point-1">Click <a href="/new">here</a> to post a report that everyone can see!</p>
+              <p className="more-info" id="new-point-2">Make your own report about anything in your community! 🖊</p>
+              <p className="more-info" id="new-point-3">View reports of other users from around the world! 🌎 </p>
+              <p className="more-info" id="new-point-4">Comment and Leave a Like on other reports! 🗣</p>
+              <p className="more-info" id="new-point-5">Make Meaningful Relationships! 😊 💕</p>
             </div>
         </div>
-
       <div className="map-box">
       <div className="visit-title-up">
       <h3>View Map</h3>
       </div>
-      
       <div className="visit-text-up">
-         <p className="more-info" id="map-point-1">Make your own report about anything in your community! 🖊</p>
-         <p className="more-info" id="map-point-2">View reports of other users from around the world! 🌎 </p>
-         <p className="more-info" id="map-point-3">View reports of other users from around the world! 🌎 </p>
-         <p className="more-info" id="map-point-4">View reports of other users from around the world! 🌎 </p>
+         <p className="more-info" id="map-point-1">Click <a href="/map">here</a> to view a map of where reports were based on!</p>
+         <p className="more-info" id="map-point-2">Shows Locations of where Reports were Made</p>
+         <p className="more-info" id="map-point-3">An Immersive Experience with an Interactive Map API</p>
+         <p className="more-info" id="map-point-4">View the Many Users of our App</p>
       </div>
-      <p className="click-here">Click <a href="/map">here</a> view a map of where reports were based on.</p>
-         
-
-      </div>
-      <div className="delete-box">
-      <div className="visit-title-down">
-      <h3>Delete Report</h3>
-      </div>
-      <div className="visit-text-down">
-       <p>Click <a href="/delete">here</a> to delete any reports you have submitted.</p>
-       <p className="more-info" id="delete-point-1">Delete A Report That You Don't Want Posted Anymore 🚫</p>
-       <p className="more-info" id="delete-point-2">Sometimes We Make Mistakes and That's Ok 🙂 </p>
-      </div>
-      </div>
+     </div>
+     <div className="delete-box">
+          <div className="visit-title-down">
+            <h3>Delete Report</h3>
+          </div>
+          <div className="visit-text-down">
+            <p className="more-info" id="delete-point-1">Click <a href="/delete">here</a> to delete any reports you have submitted.</p>
+            <p className="more-info" id="delete-point-2">Delete A Report That You Don't Want Posted Anymore 🚫</p>
+            <p className="more-info" id="delete-point-3">Deletion Process is Quick and Efficient</p>
+            <p className="more-info" id="delete-point-4">Please keep content appropriate in our public forums</p>
+            <p className="more-info" id="delete-point-5">Sometimes We Make Mistakes and That's Ok 🙂 </p>
+            
+         </div>
+        </div>
       <div className="update-box">
-      <div className="visit-title">
-      <h3>Update Report</h3>
+        <div className="visit-title-up">
+          <h3>Update Report</h3>
+        </div>
+        <div className="visit-text-up">
+           <p className="more-info" id="up-point-1">Click <a href="/update">here</a> to view a map of where reports were based on!</p>
+           <p className="more-info" id="up-point-2">Shows Locations of where Reports were Made</p>
+           <p className="more-info" id="up-point-3">An Immersive Experience with an Interactive Map API</p>
+           <p className="more-info" id="up-point-4">View the Many Users of our App</p>
+        </div>
       </div>
-       <p>Click <a href="/update">here</a> to update any reports you have submitted</p>
-      </div>
-      </div>
-      </div>
-      </div>
+    </div>
+  </div>
+</div>
     </>
   );
 }
