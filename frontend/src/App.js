@@ -25,7 +25,7 @@ function App() {
   // useEffect(() => {
   //   const getData = async () => {
   //     try {
-  //       const [message] = await Promise.all([
+  //       const [message, delete] = await Promise.all([
   //         axios.get(`http://localhost:8000/users`).then((response) => {
   //           console.log('im response.data', response.data)
   //           return response.data

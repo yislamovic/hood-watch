@@ -20,8 +20,8 @@ CREATE TABLE report(
   date_time timestamp without time zone NOT NULL,
   report TEXT NOT NULL,
   report_address VARCHAR(255) NOT NULL,
-  up_vote INTEGER NOT NULL,
-  down_vote INTEGER NOT NULL,
+  up_vote INTEGER DEFAULT 0 NOT NULL,
+  down_vote INTEGER DEFAULT 0 NOT NULL,
   person_id INTEGER REFERENCES person(id) ON DELETE CASCADE
 );
 
