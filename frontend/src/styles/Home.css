@@ -70,7 +70,7 @@
 
 .visit-container {
     width: 98%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: 550px;
     display: flex;
     justify-content: space-around;

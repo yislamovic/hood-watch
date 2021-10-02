@@ -123,8 +123,8 @@ export default function New(props){
              </input>
           </div>
 
-         <div className="button-container">
-          <button type="submit" className="btn" disabled={isDisabled}>Post</button>
+         <div className="new-button-container">
+          <button type="submit" className="new-btn" disabled={isDisabled}>Post</button>
         </div>
 
           </form>

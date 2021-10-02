@@ -11,7 +11,7 @@
   background-image: linear-gradient(315deg, #9ab5e1 0%, #f39fdc 74%);
  }
  
- .register-form-container {
+.register-form-container {
     border: 2px solid black;
     width: 1000px;
     height: 1300px;
@@ -58,10 +58,8 @@
  }
 
  .register-box:focus {
-     width: 600px
+     width: 600px;
  }
-
-
 
  .error-message {
      color: red;
