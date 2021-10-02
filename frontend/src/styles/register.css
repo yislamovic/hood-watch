@@ -17,7 +17,7 @@
  }
 
  .register-form {
-    width: 700px;
+    width: 800px;
     height: 1000px;
     display: flex;
     flex-direction: column;
@@ -28,35 +28,30 @@
 }
 
  .register-form-group {
-     width: 90%;
-     height: 100px;
-     padding: 20px 5px;
-     margin: 20px 0;
-     border: 2px solid blue;
      display: flex;
      flex-direction: column;
-     justify-content: center;
-     align-items: center;
- }
+     justify-content: space-between;
+     border: 2px solid blue;
+     padding: 2% 2%;
+}
 
  .register-box {
-     width: 450px;
-     height: 50px;
+     width: 500px;
+     height: 45px;
      font-size: 20px;
      transition: 0.3s width ease;
  }
+ 
+ .register-label {
+     font-size: 24px;
+     border: 2px solid red;
+ }
 
  .register-box:focus {
-     width: 510px
+     width: 700px
  }
 
- .register-label {
-     /* border: 2px solid red; */
-     align-self: flex-start;
-     margin-left: 86px;
-     
- }
- 
+
 
  .error-message {
      color: red;
