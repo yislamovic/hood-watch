@@ -35,7 +35,7 @@ function Register() {
   // you change the state, instead of react changing right away, it changes on the next render => immutability
   // rerun the component with the new value
   useEffect(() => {
-    if (Object.values(values).filter(value => value !== "").length === 9) {
+    if (Object.values(values).filter(value => value !== "").length === 6) {
       setIsDisabled(false)
      } else {
        setIsDisabled(true)
@@ -45,8 +45,8 @@ function Register() {
   return (
     <>
     <div className="register-container">
-      <h1 className="header">Register a New Account!</h1>
        <div className="register-form-container">
+        <h1 className="header">Register a New Account!</h1>
         <form className="register-form" onSubmit={handleSubmit}>
          
          <div className="register-form-group">
