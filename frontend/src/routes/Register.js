@@ -1,6 +1,7 @@
 import "../styles/Register.css";
 import useForm from "../hooks/useForm";
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function Register() {
   const { handleChange, handleSubmit, values, setValues } = useForm(handleRegisterForm)
@@ -29,6 +30,26 @@ function Register() {
     }
     console.log("Form Submitted!!")
     setValues({});
+  }
+
+  function userSubmitData(){
+    const getData = async () => {
+      try {
+        console.log('Form Submission')
+        if (values.password_confirm !== values.password) {
+          console.log("Passwords don't match 40")
+          return;
+      }
+        const [ formSubmit ] = await Promise.all([
+          axios.post(`http://localhost:8000/register`, {values})
+        ])
+        console.log('im response.data', formSubmit.data)
+          return formSubmit.data
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    getData()
   }
 
   // anytime the value changes, want to run this function
@@ -129,7 +150,7 @@ function Register() {
         </div>
 
         <div className="register-button-container">
-          <button type="submit" className="register-btn" disabled={isDisabled}>Register</button>
+          <button type="submit" className="register-btn" disabled={isDisabled} onClick={() => userSubmitData()}>Register</button>
           <p>Already have an account? <a href="/login">Login here</a></p>
         </div>
       </form>

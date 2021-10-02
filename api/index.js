@@ -33,17 +33,18 @@ app.get("/users/:id", async (req, res) => {
 })
 
 app.post("/register", async (req, res) => {
-  try {
-    const { first_name, last_name, email, person_password, person_address } = req.body;
+  console.log("post register", req.body);
+  // try {
+    const { first_name, last_name, email, password, address } = req.body.values;
     const newUser = await pool.query(
       `INSERT INTO person (first_name, last_name, email, person_password, person_address) values ($1, $2, $3, $4, $5)
        RETURNING *`
-      , [first_name, last_name, email, person_password, person_address])
+      , [first_name, last_name, email, password, address]);
     res.json(newUser);
-    console.log(req.body)
-  } catch (err) {
-    console.log(err.message)
-  }
+    console.log(req.body.values);
+  // // } catch (err) {
+  //   console.log(err.message)
+  // }
 })
 
 app.get("/reports", async(req, res) => {
