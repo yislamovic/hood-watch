@@ -86,9 +86,3 @@
     transform: translateY(-8px);
     box-shadow: 0px 8px 6px black;
 }
-
-.street-holder {
-    width: 100px;
-    height: 100px;
-    border: 2px solid black;
-}

@@ -50,10 +50,10 @@ function Register() {
         <form className="register-form" onSubmit={handleSubmit}>
          
          <div className="register-form-group">
-          <label>First Name: </label>
+          <label className="register-label">First Name: </label>
           <input type="text"
            name="first_name" 
-           className="first-name"
+           className="register-box"
            placeholder="first name"
            value={values.first_name}
            onChange={handleChange}
@@ -63,10 +63,10 @@ function Register() {
           </div>
         
         <div className="register-form-group">
-          <label>Last Name: </label>
+          <label className="register-label">Last Name: </label>
           <input type="text"
            name="last_name"
-           className="last-name" 
+           className="register-box" 
            placeholder="last name"
            value={values.last_name}
            onChange={handleChange}
@@ -76,10 +76,10 @@ function Register() {
         </div>
        
         <div className="register-form-group">
-          <label>Address: </label>
+          <label className="register-label">Address: </label>
           <input type="text"
            name="address" 
-           className="address"
+           className="register-box"
            placeholder="address"
            value={values.address}
            onChange={handleChange}
@@ -88,10 +88,10 @@ function Register() {
         </div>
         
         <div className="register-form-group">
-          <label>Email: </label>
+          <label className="register-label">Email: </label>
           <input type="email"
           name="email" 
-          className="email"
+          className="register-box"
           placeholder="email"
           value={values.email}
           onChange={handleChange}
@@ -102,10 +102,10 @@ function Register() {
         </div>
 
         <div className="register-form-group">
-          <label>Password: </label>
+          <label className="register-label">Password: </label>
           <input type="password"
           name="password"
-          className="password" 
+          className="register-box" 
           placeholder="password"
           value={values.password}
           onChange={handleChange}
@@ -116,11 +116,11 @@ function Register() {
         </div>
 
         <div className="register-form-group">
-          <label>Confirm Password: </label>
+          <label className="register-label">Confirm Password: </label>
           <input type="password"
           name="password_confirm" 
-          className="password-confirm"
-          placeholder="password"
+          className="register-box"
+          placeholder="confirm password"
           value={values.password_confirm}
           onChange={handleChange}
           required
