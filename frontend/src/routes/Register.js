@@ -128,8 +128,8 @@ function Register() {
           {errors.password_confirm && <p className="error-message">{errors.password_confirm}</p>}
         </div>
 
-        <div className="button-container">
-          <button type="submit" className="btn" disabled={isDisabled}>Register</button>
+        <div className="register-button-container">
+          <button type="submit" className="register-btn" disabled={isDisabled}>Register</button>
           <p>Already have an account? <a href="/login">Login here</a></p>
         </div>
       </form>

@@ -71,6 +71,7 @@
 
 .button-container {
     padding: 1%;
+    border: 2px solid black;
 }
 
 .btn {
