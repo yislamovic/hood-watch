@@ -18,18 +18,23 @@
 
  .register-form {
     width: 700px;
-    height: 825px;
+    height: 840px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     border: 2px solid purple;
 }
 
  .register-form-group {
      width: 200px;
-     height: 40px;
+     height: 65px;
+     padding: 20px 5px;
      margin: 20px 0;
      border: 2px solid blue;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
  }
  
 

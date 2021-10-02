@@ -12,10 +12,10 @@ export default function New(props){
     // the callback function is already doing our console.logs
     function handleNewPost(){
         if (values.title.length > 50) {
-           return setErrors({ title: "Title must be less than 30 characters"})
+           return setErrors({ title: "Title must be less than 50 characters"})
        }
        if (values.post.length > 500) {
-        return setErrors({ post: "Description must be less than 500 characters"})
+        return setErrors({ post: "Report must be less than 500 characters"})
     }
        
        setValues({})
@@ -51,7 +51,7 @@ export default function New(props){
              required
              >
              </input>
-             {errors.title && <p className="error-message">{errors.title}</p>}
+             {errors.title && <span className="error-message">{errors.title}</span>}
            </div>
 
          <div className="new-form-group">
@@ -67,7 +67,7 @@ export default function New(props){
              required
             >
             </textarea>
-             <p id="counter"><label>{textLength}/500</label></p>
+             <span id="counter"><label>{textLength}/500</label></span>
             {errors.post && <span className="error-message">{errors.post}</span>}
          </div>
 
@@ -95,7 +95,6 @@ export default function New(props){
              required
              >
              </input>
-             {/* <span className="street-holder"></span> */}
           </div>
 
           <div className="new-form-group">
