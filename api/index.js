@@ -46,7 +46,7 @@ app.post("/register", async(req, res) => {
   }
 })
 
-app.get("/posts", async(req, res) => {
+app.get("/reports", async(req, res) => {
   try{
     const allPosts = await pool.query(
       `SELECT id, title, category, date_time,report, report_address, up_vote, down_vote, person_id
@@ -59,12 +59,13 @@ app.get("/posts", async(req, res) => {
   }
 })
 
-app.get("/posts/:id", async(req, res) => {
+app.get("/reports/:id", async(req, res) => {
   try{
     const { id } = req.params
     const singlePost = await pool.query(
-      `SELECT id, title, category, date_time,report, report_address, up_vote, down_vote, person_id
+      `SELECT id, title, category, date_time, report, report_address, up_vote, down_vote, person_id
       FROM report
+      JOIN person ON person_id = person.id
       WHERE id = $1`, [id]
       )
       res.json(singlePost.rows[0]);
@@ -82,6 +83,21 @@ app.get("/map", async(req, res) => {
        JOIN person ON person.id = person_id`
       )
       res.json(userPostsMap.rows[0]);
+      console.log(req.body)
+  } catch(err) {
+    console.log(err.message)
+  }
+})
+
+app.delete("/delete/:id", async(req, res) => {
+  try{
+    const { id } = req.params;
+    const { report_id } = req.body;
+    const delete_record = await pool.query(
+      `DELETE FROM report
+       WHERE person_id = $1 AND id = $2;`, [id, report_id]
+      )
+      res.json(delete_record.rows[0]);
       console.log(req.body)
   } catch(err) {
     console.log(err.message)

@@ -17,7 +17,7 @@ CREATE TABLE report(
   id SERIAL PRIMARY KEY NOT NULL,
   title VARCHAR(255) NOT NULL,
   category VARCHAR(255) NOT NULL,
-  date_time timestamp without time zone NOT NULL,
+  date_time timestamp without time zone NOT NULL current_timestamp,
   report TEXT NOT NULL,
   report_address VARCHAR(255) NOT NULL,
   up_vote INTEGER DEFAULT 0 NOT NULL,
