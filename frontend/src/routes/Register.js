@@ -47,7 +47,7 @@ function Register() {
     <div className="register-container">
       <h1 className="header">Register a New Account!</h1>
        <div className="register-form-container">
-        <form onSubmit={handleSubmit}>
+        <form className="register-form" onSubmit={handleSubmit}>
          
          <div className="register-form-group">
           <label>First Name: </label>
