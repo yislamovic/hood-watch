@@ -12,3 +12,9 @@ VALUES
 ('Dilan','Summers', 'd483@gmail.com', '1234', 'Toronto, Ontario, 12 College St'),
 ('Rose','Amysetrich', 'summergirl111@gmail.com', '1234', 'Toronto, Ontario, High Park'),
 ('Aphason','Aberham','aphason1@gmail.com','1234','Toronto, Ontario Bloor St E');
+('Jeff','Teague','Jeff19@gmail.com','1234','Toronto, Ontario 15 Queen St E');
+('James','Donaldson','James324@gmail.com','1234','Toronto, Ontario 42 Clancy St');
+('Samuel','Alistar','Sam_Ali@gmail.com','1234','Toronto, Ontario 34 Warden St');
+('Tracer','Stevens','Trace.S@gmail.com','1234','Toronto, Ontario 1001 Rodelawn Av');
+('Genji Hawkins','hawk@gmail.com','1234','Toronto, Ontario 29 Danforth Av');
+('Ana','Bydee','ana_byd@gmail.com','1234','Toronto, Ontario 64 Bywood Drive');
