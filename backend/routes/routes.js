@@ -8,13 +8,13 @@ module.exports = (db) => {
     const { firstName, email, password } = req.body;
 
     let selectString = `
-      SELECT * FROM User
+      SELECT * FROM person
       email = $2
     `;
 
     let insertString = `
-      INSERT INTO User (first_name, last_name, email, user_password, country, province_or_state, city, street)
-      VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+      INSERT INTO person (first_name, last_name, email, person_password, person_adress)
+      VALUES ($1, $2, $3, $4, $5)
       RETURNING *;
     `;
     let selectParams = [firstName, email];
@@ -29,7 +29,6 @@ module.exports = (db) => {
             userEmail: data.rows[0].email,
             userName: data.rows[0].user_password,
           };
-          res.render('/login', { user: req.session.userID });
         })
         .catch((err) => {
           res
@@ -46,7 +45,7 @@ module.exports = (db) => {
     const { email, password } = req.body;
 
     let queryString = `
-      SELECT * FROM User
+      SELECT email, person_password FROM person
     `;
 
     let queryParams = [email];
@@ -59,7 +58,10 @@ module.exports = (db) => {
             userEmail: data.rows[0].email,
             userName: data.rows[0].user_password
           };
-          res.redirect('/home');
+        } else if (!email || !password) {
+          res.status(400);
+          res.send("Email or/and Password cannot be blank");
+          return;
         } else {
           res.status(403);
           res.send("Incorrect Email And/Or Password");
@@ -79,8 +81,8 @@ module.exports = (db) => {
 
   router.get("/reports", (req, res) => {
     db.query(`
-    SELECT report_description, character_amount, gps_coordinates, up_vote
-    FROM Report, Vote 
+    SELECT title, category, date_time, up_vote, down_vote, report
+    FROM report
     ORDER BY up_vote;`)
       .then(data => {
         const reports = data.rows;
@@ -93,13 +95,13 @@ module.exports = (db) => {
       });
 
   });
-  
+
   router.get("/reports/:id", (req, res) => {
     db.query(`
-    SELECT title, date_time, report_description, character_amount, up_vote, down_vote, comment
-    FROM Report, Vote, Comment
-    JOIN User ON Report.id = User.report_id
-    WHERE Report.id = ${req.params.id}`)
+    SELECT title, category, date_time, up_vote, down_vote, report, report_address, person_id
+    FROM report, Vote, Comment
+    JOIN person ON report.id = person.report_id
+    WHERE report.id = ${req.params.id}`)
       .then(data => {
         const report = data.rows;
         return res.json({ report });
@@ -112,11 +114,11 @@ module.exports = (db) => {
   });
 
 
-  
+
   router.get("/map", (req, res) => {
     db.query(`
-    SELECT gps_coordinates
-    FROM Report`)
+    SELECT report_address
+    FROM report`)
       .then(data => {
         const map = data.rows;
         return res.json({ map });
@@ -127,6 +129,6 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
- 
+
   return router;
 };
