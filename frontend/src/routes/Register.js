@@ -1,4 +1,4 @@
-import "../styles/register.css";
+import "../styles/Register.css";
 import useForm from "../hooks/useForm";
 import { useState, useEffect } from 'react';
 
