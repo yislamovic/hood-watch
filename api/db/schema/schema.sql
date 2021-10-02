@@ -1,7 +1,5 @@
 DROP TABLE IF EXISTS person CASCADE;
-DROP TABLE IF EXISTS vote CASCADE;
 DROP TABLE IF EXISTS report CASCADE;
-DROP TABLE IF EXISTS report_type CASCADE;
 DROP TABLE IF EXISTS comment CASCADE;
 
 CREATE TABLE person(
@@ -17,7 +15,7 @@ CREATE TABLE report(
   id SERIAL PRIMARY KEY NOT NULL,
   title VARCHAR(255) NOT NULL,
   category VARCHAR(255) NOT NULL,
-  date_time timestamp without time zone NOT NULL current_timestamp,
+  date_time TIMESTAMPTZ DEFAULT Now(),
   report TEXT NOT NULL,
   report_address VARCHAR(255) NOT NULL,
   up_vote INTEGER DEFAULT 0 NOT NULL,
