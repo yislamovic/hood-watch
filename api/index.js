@@ -114,7 +114,7 @@ app.get("/login", async(req, res) => {
        WHERE email = $1 AND person_password = $2`
       , [email,password]);
     res.json(login);
-    console.log(req.body);
+    console.log(req.body.values);
   } catch (err) {
     console.log(err.message);
   }

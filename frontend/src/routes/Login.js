@@ -28,6 +28,23 @@ export default function Login() {
     setValues({});
   }
 
+  function userLogin(){
+    const getData = async () => {
+      // try {
+        console.log('Form Submission')
+        const [ loginSubmit ] = await Promise.all([
+          axios.get(`http://localhost:8000/login`, {values})
+        ])
+        console.log("over here im values", values)
+        console.log('im response.data', loginSubmit.data)
+          return loginSubmit.data
+      // } catch (err) {
+        // console.log(err);
+      // }
+    }
+    getData()
+  }
+
   useEffect(() => {
     if (Object.values(values).filter(value => value !== "").length === 2) {
       setIsDisabled(false)
@@ -53,7 +70,7 @@ export default function Login() {
           {errors.password && <span className="error-message">{errors.password}</span>}
         </div>
         <div className="button-container">
-          <button type="submit" className="btn" disabled={isDisabled}>Login</button>
+          <button type="submit" className="btn" disabled={isDisabled} onClick={() => userLogin()}>Login</button>
         </div>
       </form>
       </div>
