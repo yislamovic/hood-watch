@@ -105,14 +105,14 @@ app.delete("/delete/:id", async(req, res) => {
   }
 })
 
-app.get("/login", async(req, res) => {
-  console.log('109 req.body',req.body);
+app.post("/login", async(req, res) => {
+  console.log('109 req.body', req.body);
   try {
     const { email, password } = req.body.values;
     const login = await pool.query(
       `SELECT * FROM person
-       WHERE email = $1 AND person_password = $2`
-      , [email,password]);
+       WHERE email = $1 AND person_password = $2;`
+      , [email, password]);
     res.json(login);
     console.log(req.body.values);
   } catch (err) {
