@@ -28,7 +28,7 @@ function Nav() {
     );
   } else {
     return (
-      <nav> 
+      <nav>
         <img src={Image} alt="logo" width="80px" height="56px"/>
         <ul className='nav-links'>
           <Link style={navStyle} to='/'>
@@ -43,7 +43,6 @@ function Nav() {
         </ul>
     </nav>
     );
-    console.log(email);
   }
 }
 

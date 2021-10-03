@@ -1,5 +1,6 @@
 import "../styles/Home.css";
 import neighbourhoodImage from "../assets/cartoon-street.jpeg"
+
 function Home() {
 
   return (
