@@ -30,17 +30,17 @@ export default function Login() {
 
   function userLogin(){
     const getData = async () => {
-      // try {
+      try {
         console.log('Form Submission')
         const [ loginSubmit ] = await Promise.all([
-          axios.get(`http://localhost:8000/login`, {values})
+          axios.post(`http://localhost:8000/login`, {values})
         ])
         console.log("over here im values", values)
         console.log('im response.data', loginSubmit.data)
           return loginSubmit.data
-      // } catch (err) {
-        // console.log(err);
-      // }
+      } catch (err) {
+        console.log(err);
+      }
     }
     getData()
   }

@@ -5,14 +5,21 @@ function Home() {
   return (
     <>
     <div className="home-container">
-    <div className="home-header" style={{ backgroundImage: `url(${neighbourhoodImage})`}}>
-      <div className="home-title">
+    <div className="home-title">
      <h1>Welcome to Neighbourhood Watch</h1>
      </div>
-
-      <div className="about-container">
-        <p>Welcome to the neighbourhood watch 🕵 🦉 ! Our app is dedicated to creating more safe and positive spaces by informing users of many good/concerning things that may take place in their areas ✅ . Please feel free to report anything that may take place in your community 📝 . Feel free to <b><a href="/register">Register Here</a></b> to create an account. If you already have an account you can <b><a href="/login">Login Here</a></b>. Our users are slowly growing in number and we would love your feeback 📈 . Feel feel to email us at <b>AskTheWatchers3@gmail.com</b> if you have any burning questions 🔥 . Enjoy your say and thanks for checking us out! Stay watchin' folks!!! 👁 👁  </p>
+    <div className="home-header" style={{ backgroundImage: `url(${neighbourhoodImage})`}}></div>
+    <div className="about-container">
+      <div className="header-and-text-holder">
+      <div className="about-header-container">
+        <h3 className="about-header">About Us</h3>
       </div>
+      </div>
+       <span className="space-text" id="one">We want to create more safe and positive spaces</span>
+       <span className="space-text" id="two">Want to Unite Communities </span>
+       <span className="space-text" id="three">We serve our communities</span>
+       <span className="space-text" id="four">Like and Subscribe</span>
+       
      </div>
     
       <div className="home-ref">
