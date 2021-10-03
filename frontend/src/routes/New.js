@@ -41,7 +41,7 @@ export default function New(props){
              <h1>New Report</h1>
 
             <div className="new-form-group">
-             <label className="input-label">Title</label>
+             <label className="input-label">Title:</label>
              <input type="text"
              name="title"
              className="box" 
@@ -54,25 +54,9 @@ export default function New(props){
              {errors.title && <span className="error-message">{errors.title}</span>}
            </div>
 
-         <div className="new-form-group">
-             <label className="input-label">Whats on Your Mind 🤔 </label>
-            <textarea
-            className="description-box"
-             name="post"
-             rows="10"
-             cols="10"
-             placeholder="Type Your Report Here"
-             value={values.post}
-             onChange={handleChange}
-             required
-            >
-            </textarea>
-             <span id="counter"><label>{textLength}/500</label></span>
-            {errors.post && <span className="error-message">{errors.post}</span>}
-         </div>
 
          <div className="new-form-group">
-            <label className="input-label">Category</label>
+            <label className="input-label">Category:</label>
             <select name="category" className="category-box" value={values.category} onChange={handleChange} required>
               <option value="trending">Trending</option>
               <option value="celebrate">Celebrate</option>
@@ -85,11 +69,29 @@ export default function New(props){
          </div>
 
          <div className="new-form-group">
-             <label className="input-label">Street Name One</label>
+             <label className="input-label">Whats on Your Mind 🤔 :</label>
+            <textarea
+            className="description-box"
+             name="report"
+             rows="10"
+             cols="10"
+             placeholder="Type Your Report Here"
+             value={values.post}
+             onChange={handleChange}
+             required
+            >
+            </textarea>
+             <span id="counter"><label>{textLength}/500</label></span>
+            {errors.post && <span className="error-message">{errors.post}</span>}
+         </div>
+
+
+         <div className="new-form-group">
+             <label className="input-label">Report Address:</label>
              <input type="text"
-             name="street_one" 
+             name="report_address" 
              className="box" 
-             placeholder=""
+             placeholder="The address of the place described"
              value={values.street_one}
              onChange={handleChange}
              required
@@ -97,33 +99,7 @@ export default function New(props){
              </input>
           </div>
 
-          <div className="new-form-group">
-             <label className="input-label">Street Name Two</label>
-             <input type="text"
-             name="street_name_two" 
-             className="box" 
-             placeholder=""
-             value={values.street_two}
-             onChange={handleChange}
-             required
-             >
-             </input>
-          </div>
-
-           <div className="new-form-group">
-             <label className="input-label">Postal Code</label>
-             <input type="text"
-             name="postal_code"
-             className="box"  
-             placeholder=""
-             value={values.postal_code}
-             onChange={handleChange}
-             required
-             >
-             </input>
-          </div>
-
-         <div className="new-button-container">
+        <div className="new-button-container">
           <button type="submit" className="new-btn" disabled={isDisabled}>Post</button>
         </div>
 
