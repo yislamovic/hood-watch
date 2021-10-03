@@ -2,13 +2,14 @@ import "../styles/Login.css";
 import useForm from "../hooks/useForm";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 
-export default function Login() {
-  const { handleChange, handleSubmit, values, setValues } = useForm(handleLoginForm)
-  const [isDisabled, setIsDisabled] = useState(true)
-  const [errors, setErrors] = useState({})
+export default function Login(props) {
+  const { handleChange, handleSubmit, values, setValues } = useForm(handleLoginForm);
+  const [isDisabled, setIsDisabled] = useState(true);
+  const [errors, setErrors] = useState({});
+  let history = useHistory();
 
   function handleLoginForm() {
     // Email
@@ -33,14 +34,13 @@ export default function Login() {
       try {
         console.log('Form Submission')
         const [loginSubmit] = await Promise.all([
-          axios.post(`http://localhost:8000/login`, { values })
-            .then((response) => {
-              return response.data.rows[0];
-            })
-        ])
-        console.log("over here im values", values)
-        console.log('im response.data', loginSubmit)
-    
+          axios.post(`http://localhost:3000/login`, { values })
+        ]).then(() => {
+          history.push('/')
+        })
+        console.log("over here im values", values);
+        await console.log('im response.data', loginSubmit);
+        return loginSubmit;
       } catch (err) {
         console.log(err);
       }
@@ -56,13 +56,7 @@ export default function Login() {
     }
   }, [values])
 
-  function onSubmit(){
-    const user = userLogin();
-    if(user){
-      return <Redirect to="/home"/>
-    }
-  }
-
+ 
   return (
     <>
       <div className="login-container">
@@ -80,11 +74,14 @@ export default function Login() {
               {errors.password && <span className="error-message">{errors.password}</span>}
             </div>
             <div className="button-container">
-              <button type="submit" className="btn" disabled={isDisabled} onClick={() => onSubmit()}>Login</button>
+              <button type="submit" className="btn" disabled={isDisabled} onClick={userLogin}>Login</button>
             </div>
           </form>
         </div>
       </div>
     </>
+
+    
+  
   );
 }

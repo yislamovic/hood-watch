@@ -2,11 +2,13 @@ import "../styles/Register.css";
 import useForm from "../hooks/useForm";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
 function Register() {
-  const { handleChange, handleSubmit, values, setValues } = useForm(handleRegisterForm)
-  const [isDisabled, setIsDisabled] = useState(true)
-  const [errors, setErrors] = useState({})
+  const { handleChange, handleSubmit, values, setValues } = useForm(handleRegisterForm);
+  const [isDisabled, setIsDisabled] = useState(true);
+  const [errors, setErrors] = useState({});
+  let history = useHistory();
 
   function handleRegisterForm() {
     // Email
@@ -41,9 +43,11 @@ function Register() {
           return;
         }
         const [formSubmit] = await Promise.all([
-          axios.post(`http://localhost:8000/register`, { values })
-        ])
-        console.log('im response.data', formSubmit.data)
+          axios.post(`http://localhost:3000/register`, { values })
+        ]).then(() => {
+          history.push("/");
+        })
+        await console.log('im response.data', formSubmit)
         return formSubmit.data
       } catch (err) {
         console.log(err);

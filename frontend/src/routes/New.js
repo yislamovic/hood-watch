@@ -5,17 +5,18 @@ import { useState, useEffect } from 'react';
 
 export default function New(props){
     const { handleChange, handleSubmit, values, setValues } = useForm(handleNewPost)
+    const [titleLength, setTitleLength] = useState(0)
     const [textLength, setTextLength] = useState(0)
     const [isDisabled, setIsDisabled] = useState(true)
     const [errors, setErrors] = useState({})
 
     // the callback function is already doing our console.logs
     function handleNewPost(){
-        if (values.title.length > 50) {
-           return setErrors({ title: "Title must be less than 50 characters"})
+        if (values.title.length > 30) {
+           return setErrors({ title: "Title must be less than 30 characters"})
        }
        if (values.post.length > 500) {
-        return setErrors({ post: "Report must be less than 500 characters"})
+        return setErrors({ report: "Report must be less than 500 characters"})
     }
        
        setValues({})
@@ -28,8 +29,12 @@ export default function New(props){
       } else {
         setIsDisabled(true)
       }
-      if (values.post) {
-        setTextLength(values.post.length)
+      if (values.report) {
+        setTextLength(values.report.length)
+      }
+
+      if(values.title) {
+        setTitleLength(values.title.length)
       }
     }, [values])
   
@@ -51,6 +56,7 @@ export default function New(props){
              required
              >
              </input>
+             <span id="counter"><label>{titleLength}/30</label></span>
              {errors.title && <span className="error-message">{errors.title}</span>}
            </div>
 
