@@ -106,13 +106,21 @@ app.delete("/delete/:id", async(req, res) => {
 })
 
 app.post("/login", async(req, res) => {
+<<<<<<< HEAD
   console.log('109 req.body',req.body.values);
+=======
+  console.log('109 req.body', req.body);
+>>>>>>> ed88cf8c5c0d5fbb835503a30bff8e1a26aa8d71
   try {
     const { email, password } = req.body.values;
     const login = await pool.query(
       `SELECT * FROM person
        WHERE email = $1 AND person_password = $2;`
+<<<<<<< HEAD
       , [email,password]);
+=======
+      , [email, password]);
+>>>>>>> ed88cf8c5c0d5fbb835503a30bff8e1a26aa8d71
     res.json(login);
     console.log(req.body.values);
   } catch (err) {
