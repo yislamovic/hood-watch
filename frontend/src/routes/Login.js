@@ -21,8 +21,8 @@ export default function Login() {
     // Password
     if (!values.password) {
       return setErrors({password: "Password is required"})
-    } else if (values.password.length < 8) {
-      return setErrors({password: "Password must be 8 characters long"})
+    } else if (values.password.length < 4) {
+      return setErrors({password: "Password must be 4 characters long"})
     }
     console.log("Form Submitted!!")
     setValues({});
@@ -35,9 +35,9 @@ export default function Login() {
         const [ loginSubmit ] = await Promise.all([
           axios.post(`http://localhost:8000/login`, {values})
         ])
-        console.log("over here im values", values)
-        console.log('im response.data', loginSubmit.data)
-          return loginSubmit.data
+          console.log("over here im values", values)
+          console.log('im response.data', loginSubmit.data)
+          return loginSubmit.data;
       } catch (err) {
         console.log(err);
       }

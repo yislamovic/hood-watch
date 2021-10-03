@@ -19,8 +19,8 @@ function Register() {
     // Password
     if (!values.password) {
       return setErrors({password: "Password is required"})
-    } else if (values.password.length < 8) {
-      return setErrors({password: "Password must be 8 characters long"})
+    } else if (values.password.length < 4) {
+      return setErrors({password: "Password must be at least 4 characters long"})
     }
     // Password Confirm
     if (!values.password_confirm) {

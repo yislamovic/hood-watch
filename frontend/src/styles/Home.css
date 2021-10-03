@@ -123,7 +123,7 @@
 
 #one {
     position: absolute;
-    top: 99%;
+    top: 96.5%;
     left: 9%;
 }
 
@@ -294,7 +294,7 @@
 .map-box,
 .delete-box,
 .update-box {
-   width: 70%;
+   width: 20%;
    height: 100px;
    margin: 1%;
    padding: 20px 15px;
@@ -331,3 +331,6 @@
 .update-box {
     align-self: flex-end;
 }
+
+
+  

@@ -15,10 +15,10 @@ function Home() {
         <h3 className="about-header">About Us</h3>
       </div>
       </div>
-       <span className="space-text" id="one">We want to create more safe and positive spaces</span>
+       {/* <span className="space-text" id="one">We want to create more safe and positive spaces</span>
        <span className="space-text" id="two">Want to Unite Communities </span>
        <span className="space-text" id="three">We serve our communities</span>
-       <span className="space-text" id="four">Like and Subscribe</span>
+       <span className="space-text" id="four">Like and Subscribe</span> */}
        
      </div>
     
