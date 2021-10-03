@@ -119,7 +119,7 @@ function Register() {
           required
           >
           </input>
-          {errors.email && <p className="error-message">{errors.email}</p>}
+          {errors.email && <span className="error-message">{errors.email}</span>}
         </div>
 
         <div className="register-form-group">
@@ -133,7 +133,7 @@ function Register() {
           required
           >
           </input>
-          {errors.password && <p className="error-message">{errors.password}</p>}
+          {errors.password && <span className="error-message">{errors.password}</span>}
         </div>
 
         <div className="register-form-group">
@@ -146,7 +146,7 @@ function Register() {
           onChange={handleChange}
           required
           ></input>
-          {errors.password_confirm && <p className="error-message">{errors.password_confirm}</p>}
+          {errors.password_confirm && <span className="error-message">{errors.password_confirm}</span>}
         </div>
 
         <div className="register-button-container">

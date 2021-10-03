@@ -106,6 +106,7 @@ app.delete("/delete/:id", async(req, res) => {
 })
 
 app.get("/login", async(req, res) => {
+  console.log('109 req.body',req.body);
   try {
     const { email, password } = req.body;
     const login = await pool.query(
