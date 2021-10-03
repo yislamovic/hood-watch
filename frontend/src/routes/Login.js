@@ -10,6 +10,8 @@ export default function Login(props) {
   const [isDisabled, setIsDisabled] = useState(true);
   const [errors, setErrors] = useState({});
   let history = useHistory();
+  const [email] = useState("");
+  const [password] = useState("");
 
   function handleLoginForm() {
     // Email
@@ -33,13 +35,15 @@ export default function Login(props) {
     const getData = async () => {
       try {
         console.log('Form Submission')
+        const user = { email, password };
         const [loginSubmit] = await Promise.all([
-          axios.post(`http://localhost:3000/login`, { values })
+          axios.post(`http://localhost:3000/login`, { values }, user)
         ]).then(() => {
           history.push('/')
         })
         console.log("over here im values", values);
         await console.log('im response.data', loginSubmit);
+        localStorage.setItem('user', loginSubmit.data)
         return loginSubmit;
       } catch (err) {
         console.log(err);
