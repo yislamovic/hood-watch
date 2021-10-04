@@ -137,7 +137,7 @@ app.post("/new", async(req, res) => {
 app.get("/update/:id", async(req, res) => {
   try {
     const { person_id } =  req.params;
-    const { report_id } =  req.body;
+    const { report_id } =  req.body.values;
     const get_report = await pool.query(
       `SELECT title, category, report, report_address 
       FROM report

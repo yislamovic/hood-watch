@@ -4,20 +4,20 @@ import { useState, useEffect } from 'react';
 import axios from "axios";
 
 
-export default function New(props){
+export default function New(){
     const { handleChange, handleSubmit, values, setValues } = useForm(handleNewPost)
     const [titleLength, setTitleLength] = useState(0)
     const [textLength, setTextLength] = useState(0)
     const [isDisabled, setIsDisabled] = useState(true)
     const [errors, setErrors] = useState({})
-    const { user, setUser } = props
+
 
     // the callback function is already doing our console.logs
     function handleNewPost(){
         if (values.title.length > 30) {
            return setErrors({ title: "Title must be less than 30 characters"})
        }
-       if (values.post.length > 500) {
+       if (values.report.length > 500) {
         return setErrors({ report: "Report must be less than 500 characters"})
     }
        
@@ -48,11 +48,11 @@ export default function New(props){
       })
     }
 
-    if (!user) {
-      return <p>You must be logged in to make a report</p>
-    }
+    // if (!user) {
+    //   return <p>You must be logged in to make a report</p>
+    // }
 
-    else {
+    // else {
     return (
       <>
        <div className="new-post-container">
@@ -126,5 +126,5 @@ export default function New(props){
         </div>
      </>
     )
-  }
+  // }
 }
