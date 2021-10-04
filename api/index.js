@@ -9,7 +9,7 @@ app.use(express.json())
 app.get("/users", async (req, res) => {
   try {
     const allUsers = await pool.query(
-      `SELECT * FROM person`
+      `SELECT * FROM person;`
     )
     res.json(allUsers.rows[0]);
     console.log(req.body)
@@ -23,7 +23,7 @@ app.get("/users/:id", async (req, res) => {
     const { id } = req.params
     const user = await pool.query(
       `SELECT * FROM person
-       WHERE id = $1`, [id]
+       WHERE id = $1;`, [id]
     )
     res.json(user.rows[0]);
     console.log(req.body)
@@ -38,7 +38,7 @@ app.post("/register", async (req, res) => {
     const { first_name, last_name, email, password, address } = req.body.values;
     const newUser = await pool.query(
       `INSERT INTO person (first_name, last_name, email, person_password, person_address) values ($1, $2, $3, $4, $5)
-       RETURNING *`
+       RETURNING *;`
       , [first_name, last_name, email, password, address]);
     res.json(newUser);
     console.log(req.body.values);
@@ -51,7 +51,7 @@ app.get("/reports", async(req, res) => {
   try{
     const allPosts = await pool.query(
       `SELECT id, title, category, date_time,report, report_address, up_vote, down_vote, person_id
-      FROM report`
+      FROM report;`
       )
       res.json(allPosts.rows[0]);
       console.log(req.body)
@@ -67,7 +67,7 @@ app.get("/reports/:id", async(req, res) => {
       `SELECT id, title, category, date_time, report, report_address, up_vote, down_vote, person_id
       FROM report
       JOIN person ON person_id = person.id
-      WHERE id = $1`, [id]
+      WHERE id = $1;`, [id]
       )
       res.json(singlePost.rows[0]);
       console.log(req.body)
@@ -81,9 +81,9 @@ app.get("/map", async(req, res) => {
     const userPostsMap = await pool.query(
       `SELECT *
        FROM report
-       JOIN person ON person.id = person_id`
+       JOIN person ON person.id = person_id;`
       )
-      res.json(userPostsMap.rows[0]);
+      res.json(userPostsMap.rows);
       console.log(req.body)
   } catch(err) {
     console.log(err.message)
@@ -106,21 +106,13 @@ app.delete("/delete/:id", async(req, res) => {
 })
 
 app.post("/login", async(req, res) => {
-<<<<<<< HEAD
-  console.log('109 req.body',req.body.values);
-=======
   console.log('109 req.body', req.body);
->>>>>>> ed88cf8c5c0d5fbb835503a30bff8e1a26aa8d71
   try {
     const { email, password } = req.body.values;
     const login = await pool.query(
       `SELECT * FROM person
        WHERE email = $1 AND person_password = $2;`
-<<<<<<< HEAD
-      , [email,password]);
-=======
       , [email, password]);
->>>>>>> ed88cf8c5c0d5fbb835503a30bff8e1a26aa8d71
     res.json(login);
     console.log(req.body.values);
   } catch (err) {
@@ -133,7 +125,7 @@ app.post("/new", async(req, res) => {
     const { title, category, report, report_address, person_id } = req.body;
     const new_report = await pool.query(
       `INSERT INTO report (title, category, report, report_address, person_id) values ($1, $2, $3, $4, $5)
-       RETURNING *`,
+       RETURNING *;`,
       [title, category, report, report_address, person_id]);
     res.json(new_report);
     console.log(req.body);
@@ -150,7 +142,7 @@ app.get("/update/:id", async(req, res) => {
       `SELECT title, category, report, report_address 
       FROM report
       JOIN person ON person_id = person.id
-      WHERE person.id = $1 AND report.id = $2`, [person_id,report_id]);
+      WHERE person.id = $1 AND report.id = $2;`, [person_id,report_id]);
     res.json(get_report);
     console.log(req.body);
   } catch (err) {
@@ -168,7 +160,7 @@ app.put("/update/:id", async(req, res) => {
       category = $2
       report = $3
       report_address = $4
-      WHERE report_id = ${id}`,
+      WHERE report_id = ${id};`,
       [title, category, report, report_address]);
     res.json(update_report);
     console.log(req.body);

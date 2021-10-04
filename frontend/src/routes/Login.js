@@ -30,6 +30,7 @@ export default function Login() {
 
   function userLogin() {
     const getData = async () => {
+
       try {
         console.log('Form Submission')
         const [loginSubmit] = await Promise.all([
@@ -38,8 +39,10 @@ export default function Login() {
               return response.data.rows[0];
             })
         ])
+        
         console.log("over here im values", values)
         console.log('im response.data', loginSubmit)
+        return loginSubmit;
     
       } catch (err) {
         console.log(err);
@@ -56,12 +59,6 @@ export default function Login() {
     }
   }, [values])
 
-  function onSubmit(){
-    const user = userLogin();
-    if(user){
-      return <Redirect to="/home"/>
-    }
-  }
 
   return (
     <>
@@ -80,7 +77,7 @@ export default function Login() {
               {errors.password && <span className="error-message">{errors.password}</span>}
             </div>
             <div className="button-container">
-              <button type="submit" className="btn" disabled={isDisabled} onClick={() => onSubmit()}>Login</button>
+              <button type="submit" className="btn" disabled={isDisabled} onChange={() => userLogin()} >Login</button>
             </div>
           </form>
         </div>
