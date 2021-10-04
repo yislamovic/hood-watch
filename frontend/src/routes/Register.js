@@ -45,7 +45,7 @@ function Register() {
         const [formSubmit] = await Promise.all([
           axios.post(`http://localhost:3000/register`, { values })
         ]).then(() => {
-          history.push("/");
+          history.push("/login");
         })
         await console.log('im response.data', formSubmit)
         return formSubmit.data

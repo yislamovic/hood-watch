@@ -1,5 +1,4 @@
 import "../styles/Login.css";
-import Nav from "../component/Nav";
 import useForm from "../hooks/useForm";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -11,7 +10,7 @@ export default function Login(props) {
   const [isDisabled, setIsDisabled] = useState(true);
   const [errors, setErrors] = useState({});
   let history = useHistory();
-  const {user, setUser} = props;
+  const { user, setUser } = props;
   console.log('props 14', props)
 
 
@@ -34,22 +33,32 @@ export default function Login(props) {
   }
 
   const userLogin = () => {
-       axios.post(`http://localhost:3000/login`, { values })
-       .then((res) => {
-         return res.data
-        })
-       .then(user => {
-         console.log("USER LINE 42",user);
-         if (!user) {
-           return;
-         } else {
-           setUser(user)
-         }
-        
-         
-       })
-   
+    axios.post(`http://localhost:3000/login`, { values })
+    .then((res) => {
+      const userObj = res.data;
+      console.log("The whole user object --->", res)
+      console.log("The data we need ---->", userObj)
+      if (!userObj) {
+        return;
+      } else {
+        setUser(userObj);
+      }
+      history.push('/');
+    })
   }
+  
+  // .then(user => {
+  //   console.log("USER LINE 42",user);
+  //     if (!user) {
+  //       return;
+  //     } else {
+  //       setUser(user)
+  //     }
+  //   }
+   
+      
+    
+
 
   useEffect(() => {
     if (Object.values(values).filter(value => value !== "").length === 2) {
@@ -63,7 +72,7 @@ export default function Login(props) {
   return (
     <>
     <div className="login-container">
-        <h1 className="header">Login{user ? 'baller' : 'nothing'}</h1>
+        <h1 className="header">Login{user ? user.first_name : 'No Data'}</h1>
         <div className="form-container">
           <form onSubmit={handleSubmit} >
             <div className="form-group">

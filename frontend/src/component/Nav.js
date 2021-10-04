@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom'
-import React, { useState } from "react";
 import Image from '../assets/logo.png'
-function Nav() {
+function Nav(props) {
   const navStyle = {
     color: 'white'
   };
-  const [email, setEmail] = useState("");
-  const [user, setUser] = useState();
+  const { user } = props;
+
 
   if (user) {
     return (
@@ -16,12 +15,11 @@ function Nav() {
           <Link style={navStyle} to='/'>
             <li>Home</li>
           </Link>
-          <Link style={navStyle} to='/logout'>
-          <div>{email} is loggged in</div>;
-            <li>Logout</li>
+          <Link style={navStyle}>
+          <li>{user.email} is loggged in</li>
           </Link>
-          <Link style={navStyle} to='/register'>
-            <li>Register</li>
+          <Link style={navStyle} to='/logout'>
+            <li>Logout</li>
           </Link>
         </ul>
     </nav>
