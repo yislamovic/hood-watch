@@ -98,7 +98,7 @@ app.get("/map", async(req, res) => {
        FROM report
        JOIN person ON person.id = person_id`
     );
-    res.json(userPostsMap.rows[0]);
+    res.json(userPostsMap.rows);
     console.log(req.body);
   } catch (err) {
     console.log(err.message);
@@ -185,6 +185,6 @@ app.put("/update/:id", async(req, res) => {
 });
 //END of example ROUTES
 
-app.listen(3000, () => {
-  console.log("server is listening on port 3000");
+app.listen(8000, () => {
+  console.log("server is listening on port 8000");
 });
