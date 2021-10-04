@@ -30,7 +30,7 @@ app.get("/users/:id", async (req, res) => {
   } catch (err) {
     console.log(err.message)
   }
-})
+});
 
 app.post("/register", async(req, res) => {
   console.log("post register", req.body);
@@ -62,20 +62,6 @@ app.post("/login", async(req, res) => {
   }
 });
 
-app.post("logout", async(req,res) => {
-  console.log("req.body.values 66 ====>", req.body.values);
-  try {
-    const { id, first_name, last_name, email, password, address } = req.body.values
-    const deleteUser = await pool.query(
-      `DELETE * FROM person
-      WHERE id = $1 AND first_name = $2 AND last_name = $3 AND email = $4 AND password = $5 AND address = $6;`,[id, first_name, last_name, email, password, address]);
-    return res.json(deleteUser.rows[0]);
-  }
-  catch (err) {
-    console.log(err.message);
-  }
-});
-
 app.get("/reports", async(req, res) => {
   try{
     const allPosts = await pool.query(
@@ -90,34 +76,34 @@ app.get("/reports", async(req, res) => {
 })
 
 app.get("/reports/:id", async(req, res) => {
-  try{
-    const { id } = req.params
+  try {
+    const { id } = req.params;
     const singlePost = await pool.query(
       `SELECT id, title, category, date_time, report, report_address, up_vote, down_vote, person_id
       FROM report
       JOIN person ON person_id = person.id
       WHERE id = $1`, [id]
-      )
-      res.json(singlePost.rows[0]);
-      console.log(req.body)
-  } catch(err) {
-    console.log(err.message)
+    );
+    res.json(singlePost.rows[0]);
+    console.log(req.body);
+  } catch (err) {
+    console.log(err.message);
   }
 })
 
 app.get("/map", async(req, res) => {
-  try{
+  try {
     const userPostsMap = await pool.query(
       `SELECT *
        FROM report
        JOIN person ON person.id = person_id`
-      )
-      res.json(userPostsMap.rows[0]);
-      console.log(req.body)
-  } catch(err) {
-    console.log(err.message)
+    );
+    res.json(userPostsMap.rows[0]);
+    console.log(req.body);
+  } catch (err) {
+    console.log(err.message);
   }
-})
+});
 
 app.delete("/delete/:id", async(req, res) => {
   try{

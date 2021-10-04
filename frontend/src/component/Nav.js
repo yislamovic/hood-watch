@@ -1,11 +1,18 @@
 import { Link } from 'react-router-dom'
 import Image from '../assets/logo.png'
+import { useHistory } from 'react-router-dom';
+
 function Nav(props) {
   const navStyle = {
     color: 'white'
   };
-  const { user } = props;
+  const history = useHistory();
 
+  const { user, setUser } = props;
+  function userLogout() {
+    setUser(null)
+    history.push('/login');
+  }
 
   if (user) {
     return (
@@ -16,10 +23,10 @@ function Nav(props) {
             <li>Home</li>
           </Link>
           <Link style={navStyle}>
-          <li>{user.email} is loggged in</li>
+          <li>{user.email}</li>
           </Link>
-          <Link style={navStyle} to='/logout'>
-            <li>Logout</li>
+          <Link style={navStyle} to='/login'>
+            <li onClick={userLogout}>Logout</li>
           </Link>
         </ul>
     </nav>
