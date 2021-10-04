@@ -93,12 +93,51 @@ export default function New(props){
 
 
          <div className="new-form-group">
-             <label className="input-label">Report Address:</label>
+             <label className="input-label">Street Number and Street Name:</label>
              <input type="text"
-             name="report_address" 
+             name="street_number_and_name" 
              className="box" 
-             placeholder="The address of the place described"
-             value={values.street_one}
+             placeholder="37 Chester Hill Rd"
+             value={values.street_number_and_name}
+             onChange={handleChange}
+             required
+             >
+             </input>
+          </div>
+
+          <div className="new-form-group">
+             <label className="input-label">City:</label>
+             <input type="text"
+             name="city" 
+             className="box" 
+             placeholder="Toronto"
+             value={values.city}
+             onChange={handleChange}
+             required
+             >
+             </input>
+          </div>
+
+          <div className="new-form-group">
+             <label className="input-label">Province (Make Shortform):</label>
+             <input type="text"
+             name="province" 
+             className="box" 
+             placeholder="ON"
+             value={values.province}
+             onChange={handleChange}
+             required
+             >
+             </input>
+          </div>
+
+          <div className="new-form-group">
+             <label className="input-label">Postal Code:</label>
+             <input type="text"
+             name="postal_code" 
+             className="box" 
+             placeholder="M5T 1E4"
+             value={values.postal_code}
              onChange={handleChange}
              required
              >
