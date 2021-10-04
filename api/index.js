@@ -62,6 +62,20 @@ app.post("/login", async(req, res) => {
   }
 });
 
+app.post("logout", async(req,res) => {
+  console.log("req.body.values 66 ====>", req.body.values);
+  try {
+    const { id, first_name, last_name, email, password, address } = req.body.values
+    const deleteUser = await pool.query(
+      `DELETE * FROM person
+      WHERE id = $1 AND first_name = $2 AND last_name = $3 AND email = $4 AND password = $5 AND address = $6;`,[id, first_name, last_name, email, password, address]);
+    return res.json(deleteUser.rows[0]);
+  }
+  catch (err) {
+    console.log(err.message);
+  }
+});
+
 app.get("/reports", async(req, res) => {
   try{
     const allPosts = await pool.query(
