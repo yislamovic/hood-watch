@@ -1,4 +1,5 @@
 import "../styles/Login.css";
+import Nav from "../component/Nav";
 import useForm from "../hooks/useForm";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -10,8 +11,9 @@ export default function Login(props) {
   const [isDisabled, setIsDisabled] = useState(true);
   const [errors, setErrors] = useState({});
   let history = useHistory();
-  const [email] = useState("");
-  const [password] = useState("");
+  const {user, setUser} = props;
+  console.log('props 14', props)
+
 
   function handleLoginForm() {
     // Email
@@ -31,25 +33,22 @@ export default function Login(props) {
     setValues({});
   }
 
-  function userLogin() {
-    const getData = async () => {
-      try {
-        console.log('Form Submission')
-        const user = { email, password };
-        const [loginSubmit] = await Promise.all([
-          axios.post(`http://localhost:3000/login`, { values }, user)
-        ]).then(() => {
-          history.push('/')
+  const userLogin = () => {
+       axios.post(`http://localhost:3000/login`, { values })
+       .then((res) => {
+         return res.data
         })
-        console.log("over here im values", values);
-        await console.log('im response.data', loginSubmit);
-        localStorage.setItem('user', loginSubmit.data)
-        return loginSubmit;
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    getData()
+       .then(user => {
+         console.log("USER LINE 42",user);
+         if (!user) {
+           return;
+         } else {
+           setUser(user)
+         }
+        
+         
+       })
+   
   }
 
   useEffect(() => {
@@ -63,8 +62,8 @@ export default function Login(props) {
  
   return (
     <>
-      <div className="login-container">
-        <h1 className="header">Login</h1>
+    <div className="login-container">
+        <h1 className="header">Login{user ? 'baller' : 'nothing'}</h1>
         <div className="form-container">
           <form onSubmit={handleSubmit} >
             <div className="form-group">

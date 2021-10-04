@@ -47,15 +47,15 @@ app.post("/register", async (req, res) => {
   }
 });
 
-app.post("/login", (req, res) => {
-  console.log('109 req.body',req.body.values);
+app.post("/login", async(req, res) => {
+  console.log('51 req.body.values ---->',req.body.values);
   const { email, password } = req.body.values;
-  const login = pool.query(
+  const login = await pool.query(
     `SELECT * FROM person 
     WHERE email = $1 AND person_password = $2;`
     , [email,password]);
-  console.log(req.body.values);
-  res.json(login);
+  console.log('57 login --->', login);
+  return res.json(login.rows[0]);
 });
 
 app.get("/reports", async(req, res) => {

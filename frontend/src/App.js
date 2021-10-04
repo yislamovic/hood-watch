@@ -48,15 +48,15 @@ function App() {
   //   setUser({first_name: values.first_name, last_name: values.last_name, address: values.address, email: values.email, password: values.password, password_confirm: values.password_confirm})
   // }
 
-  
+  const [user, setUser] = useState(null);
 
   return (
     <Router>
-      <Nav className="nav"/>
+      <Nav className="nav" user={user} setUser={setUser}/>
       <div className="App">
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/login" component={Login}/>
+          <Route path="/login" component={() => <Login user={user} setUser={setUser}/>}/>
           <Route path="/register" component={Register} />
           <Route path="/new" component={New} />
           <Route path="/posts" component={Posts} />

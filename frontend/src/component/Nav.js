@@ -5,8 +5,8 @@ function Nav() {
   const navStyle = {
     color: 'white'
   };
-  const [email] = useState("");
-  const [user] = useState()
+  const [email, setEmail] = useState("");
+  const [user, setUser] = useState();
 
   if (user) {
     return (
