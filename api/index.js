@@ -1,9 +1,9 @@
-const express = require('express')
+const express = require('express');
 const app = express();
-const pool = require("./db")
-const cors = require("cors")
-app.use(cors())
-app.use(express.json())
+const pool = require("./db");
+const cors = require("cors");
+app.use(cors());
+app.use(express.json());
 
 //Example routes
 app.get("/users", async (req, res) => {
@@ -34,18 +34,29 @@ app.get("/users/:id", async (req, res) => {
 
 app.post("/register", async (req, res) => {
   console.log("post register", req.body);
-  // try {
+  try {
     const { first_name, last_name, email, password, address } = req.body.values;
-    const newUser = await pool.query(
+    const newUser = pool.query(
       `INSERT INTO person (first_name, last_name, email, person_password, person_address) values ($1, $2, $3, $4, $5)
        RETURNING *;`
       , [first_name, last_name, email, password, address]);
     res.json(newUser);
     console.log(req.body.values);
-  // // } catch (err) {
-  //   console.log(err.message)
-  // }
-})
+  } catch (err) {
+    console.log(err.message);
+  }
+});
+
+app.post("/login", (req, res) => {
+  console.log('109 req.body',req.body.values);
+  const { email, password } = req.body.values;
+  const login = pool.query(
+    `SELECT * FROM person 
+    WHERE email = $1 AND person_password = $2;`
+    , [email,password]);
+  console.log(req.body.values);
+  res.json(login);
+});
 
 app.get("/reports", async(req, res) => {
   try{
@@ -99,7 +110,7 @@ app.delete("/delete/:id", async(req, res) => {
        WHERE person_id = $1 AND id = $2;`, [id, report_id]
       )
       res.json(delete_record.rows[0]);
-      console.log(req.body)
+      console.log(req.body);
   } catch(err) {
     console.log(err.message)
   }
@@ -170,6 +181,6 @@ app.put("/update/:id", async(req, res) => {
 });
 //END of example ROUTES
 
-app.listen(8000, () => {
-  console.log("server is listening on port 8000")
-})
+app.listen(3000, () => {
+  console.log("server is listening on port 3000");
+});

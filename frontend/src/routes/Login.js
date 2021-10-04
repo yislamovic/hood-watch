@@ -2,13 +2,16 @@ import "../styles/Login.css";
 import useForm from "../hooks/useForm";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 
-export default function Login() {
-  const { handleChange, handleSubmit, values, setValues } = useForm(handleLoginForm)
-  const [isDisabled, setIsDisabled] = useState(true)
-  const [errors, setErrors] = useState({})
+export default function Login(props) {
+  const { handleChange, handleSubmit, values, setValues } = useForm(handleLoginForm);
+  const [isDisabled, setIsDisabled] = useState(true);
+  const [errors, setErrors] = useState({});
+  let history = useHistory();
+  const [email] = useState("");
+  const [password] = useState("");
 
   function handleLoginForm() {
     // Email
@@ -33,6 +36,7 @@ export default function Login() {
 
       try {
         console.log('Form Submission')
+        const user = { email, password };
         const [loginSubmit] = await Promise.all([
           axios.post(`http://localhost:8000/login`, { values })
             .then((response) => {
@@ -59,7 +63,6 @@ export default function Login() {
     }
   }, [values])
 
-
   return (
     <>
       <div className="login-container">
@@ -77,11 +80,18 @@ export default function Login() {
               {errors.password && <span className="error-message">{errors.password}</span>}
             </div>
             <div className="button-container">
+<<<<<<< HEAD
               <button type="submit" className="btn" disabled={isDisabled} onChange={() => userLogin()} >Login</button>
+=======
+              <button type="submit" className="btn" disabled={isDisabled} onClick={userLogin}>Login</button>
+>>>>>>> f2c88ef388dafab5278c8571c723eb10254a1029
             </div>
           </form>
         </div>
       </div>
     </>
+
+    
+  
   );
 }

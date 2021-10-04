@@ -1,12 +1,35 @@
 import { Link } from 'react-router-dom'
-import Image from '../assets/owl.png'
+import React, { useState } from "react";
+import Image from '../assets/logo.png'
 function Nav() {
   const navStyle = {
     color: 'white'
   };
-  return (
-    <nav>
-        <img src={Image} alt="logo" width="80px" height="60px"/>
+  const [email] = useState("");
+  const [user] = useState()
+
+  if (user) {
+    return (
+      <nav> 
+        <img src={Image} alt="logo" width="80px" height="56px"/>
+        <ul className='nav-links'>
+          <Link style={navStyle} to='/'>
+            <li>Home</li>
+          </Link>
+          <Link style={navStyle} to='/logout'>
+          <div>{email} is loggged in</div>;
+            <li>Logout</li>
+          </Link>
+          <Link style={navStyle} to='/register'>
+            <li>Register</li>
+          </Link>
+        </ul>
+    </nav>
+    );
+  } else {
+    return (
+      <nav>
+        <img src={Image} alt="logo" width="80px" height="56px"/>
         <ul className='nav-links'>
           <Link style={navStyle} to='/'>
             <li>Home</li>
@@ -19,7 +42,9 @@ function Nav() {
           </Link>
         </ul>
     </nav>
-  );
+    );
+  }
 }
+
 
 export default Nav;
