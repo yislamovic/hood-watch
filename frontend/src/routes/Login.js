@@ -1,8 +1,9 @@
 import "../styles/Login.css";
 import useForm from "../hooks/useForm";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
+import { authContext } from '../providers/AuthProvider';
 
 
 export default function Login(props) {
@@ -10,9 +11,7 @@ export default function Login(props) {
   const [isDisabled, setIsDisabled] = useState(true);
   const [errors, setErrors] = useState({});
   let history = useHistory();
-  const { user, setUser } = props;
-  console.log('props 14', props)
-
+  const { login } = useContext(authContext);
 
   function handleLoginForm() {
     // Email
@@ -29,6 +28,7 @@ export default function Login(props) {
       return setErrors({ password: "Password must be 8 characters long" })
     }
     console.log("Form Submitted!!")
+    
     setValues({});
   }
 
@@ -47,19 +47,6 @@ export default function Login(props) {
     })
   }
   
-  // .then(user => {
-  //   console.log("USER LINE 42",user);
-  //     if (!user) {
-  //       return;
-  //     } else {
-  //       setUser(user)
-  //     }
-  //   }
-   
-      
-    
-
-
   useEffect(() => {
     if (Object.values(values).filter(value => value !== "").length === 2) {
       setIsDisabled(false)
