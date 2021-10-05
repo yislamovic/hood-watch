@@ -1,7 +1,7 @@
 import React from "react";
 import ButtonGroup from "../component/ButtonGroup";
 import Image from "../assets/vote.jpeg"
-import "../styles/PostFooter.css"
+// import "../styles/PostFooter.css"
 import "../styles/ButtonGroup.css"
 import { useState, useEffect } from 'react';
 import axios from "axios";

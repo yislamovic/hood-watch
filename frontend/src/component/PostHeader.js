@@ -1,5 +1,5 @@
  import React from "react";
- import '../styles/PostHeader.css'
+//  import '../styles/PostHeader.css'
  function PostHeader (props){
   return(
     <div className='header'>
