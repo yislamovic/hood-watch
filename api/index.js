@@ -48,14 +48,14 @@ app.post("/register", async(req, res) => {
 });
 
 app.post("/login", async(req, res) => {
-  console.log('51 req.body.values ---->',req.body.values);
+  // console.log('51 req.body.values ---->',req.body.values);
   try {
     const { email, password } = req.body.values;
     const loginUser = await pool.query(
       `SELECT * FROM person 
        WHERE email = $1 AND person_password = $2;`
       ,[email,password]);
-    console.log('This is user.data in the frontend --->', loginUser.rows[0]);
+    // console.log('This is user.data in the frontend --->', loginUser.rows[0]);
     return res.json(loginUser.rows[0]);
   } catch (err) {
     console.log(err.message);
@@ -63,8 +63,12 @@ app.post("/login", async(req, res) => {
 });
 
 app.get("/reports", async(req, res) => {
+<<<<<<< HEAD
   try{
     
+=======
+  try {
+>>>>>>> 5987c4d1ccc3064e96d43fc40bc74e1af6d259b0
     const allPosts = await pool.query(
       `SELECT *
       FROM report
@@ -74,7 +78,7 @@ app.get("/reports", async(req, res) => {
       )
       res.json(allPosts.rows);
       console.log(req.body)
-  } catch(err) {
+  } catch (err) {
     console.log(err.message)
   }
 })
@@ -142,6 +146,7 @@ app.delete("/delete/:id", async(req, res) => {
   }
 })
 
+<<<<<<< HEAD
 app.post("/login", async(req, res) => {
   console.log('109 req.body', req.body);
   try {
@@ -158,15 +163,17 @@ app.post("/login", async(req, res) => {
   }
 });
 
+=======
+>>>>>>> 5987c4d1ccc3064e96d43fc40bc74e1af6d259b0
 app.post("/new", async(req, res) => {
   try {
-    const { title, category, report, report_address, person_id } = req.body;
-    const new_report = await pool.query(
-      `INSERT INTO report (title, category, report, report_address, person_id) values ($1, $2, $3, $4, $5)
+    const { title, category, report, report_address } = req.body.values;
+    const newReportData = await pool.query(
+      `INSERT INTO report (title, category, report, report_address) values ($1, $2, $3, $4)
        RETURNING *;`,
-      [title, category, report, report_address, person_id]);
-    res.json(new_report);
-    console.log(req.body);
+      [title, category, report, report_address]);
+    console.log('NEW REPORT BACKEND --->', newReportData.rows[0]);
+    res.json(newReportData.rows[0]);
   } catch (err) {
     console.log(err.message);
   }
@@ -175,7 +182,7 @@ app.post("/new", async(req, res) => {
 app.get("/update/:id", async(req, res) => {
   try {
     const { person_id } =  req.params;
-    const { report_id } =  req.body;
+    const { report_id } =  req.body.values;
     const get_report = await pool.query(
       `SELECT title, category, report, report_address 
       FROM report

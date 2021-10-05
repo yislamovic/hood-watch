@@ -6,13 +6,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   font-family: "Open+sans", 'sans-serif';
   background-image: linear-gradient(315deg, #9ab5e1 0%, #f39fdc 74%);
  }
  
 .register-form-container {
-    border: 2px solid black;
+    border: 1px solid black;
     width: 1000px;
     height: 1300px;
     display: flex;
