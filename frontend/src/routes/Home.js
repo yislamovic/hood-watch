@@ -25,6 +25,10 @@ function Home() {
        <span className="space-text" id="three">We serve our communities</span>
        <span className="space-text" id="four">Like and Subscribe</span> 
        </div>
+       <div className="mini-space-text-container-2">
+       <span className="space-text" id="three">We serve our communities</span>
+       <span className="space-text" id="four">Like and Subscribe</span> 
+       </div>
        </div>
 
 
