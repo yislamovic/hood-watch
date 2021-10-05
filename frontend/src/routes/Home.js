@@ -20,17 +20,17 @@ function Home() {
       <div className="mini-space-text-container-1">
        <span className="space-text" id="space-text-1"><b>Our app is...</b></span>
        <span className="pink-line"></span>
-       <span className="space-text" id="space-text-2">Designed to join all our communities together!</span>
+       <span className="space-text" id="space-text-2">designed to join all our communities together!</span>
       </div>
       <div className="mini-space-text-container-2">
        <span className="space-text" id="space-text-3"><b>Our mission is...</b></span>
        <span className="pink-line"></span>
-       <span className="space-text" id="space-text-4">To create a safe enviroment to report anything in!</span> 
+       <span className="space-text" id="space-text-4">to create a safe enviroment to report anything in!</span> 
        </div>
        <div className="mini-space-text-container-3">
        <span className="space-text" id="space-text-5"><b>We greatly appreciate...</b></span>
        <span className="pink-line"></span>
-       <span className="space-text" id="space-text-6">Your constant support and user feedback!</span> 
+       <span className="space-text" id="space-text-6">your constant support and user feedback!</span> 
        </div>
        </div>
 

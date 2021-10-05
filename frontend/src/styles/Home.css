@@ -244,7 +244,7 @@
 
 #new-point-1,
 #delete-point-1 {
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease;
 }
 
 #new-point-2,
@@ -269,7 +269,7 @@
 
 #map-point-1,
 #up-point-1 {
-    transition: opacity 1.2s ease;
+    transition: opacity 0.27s ease;
     
 }
 
@@ -287,7 +287,7 @@
 
 #map-point-4,
 #up-point-4  {
-    transition: opacity 0.48s ease;
+    transition: opacity 0.5s ease;
     
 }
 
