@@ -1,49 +1,31 @@
 import { useEffect, useState } from 'react'
 import Comment from './Comment';
-
-const commentData = [{
-  comment: "This is appaling!",
-  date: "Sep-28-6:48PM",
-  firstName: "Bob",
-  lastName: "Saget",
-  reportId: 1
-},
-{
-  comment: "Why is this happening to our community!? This is sickening!",
-  date: "Sep-28-7:18PM",
-  firstName: "John",
-  lastName: "Wayne",
-  reportId: 2
-}
-];
-
+import axios from "axios";
 function CommentList(props) {
 
-  const [state, setState] = useState([{
-    comment: "",
-    date: "",
-    firstName: "",
-    lastName: ""
-  }])
+  const api = `http://localhost:8000/comment/${props.id}`
+  const [commentInfo, setCommentInfo] = useState(null)
 
   useEffect(() => {
-    setState(commentData)
-  }, []);
-
-  const commentList = state.map(comment => {
-    if (comment.reportId === props.id) {
-
+    async function fetchData() {
+      const request = await axios.get(api)
+      console.log('this is data',request)
+      setCommentInfo(request.data)
+      return request.data
+    }
+    fetchData()
+  }, [api]);
+  console.log('this is info',commentInfo)
+  const commentList = commentInfo && commentInfo.map(comment => {
       return (
         <div className='comment'>
           <div className='list-header'>
-            <span>{`${comment.firstName} ${comment.lastName}`}</span>
-            <span>{comment.date}</span>
+            <span>{`${comment.first_name} ${comment.last_name}`}</span>
           </div>
           {comment.comment}
         </div>
       );
 
-    }
   });
 
   return (
