@@ -83,12 +83,13 @@ app.get("/reports", async(req, res) => {
   try{
     
     const allPosts = await pool.query(
-      `SELECT *
+      `SELECT report.id, person_id, report.*, first_name, last_name
       FROM report
       JOIN person ON report.person_id = person.id
-      GROUP BY report.id, person.id
+      ORDER BY report.id;
       `
       )
+      console.log(allPosts.rows, 'this is all reports')
       res.json(allPosts.rows);
       console.log(req.body)
   } catch (err) {
@@ -118,12 +119,13 @@ app.get("/reports/:id", async(req, res) => {
   try {
     const { id } = req.params;
     const singlePost = await pool.query(
-      `SELECT id, title, category, date_time, report, report_address, up_vote, down_vote, person_id
+      `SELECT report.id, person_id, report.*, first_name, last_name
       FROM report
-      JOIN person ON person_id = person.id
-      WHERE id = $1`, [id]
+      JOIN person ON report.person_id = person.id
+      WHERE person_id = $1
+      ORDER BY report.id;`, [id]
     );
-    res.json(singlePost.rows[0]);
+    res.json(singlePost.rows);
     console.log(req.body);
   } catch (err) {
     console.log(err.message);
@@ -232,12 +234,12 @@ app.put("/upvote/:id/:vote", async(req, res) => {
 app.post("/comment", async(req, res) => {
   try {
     console.log(req.body)
-    const { comment, id } = req.body;
+    const { comment, id, user_id } = req.body;
     const newComment = await pool.query(
       `INSERT INTO comment (comment, person_id, report_id)
-       VALUES ($1, 1, $2)
+       VALUES ($1, $2, $3)
        RETURNING *;`,
-      [comment, id]);
+      [comment, user_id, id]);
     console.log('NEW REPORT BACKEND --->', newComment.rows[0]);
     res.json(newComment.rows[0]);
   } catch (err) {
