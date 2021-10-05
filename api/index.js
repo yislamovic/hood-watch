@@ -71,8 +71,10 @@ app.get("/reports", async(req, res) => {
       FROM report
       JOIN person ON report.person_id = person.id
       GROUP BY report.id, person.id
+      ORDER BY report.id;
       `
       )
+      console.log(allPosts.rows, 'this is all reports')
       res.json(allPosts.rows);
       console.log(req.body)
   } catch (err) {
@@ -230,12 +232,12 @@ app.put("/upvote/:id/:vote", async(req, res) => {
 app.post("/comment", async(req, res) => {
   try {
     console.log(req.body)
-    const { comment, id } = req.body;
+    const { comment, id, user_id } = req.body;
     const newComment = await pool.query(
       `INSERT INTO comment (comment, person_id, report_id)
-       VALUES ($1, 1, $2)
+       VALUES ($1, $2, $3)
        RETURNING *;`,
-      [comment, id]);
+      [comment, user_id, id]);
     console.log('NEW REPORT BACKEND --->', newComment.rows[0]);
     res.json(newComment.rows[0]);
   } catch (err) {
