@@ -18,16 +18,16 @@ function Home() {
       </div>
       <div className="space-text-container">
       <div className="mini-space-text-container-1">
-       <span className="space-text" id="one">We want to create more safe and positive spaces</span>
-       <span className="space-text" id="two">Want to Unite Communities </span>
+       <span className="space-text">We want to create more safe and positive spaces</span>
+       <span className="space-text">Want to Unite Communities </span>
       </div>
       <div className="mini-space-text-container-2">
-       <span className="space-text" id="three">We serve our communities</span>
-       <span className="space-text" id="four">Like and Subscribe</span> 
+       <span className="space-text">We serve our communities</span>
+       <span className="space-text">Like and Subscribe</span> 
        </div>
-       <div className="mini-space-text-container-2">
-       <span className="space-text" id="three">We serve our communities</span>
-       <span className="space-text" id="four">Like and Subscribe</span> 
+       <div className="mini-space-text-container-3">
+       <span className="space-text">We serve our communities</span>
+       <span className="space-text">Like and Subscribe</span> 
        </div>
        </div>
 
