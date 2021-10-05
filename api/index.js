@@ -226,6 +226,22 @@ app.put("/upvote/:id/:vote", async(req, res) => {
     console.log(err.message);
   }
 });
+
+app.post("/comment", async(req, res) => {
+  try {
+    console.log(req.body)
+    const { comment, id } = req.body;
+    const newComment = await pool.query(
+      `INSERT INTO comment (comment, person_id, report_id)
+       VALUES ($1, 1, $2)
+       RETURNING *;`,
+      [comment, id]);
+    console.log('NEW REPORT BACKEND --->', newComment.rows[0]);
+    res.json(newComment.rows[0]);
+  } catch (err) {
+    console.log(err.message);
+  }
+});
 //END of example ROUTES
 
 app.listen(8000, () => {

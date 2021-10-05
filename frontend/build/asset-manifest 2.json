@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "./static/css/main.3ec48fee.chunk.css",
+    "main.js": "./static/js/main.a1da144c.chunk.js",
+    "main.js.map": "./static/js/main.a1da144c.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.80976088.js",
+    "runtime-main.js.map": "./static/js/runtime-main.80976088.js.map",
+    "static/js/2.4abda13d.chunk.js": "./static/js/2.4abda13d.chunk.js",
+    "static/js/2.4abda13d.chunk.js.map": "./static/js/2.4abda13d.chunk.js.map",
+    "static/js/3.3570632c.chunk.js": "./static/js/3.3570632c.chunk.js",
+    "static/js/3.3570632c.chunk.js.map": "./static/js/3.3570632c.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.3ec48fee.chunk.css.map": "./static/css/main.3ec48fee.chunk.css.map",
+    "static/js/2.4abda13d.chunk.js.LICENSE.txt": "./static/js/2.4abda13d.chunk.js.LICENSE.txt",
+    "static/media/cartoon-street.106fd856.jpeg": "./static/media/cartoon-street.106fd856.jpeg",
+    "static/media/map-pin.46ecb8c5.svg": "./static/media/map-pin.46ecb8c5.svg",
+    "static/media/vote.e5176f4e.jpeg": "./static/media/vote.e5176f4e.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.80976088.js",
+    "static/js/2.4abda13d.chunk.js",
+    "static/css/main.3ec48fee.chunk.css",
+    "static/js/main.a1da144c.chunk.js"
+  ]
+}
