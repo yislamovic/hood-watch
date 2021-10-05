@@ -15,12 +15,16 @@ function CommentList(props) {
     }
     fetchData()
   }, [api]);
+
+  function addComment(newComment){
+    setCommentInfo(prev => ([...prev, newComment]))
+  }
   console.log('this is info',commentInfo)
   const commentList = commentInfo && commentInfo.map(comment => {
       return (
         <div className='comment'>
           <div className='list-header'>
-            <span>{`${comment.first_name} ${comment.last_name}`}</span>
+            <p>{`User ${comment.first_name} ${comment.last_name} says:`}</p>
           </div>
           {comment.comment}
         </div>
@@ -31,7 +35,7 @@ function CommentList(props) {
   return (
     <div className="comment-list">
       {commentList}
-      <Comment />
+      <Comment id={props.id} addComment={addComment}/>
     </div>
   );
 }
