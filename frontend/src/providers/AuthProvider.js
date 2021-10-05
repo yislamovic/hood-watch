@@ -1,22 +1,26 @@
 import { createContext, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useEffect } from 'react';
+
 export const authContext = createContext();
 
 export default function AuthProvider(props) {
   const [auth, setAuth] = useState(false);
-  const [user, setUser] = useState({ email: "", name: "", id: "" });
-
-  // Perform login process for the user & save authID, etc
-
-  // handleUserLogin
-  const login = function (email, password) {
+  const [user, setUser] = useState(null);
+  let history = useHistory();
+  
+    function login(email, password, obj) {
+    setUser({ email: obj.email });
     setAuth(true);
-    setUser({ email });
-    
+    console.log("hello i am user!!")
+    console.log("AUTH USER 19 ----->", user)
+    // localStorage.setItem('user',JSON.stringify(user))
   };
 
-  const logout = function (email, password) {
-    setUser({ email: "" });
+  const logout = function (email, password, obj) {
     setAuth(false);
+    setUser(null);
+    // history.push('/login');
   };
    
   

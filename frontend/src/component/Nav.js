@@ -1,19 +1,16 @@
 import { Link } from 'react-router-dom'
 import Image from '../assets/logo.png'
-import { useHistory } from 'react-router-dom';
+import {  useContext } from 'react';
+import { authContext } from '../providers/AuthProvider';
 
-function Nav(props) {
+function Nav() {
   const navStyle = {
     color: 'white'
   };
-  const history = useHistory();
+  
+  const { logout, user } = useContext(authContext);
 
-  const { user, setUser } = props;
-  function userLogout() {
-    setUser(null)
-    history.push('/login');
-  }
-
+  
   if (user) {
     return (
       <nav> 
@@ -26,7 +23,7 @@ function Nav(props) {
           <li>{user.email}</li>
           </Link>
           <Link style={navStyle} to='/login'>
-            <li onClick={userLogout}>Logout</li>
+            <li onClick={logout}>Logout</li>
           </Link>
         </ul>
     </nav>

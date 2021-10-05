@@ -48,14 +48,15 @@ app.post("/register", async(req, res) => {
 });
 
 app.post("/login", async(req, res) => {
-  // console.log('51 req.body.values ---->',req.body.values);
+  console.log('51 req.body.values ---->',req.body.values);
   try {
     const { email, password } = req.body.values;
     const loginUser = await pool.query(
       `SELECT * FROM person 
        WHERE email = $1 AND person_password = $2;`
       ,[email,password]);
-    // console.log('This is user.data in the frontend --->', loginUser.rows[0]);
+    console.log('RES.ROWS 58 --->', loginUser.rows);
+    console.log('RES.ROWS[0] 59 --->', loginUser.rows[0]);
     return res.json(loginUser.rows[0]);
   } catch (err) {
     console.log(err.message);

@@ -5,43 +5,49 @@ import axios from 'axios';
 import { useHistory } from "react-router-dom";
 import { authContext } from '../providers/AuthProvider';
 
+export default function Login() {
 
-export default function Login(props) {
   const { handleChange, handleSubmit, values, setValues } = useForm(handleLoginForm);
   const [isDisabled, setIsDisabled] = useState(true);
   const [errors, setErrors] = useState({});
   let history = useHistory();
   const { login } = useContext(authContext);
+  const email = values.email;
+  const password = values.password;
 
+
+  
+  // FORM VALIDATIONS ON SUBMIT
   function handleLoginForm() {
     // Email
-    if (!values.email) {
+    if (!email) {
       return setErrors({ email: "Email is required" })
-    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
       return setErrors({ email: "Email is invalid" })
     }
 
     // Password
-    if (!values.password) {
+    if (!password) {
       return setErrors({ password: "Password is required" })
-    } else if (values.password.length < 8) {
+    } else if (password.length < 8) {
       return setErrors({ password: "Password must be 8 characters long" })
     }
     console.log("Form Submitted!!")
-    
     setValues({});
   }
 
+
+  // GETTING BACK AXIOS INFO
   const userLogin = () => {
     axios.post(`http://localhost:8000/login`, { values })
     .then((res) => {
       const userObj = res.data;
-      console.log("The whole user object --->", res)
-      console.log("The data we need ---->", userObj)
+      console.log("RES 45", res)
+      console.log("RES.DATA 46 ---->", userObj)
       if (!userObj) {
         return;
       } else {
-        setUser(userObj);
+        login(email, password, userObj);
       }
       history.push('/');
     })
@@ -58,7 +64,7 @@ export default function Login(props) {
   return (
     <>
     <div className="login-container">
-        <h1 className="header">Login{user ? user.first_name : 'No Data'}</h1>
+        <h1 className="header">Login</h1>
         <div className="form-container">
           <form onSubmit={handleSubmit} >
             <div className="form-group">
