@@ -39,6 +39,9 @@ function Nav(props) {
           <Link style={navStyle} to='/'>
             <li>Home</li>
           </Link>
+          <Link style={navStyle} to='/posts'>
+            <li>See Posts</li>
+          </Link>
           <Link style={navStyle} to='/login'>
             <li>Login</li>
           </Link>

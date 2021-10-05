@@ -11,7 +11,7 @@ app.get("/users", async (req, res) => {
     const allUsers = await pool.query(
       `SELECT * FROM person;`
     )
-    res.json(allUsers.rows[0]);
+    res.json(allUsers.rows);
     console.log(req.body)
   } catch (err) {
     console.log(err.message)
@@ -64,12 +64,34 @@ app.post("/login", async(req, res) => {
 
 app.get("/reports", async(req, res) => {
   try{
+    
     const allPosts = await pool.query(
-      `SELECT id, title, category, date_time,report, report_address, up_vote, down_vote, person_id
-      FROM report;`
+      `SELECT *
+      FROM report
+      JOIN person ON report.person_id = person.id
+      GROUP BY report.id, person.id
+      `
       )
-      res.json(allPosts.rows[0]);
+      res.json(allPosts.rows);
       console.log(req.body)
+  } catch(err) {
+    console.log(err.message)
+  }
+})
+
+app.get("/comment/:id", async(req, res) => {
+  try{
+    
+    const { id } = req.params;
+    const comments = await pool.query(
+      `SELECT *
+      FROM comment
+      JOIN person ON person.id = comment.person_id
+      WHERE comment.report_id = $1
+      GROUP BY comment.id, person.id;
+      `, [id]
+      )
+      res.json(comments.rows);
   } catch(err) {
     console.log(err.message)
   }
@@ -128,6 +150,7 @@ app.post("/login", async(req, res) => {
       `SELECT * FROM person
        WHERE email = $1 AND person_password = $2;`
       , [email, password]);
+    console.log(login.rows)
     res.json(login);
     console.log(req.body.values);
   } catch (err) {
@@ -178,6 +201,22 @@ app.put("/update/:id", async(req, res) => {
       WHERE report_id = ${id};`,
       [title, category, report, report_address]);
     res.json(update_report);
+    console.log(req.body);
+  } catch (err) {
+    console.log(err.message);
+  }
+});
+
+app.put("/upvote/:id/:vote", async(req, res) => {
+  try {
+    const { id, vote } = req.params;
+    console.log(req.params)
+    const updateCounter = await pool.query(
+      `UPDATE report
+      SET up_vote = $2
+      WHERE id = $1;`,
+      [id, vote]);
+    res.json(updateCounter.rows);
     console.log(req.body);
   } catch (err) {
     console.log(err.message);
