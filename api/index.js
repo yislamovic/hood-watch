@@ -160,11 +160,15 @@ app.post("/login", async(req, res) => {
 
 app.post("/new", async(req, res) => {
   try {
+    console.log("req.body --->", req.body);
     const { title, category, report, report_address } = req.body.values;
+    const { id } = req.body;
+    console.log("Hey i am id --->", req.body.id);
     const newReportData = await pool.query(
-      `INSERT INTO report (title, category, report, report_address) values ($1, $2, $3, $4)
+      `INSERT INTO report (title, category, report, report_address, person_id) 
+       VALUES ($1, $2, $3, $4, $5)
        RETURNING *;`,
-      [title, category, report, report_address]);
+      [title, category, report, report_address, id]);
     console.log('NEW REPORT BACKEND --->', newReportData.rows[0]);
     res.json(newReportData.rows[0]);
   } catch (err) {

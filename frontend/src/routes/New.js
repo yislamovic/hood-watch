@@ -1,6 +1,8 @@
 import "../styles/New.css";
 import useForm from "../hooks/useForm";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
+import { authContext } from '../providers/AuthProvider';
 import axios from "axios";
 
 
@@ -10,6 +12,8 @@ export default function New(){
     const [textLength, setTextLength] = useState(0)
     const [isDisabled, setIsDisabled] = useState(true)
     const [errors, setErrors] = useState({})
+    const { user } = useContext(authContext)
+    const history = useHistory();
 
 
     // the callback function is already doing our console.logs
@@ -41,11 +45,20 @@ export default function New(){
     }, [values])
 
     const newReport = () => {
-      axios.post(`http://localhost:8000/new`, { values })
+      const userObj = JSON.parse(localStorage.getItem('user'));
+      console.log("USER OBJECT --->", userObj)
+      if(!userObj) {
+        return;
+      } else {
+      console.log("USER OBJECT 53 --->", userObj)
+      // const assign = Object.assign(values, userObj.id)
+      axios.post(`http://localhost:8000/new`, { values, id: userObj.id })
       .then((res) => {
         const reportObj = res;
         console.log("report object ---->", reportObj)
-      })
+       })
+      }
+      history.push('/');
     }
 
     // if (!user) {
