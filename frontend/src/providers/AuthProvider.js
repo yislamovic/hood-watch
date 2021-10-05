@@ -9,11 +9,13 @@ export default function AuthProvider(props) {
   const [user, setUser] = useState(null);
   let history = useHistory();
   
-    function login(email, password, obj) {
-    setUser({ email: obj.email });
+    function login(email, password, obj){
+      setUser({ email: obj.email }, function(){
+      console.log("AUTH USER 19 ----->", user)
+    });
     setAuth(true);
     console.log("hello i am user!!")
-    console.log("AUTH USER 19 ----->", user)
+    
     // localStorage.setItem('user',JSON.stringify(user))
   };
 

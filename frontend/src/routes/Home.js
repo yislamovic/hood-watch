@@ -38,7 +38,7 @@ function Home() {
             <div className="visit-text-down">
               <p className="more-info" id="new-point-1">Click <a href="/new">here</a> to post a report that everyone can see!</p>
               <p className="more-info" id="new-point-2">Make your own report about anything in your community! 🖊</p>
-              <p className="more-info" id="new-point-3">View reports of other users from around the world! 🌎 </p>
+              <p className="more-info" id="new-point-3">View reports of other users from around Toronto! 🌎 </p>
               <p className="more-info" id="new-point-4">Comment and Leave a Like on other reports! 🗣</p>
               <p className="more-info" id="new-point-5">Form Friendships! 😊 💕</p>
             </div>
@@ -57,26 +57,24 @@ function Home() {
      </div>
      <div className="delete-box">
           <div className="visit-title-down">
-            <h3>Delete Report</h3>
+            <h3>Your Reports</h3>
           </div>
           <div className="visit-text-down">
-            <p className="more-info" id="delete-point-1">Click <a href="/delete">here</a> to delete any reports you have submitted.</p>
-            <p className="more-info" id="delete-point-2">Delete a report that you don't want posted anymore! 🚫</p>
-            <p className="more-info" id="delete-point-3">Deletion process is quick and efficient! 🏃</p>
-            <p className="more-info" id="delete-point-4">Please keep content appropriate in our forums! 🙏</p>
-            <p className="more-info" id="delete-point-5">We all make mistakes! 🙂 </p>
-            
-         </div>
+            <p className="more-info" id="delete-point-1">Click <a href="/reports/:id">here</a> to view the reports you've submitted.</p>
+            <p className="more-info" id="delete-point-2">All reports appear in a list! 📝</p>
+            <p className="more-info" id="delete-point-3">View all of your reports! 🏃</p>
+          </div>
         </div>
       <div className="update-box">
         <div className="visit-title-up">
-          <h3>Update Report</h3>
+          <h3>All Reports</h3>
         </div>
         <div className="visit-text-up">
-           <p className="more-info" id="up-point-1">Click <a href="/update">here</a> to update any reports you have submitted!</p>
-           <p className="more-info" id="up-point-2">Update a report that you want to change! 🔄</p>
-           <p className="more-info" id="up-point-3">Please keep content appropriate in our forums! 🙏</p>
-           <p className="more-info" id="up-point-4">We all make mistakes! 🙂</p>
+           <p className="more-info" id="up-point-1">Click <a href="/posts">here</a> to view other people's reports!</p>
+           <p className="more-info" id="up-point-2">Be alert of current news and topics! 📰</p>
+           <p className="more-info" id="up-point-2">Write comments on reports! 🗣</p>
+           <p className="more-info" id="up-point-3">Please keep comments appropriate in our forums! 🙏</p>
+           <p className="more-info" id="up-point-4">Vote on comments you like or dislike! 👍  👎</p>
         </div>
       </div>
     </div>
