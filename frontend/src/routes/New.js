@@ -12,11 +12,8 @@ export default function New(){
     const [textLength, setTextLength] = useState(0)
     const [isDisabled, setIsDisabled] = useState(true)
     const [errors, setErrors] = useState({})
-    const { user } = useContext(authContext)
     const history = useHistory();
 
-
-    // the callback function is already doing our console.logs
     function handleNewPost(){
         if (values.title.length > 30) {
            return setErrors({ title: "Title must be less than 30 characters"})
@@ -27,6 +24,18 @@ export default function New(){
        
        setValues({})
        console.log("Form Submitted")
+    }
+
+    const newReport = () => {
+      const userObj = JSON.parse(localStorage.getItem('user'));
+      if(!userObj) {
+        alert("You must be logged in to submit a report")
+        return;
+      } else {
+      axios.post(`http://localhost:8000/new`, { values, id: userObj.id })
+      }
+      alert("Form successfully submitted!")
+      history.push('/');
     }
 
    useEffect(() => {
@@ -44,28 +53,6 @@ export default function New(){
       }
     }, [values])
 
-    const newReport = () => {
-      const userObj = JSON.parse(localStorage.getItem('user'));
-      console.log("USER OBJECT --->", userObj)
-      if(!userObj) {
-        return;
-      } else {
-      console.log("USER OBJECT 53 --->", userObj)
-      // const assign = Object.assign(values, userObj.id)
-      axios.post(`http://localhost:8000/new`, { values, id: userObj.id })
-      .then((res) => {
-        const reportObj = res;
-        console.log("report object ---->", reportObj)
-       })
-      }
-      history.push('/');
-    }
-
-    // if (!user) {
-    //   return <p>You must be logged in to make a report</p>
-    // }
-
-    // else {
     return (
       <>
        <div className="new-post-container">

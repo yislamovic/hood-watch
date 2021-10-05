@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Image from '../assets/logo.png'
 import {  useContext, useEffect } from 'react';
 import { authContext } from '../providers/AuthProvider';
+import { useHistory } from 'react-router-dom';
 
 function Nav() {
   const navStyle = {
@@ -9,6 +10,7 @@ function Nav() {
   };
   
   const { logout, user, setUser } = useContext(authContext);
+  const history = useHistory();
 
   useEffect(() => {
     let userObj = JSON.parse(localStorage.getItem('user'))
@@ -21,10 +23,13 @@ function Nav() {
   if (user) {
     return (
       <nav> 
-        <img src={Image} alt="logo" width="80px" height="56px"/>
+        <a className="owl" href='/'>🦉</a>
         <ul className='nav-links'>
-          <Link style={navStyle} to='/'>
-            <li>Home</li>
+          <Link style={navStyle} to='/posts'>
+            <li>See Posts</li>
+          </Link>
+          <Link style={navStyle} to='/map'>
+            <li>View Map</li>
           </Link>
           <Link style={navStyle}>
           <li>{user.email}</li>
@@ -38,13 +43,10 @@ function Nav() {
   } else {
     return (
       <nav>
-        <img src={Image} alt="logo" width="80px" height="56px"/>
+        <a className="owl" href='/'>🦉</a>
         <ul className='nav-links'>
-          <Link style={navStyle} to='/'>
-            <li>Home</li>
-          </Link>
-          <Link style={navStyle} to='/posts'>
-            <li>See Posts</li>
+          <Link style={navStyle} to='/map'>
+            <li>View Map</li>
           </Link>
           <Link style={navStyle} to='/login'>
             <li>Login</li>
