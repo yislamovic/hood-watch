@@ -7,10 +7,6 @@ import { useState, useEffect } from 'react';
 import axios from "axios";
 function PostFooter(props) {
   const [counter, setCounter] = useState(props.likes)
-  // const [voteBool, setVoteBool] = useState({
-  //   upvote: true,
-  //   downvote: true
-  // })
   const [upVoteBool, setUpVoteBool] = useState(true)
   const [downVoteBool, setDownVoteBool] = useState(true)
 
