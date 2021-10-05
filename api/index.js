@@ -63,6 +63,22 @@ app.post("/login", async(req, res) => {
   }
 });
 
+
+// app.post("/login", async(req, res) => {
+//   console.log('109 req.body', req.body);
+//   try {
+//     const { email, password } = req.body.values;
+//     const login = await pool.query(
+//       `SELECT * FROM person
+//        WHERE email = $1 AND person_password = $2;`
+//       , [email, password]);
+//     res.json(login.rows[0]);
+//     console.log(req.body.values);
+//   } catch (err) {
+//     console.log(err.message);
+//   }
+// });
+
 app.get("/reports", async(req, res) => {
   try{
     
@@ -145,20 +161,6 @@ app.delete("/delete/:id", async(req, res) => {
   }
 })
 
-app.post("/login", async(req, res) => {
-  console.log('109 req.body', req.body);
-  try {
-    const { email, password } = req.body.values;
-    const login = await pool.query(
-      `SELECT * FROM person
-       WHERE email = $1 AND person_password = $2;`
-      , [email, password]);
-    res.json(login.rows[0]);
-    console.log(req.body.values);
-  } catch (err) {
-    console.log(err.message);
-  }
-});
 
 app.post("/new", async(req, res) => {
   try {
