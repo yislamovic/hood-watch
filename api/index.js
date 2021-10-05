@@ -64,12 +64,8 @@ app.post("/login", async(req, res) => {
 });
 
 app.get("/reports", async(req, res) => {
-<<<<<<< HEAD
   try{
     
-=======
-  try {
->>>>>>> 5987c4d1ccc3064e96d43fc40bc74e1af6d259b0
     const allPosts = await pool.query(
       `SELECT *
       FROM report
@@ -147,7 +143,6 @@ app.delete("/delete/:id", async(req, res) => {
   }
 })
 
-<<<<<<< HEAD
 app.post("/login", async(req, res) => {
   console.log('109 req.body', req.body);
   try {
@@ -156,16 +151,13 @@ app.post("/login", async(req, res) => {
       `SELECT * FROM person
        WHERE email = $1 AND person_password = $2;`
       , [email, password]);
-    console.log(login.rows)
-    res.json(login);
+    res.json(login.rows[0]);
     console.log(req.body.values);
   } catch (err) {
     console.log(err.message);
   }
 });
 
-=======
->>>>>>> 5987c4d1ccc3064e96d43fc40bc74e1af6d259b0
 app.post("/new", async(req, res) => {
   try {
     const { title, category, report, report_address } = req.body.values;

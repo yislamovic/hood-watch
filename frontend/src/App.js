@@ -1,6 +1,5 @@
 import './styles/App.css';
 import './styles/Nav.css';
-import useForm from "./hooks/useForm.js";
 import Nav from './component/Nav'
 import Home from './routes/Home'
 import New from './routes/New'
@@ -9,8 +8,8 @@ import Register from './routes/Register'
 import Posts from './routes/Posts'
 import Map from './routes/Map'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import React, { useState, createContext } from 'react';
-export const authContext = createContext();
+import React, { useState } from 'react';
+
 
 function App() {
   

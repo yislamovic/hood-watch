@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import Image from '../assets/logo.png'
-import {  useContext } from 'react';
+import {  useContext, useEffect } from 'react';
 import { authContext } from '../providers/AuthProvider';
 
 function Nav() {
@@ -8,9 +8,16 @@ function Nav() {
     color: 'white'
   };
   
-  const { logout, user } = useContext(authContext);
+  const { logout, user, setUser } = useContext(authContext);
 
-  
+  useEffect(() => {
+    let userObj = JSON.parse(localStorage.getItem('user'))
+    if (userObj) {
+      setUser(userObj)
+    }
+  },[])
+
+
   if (user) {
     return (
       <nav> 
