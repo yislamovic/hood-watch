@@ -63,12 +63,7 @@ app.post("/login", async(req, res) => {
 });
 
 app.get("/reports", async(req, res) => {
-<<<<<<< HEAD
-  try{
-    
-=======
   try {
->>>>>>> 5987c4d1ccc3064e96d43fc40bc74e1af6d259b0
     const allPosts = await pool.query(
       `SELECT *
       FROM report
@@ -146,7 +141,6 @@ app.delete("/delete/:id", async(req, res) => {
   }
 })
 
-<<<<<<< HEAD
 app.post("/login", async(req, res) => {
   console.log('109 req.body', req.body);
   try {
@@ -163,8 +157,6 @@ app.post("/login", async(req, res) => {
   }
 });
 
-=======
->>>>>>> 5987c4d1ccc3064e96d43fc40bc74e1af6d259b0
 app.post("/new", async(req, res) => {
   try {
     const { title, category, report, report_address } = req.body.values;
@@ -225,6 +217,22 @@ app.put("/upvote/:id/:vote", async(req, res) => {
       [id, vote]);
     res.json(updateCounter.rows);
     console.log(req.body);
+  } catch (err) {
+    console.log(err.message);
+  }
+});
+
+app.post("/comment", async(req, res) => {
+  try {
+    console.log(req.body)
+    const { comment, id } = req.body;
+    const newComment = await pool.query(
+      `INSERT INTO comment (comment, person_id, report_id)
+       VALUES ($1, 1, $2)
+       RETURNING *;`,
+      [comment, id]);
+    console.log('NEW REPORT BACKEND --->', newComment.rows[0]);
+    res.json(newComment.rows[0]);
   } catch (err) {
     console.log(err.message);
   }
