@@ -18,7 +18,7 @@ function Post(props) {
     }
     fetchData()
   }, [api]);
-  
+  console.log(info, 'this is info from post')
   const posts = info.map(post => {
     return (
       <div className='post'>

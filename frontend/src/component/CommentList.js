@@ -9,7 +9,7 @@ function CommentList(props) {
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(api)
-      console.log('this is data',request)
+      //console.log('this is data',request)
       setCommentInfo(request.data)
       return request.data
     }
@@ -19,7 +19,8 @@ function CommentList(props) {
   function addComment(newComment){
     setCommentInfo(prev => ([...prev, newComment]))
   }
-  console.log('this is info',commentInfo)
+  //console.log('this is info',commentInfo)
+  console.log(props.id, 'this is props id')
   const commentList = commentInfo && commentInfo.map(comment => {
       return (
         <div className='comment'>
