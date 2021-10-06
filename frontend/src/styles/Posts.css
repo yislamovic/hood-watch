@@ -1,8 +1,8 @@
 .master-container {
   display: flex;
   justify-content: center;
-  border: 2px solid navy;
-  height: 800px
+  height: 800px;
+  background-image: linear-gradient(315deg, #9ab5e1 0%, #f39fdc 74%);
 }
 
 .all-post-container {
@@ -26,10 +26,8 @@
 }
 
 .post-header-container {
-  border-bottom: 2px solid rgb(237, 183, 234);
   width: 95%;
   margin: 0.5% 0;
-  
 }
 
 .post-header {
@@ -108,7 +106,7 @@
 }
 
 .comment-list-container {
-  border: 2px solid grey;
+  /* border: 2px solid grey; */
   width: 90%;
   display: flex;
   justify-content: center;
@@ -117,7 +115,7 @@
 }
 
 .right-comment-list-container {
-  border: 2px solid green;
+  /* border: 2px solid green; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -139,16 +137,16 @@
   align-items: center;
   overflow: scroll;
   background-color: rgb(128, 23, 133);
-  transition: height 0.4s ease;
+  transition: height 0.54s ease;
 }
 
 .right-comment-list-container:hover .comment-list {
   height: 100%;
 }
 
-.right-comment-list-container:hover .comments-title {
+/* .right-comment-list-container:hover .comments-title {
   opacity: 0;
-}
+} */
 
 
 /* .comment-container {
@@ -169,7 +167,7 @@
 }
 
 .comment-form {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   width: 60%;
   height: 100%;
   display: flex;
@@ -181,18 +179,30 @@
 .post-textarea {
   width: 350px;
   height: 200px;
+  font-size: 20px;
+  transition: width 0.3s ease;
+}
+
+.post-textarea:focus {
+  width: 420px;
+  
 }
 
 .post-comment-button {
-  border: 2px solid black;
+  /* border: 2px solid black; */
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+#post-comment-btn {
+  font-size: 15px;
+  height: 35px;
+}
+
 .post-footer-container {
-  border: 2px solid black;
+  /* border: 2px solid black; */
   display: flex;
   flex-direction: column;
   justify-content: center;
