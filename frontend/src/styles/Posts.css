@@ -1,8 +1,46 @@
+.master-container {
+  display: flex;
+  justify-content: center;
+  border: 2px solid navy;
+}
+
 .all-post-container {
-  
+  display: flex;
+  justify-content: center;
+  border: 1px solid blue;
+  margin: 2% 0;
+  width: 90%;
 }
 
 .post-container {
   border: 2px solid black;
-  width: 50%;
+  width: 100%;
+}
+
+.post-header-container {
+  border: 2px solid red;
+}
+
+.post-header {
+  border: 2px solid black;
+  display: flex;
+  justify-content: space-around;
+}
+
+#header-name {
+  border: 2px solid blue;
+
+}
+
+#header-title {
+  border: 2px solid blue;
+  width: 750px;
+  display: flex;
+  justify-content: center;
+}
+
+#header-date {
+  border: 2px solid blue;
+
+ 
 }

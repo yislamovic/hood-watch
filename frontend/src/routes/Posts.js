@@ -21,6 +21,7 @@ function Post(props) {
   console.log(info, 'this is info from post')
   const posts = info.map(post => {
     return (
+      <div className='master-container'>
       <div className='all-post-container'>
       <div className='post-container'>
         <div className='post-header-container'>
@@ -41,8 +42,8 @@ function Post(props) {
           </div>
         </div>
       </div>
-    </div>
-    
+      </div>
+      </div>
     );
   });
 
