@@ -33,7 +33,9 @@ function Post(props) {
           />
           </div>
         <div className="post-body-container">
+          <div className="report-container">
           <p className="report">{post.report}</p>
+          </div>
           <div className="post-footer-container">
             <PostFooter id={post.id} likes={post.up_vote} />
           </div>

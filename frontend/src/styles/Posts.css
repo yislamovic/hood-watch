@@ -39,6 +39,9 @@
 
 #header-name {
   border: 2px solid blue;
+  width: 215px;
+  display: flex;
+  justify-content: center;
 
 }
 
@@ -59,4 +62,21 @@
   width: 95%;
   height: 600px;
   margin: 1% 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.report-container {
+  border: 2px solid blue;
+  width: 90%;
+}
+
+.post-footer-container {
+  border: 2px solid blue;
+}
+
+.comment-list-container {
+  border: 2px solid blue;
 }
