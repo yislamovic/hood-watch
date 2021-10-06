@@ -1,27 +1,213 @@
- .post{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   border-radius: 20px;
-   border: 3px solid black;
-   width: 95%;
-   margin-top: 2%;
-} 
-
-
-.header{
+.master-container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
-  padding-left: 8%;
+  justify-content: center;
+  height: 800px;
+  background-image: linear-gradient(315deg, #9ab5e1 0%, #f39fdc 74%);
 }
 
-
-.post-footer{
+.all-post-container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
-  padding-left: 8%;
+  justify-content: center;
+  align-items: center;
+  /* border: 3px solid black; */
+  margin: 2% 0;
+  width: 95%;
 }
+
+.post-container {
+  border: 4px solid black;
+  width: 90%;
+  height: 88%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(128, 23, 133);
+}
+
+.post-header-container {
+  width: 95%;
+  margin: 0.5% 0;
+}
+
+.post-header {
+  /* border: 2px solid black; */
+  display: flex;
+  justify-content: space-around;
+}
+
+#header-name {
+  border: 3px solid black;
+  width: 200px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(243, 174, 240);
+
+}
+
+#header-title {
+  border: 3px solid black;
+  width: 525px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(243, 174, 240);
+}
+
+#header-date {
+  border: 3px solid black;
+  height: 40px;
+  width: 279px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(243, 174, 240);
+
+}
+
+.post-body-container {
+  border: 2px solid black;
+  width: 95%;
+  height: 600px;
+  margin: 1% 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #8f69e9;
+}
+
+.report-container {
+  border: 3px solid black;
+  width: 97%;
+  margin: 1% 0;
+  background-color: rgb(237, 183, 234);
+}
+
+.report-colon {
+  padding-left: 6px;
+}
+
+.report {
+  padding-left: 10px;
+}
+
+.bottom-container {
+  border: 3px solid black;
+  width: 1130px;
+  height: 350px;
+  display: flex;
+  justify-content: space-around;
+  margin: 1.5% 0;
+  background-color: rgb(243, 174, 240);
+}
+
+.comment-list-container {
+  /* border: 2px solid grey; */
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5%;
+}
+
+.right-comment-list-container {
+  /* border: 2px solid green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+
+.comments-title {
+  transition: opacity 0.3s ease;
+}
+
+.comment-list {
+  border: 2px solid black;
+  height: 1px;
+  width: 88%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow: scroll;
+  background-color: rgb(128, 23, 133);
+  transition: height 0.54s ease;
+}
+
+.right-comment-list-container:hover .comment-list {
+  height: 100%;
+}
+
+/* .right-comment-list-container:hover .comments-title {
+  opacity: 0;
+} */
+
+
+/* .comment-container {
+  border: 2px solid purple;
+  width: 90%;
+  height: 100px;
+} */
+
+.comment {
+  border: 1px solid black;
+  width: 90%;
+  background-color: rgb(255, 218, 253);
+  padding-left: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 2% 0;
+}
+
+.comment-form {
+  /* border: 2px solid red; */
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-textarea {
+  width: 350px;
+  height: 200px;
+  font-size: 20px;
+  transition: width 0.3s ease;
+}
+
+.post-textarea:focus {
+  width: 420px;
+  
+}
+
+.post-comment-button {
+  /* border: 2px solid black; */
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#post-comment-btn {
+  font-size: 15px;
+  height: 35px;
+}
+
+.post-footer-container {
+  /* border: 2px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40%;
+  margin: 0.5%;
+}
+

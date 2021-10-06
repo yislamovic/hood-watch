@@ -30,6 +30,7 @@ export default function New(){
       const userObj = JSON.parse(localStorage.getItem('user'));
       if(!userObj) {
         alert("You must be logged in to submit a report")
+        history.push('/login')
         return;
       } else {
       axios.post(`http://localhost:8000/new`, { values, id: userObj.id })

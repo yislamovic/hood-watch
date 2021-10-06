@@ -2,10 +2,10 @@
 //  import '../styles/PostHeader.css'
  function PostHeader (props){
   return(
-    <div className='header'>
-      <p>{`${props.first_name} ${props.last_name}`}</p>
-      <h3>{props.title}</h3>
-      <p>{props.date_time}</p>
+    <div className='post-header'>
+      <p id="header-name">By: {`${props.first_name} ${props.last_name}`}</p>
+      <b><p id="header-title">{props.title}</p></b>
+      <p id="header-date">Created: {props.date_time}</p>
     </div>
   );
  }
