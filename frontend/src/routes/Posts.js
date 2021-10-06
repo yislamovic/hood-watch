@@ -34,13 +34,16 @@ function Post(props) {
           </div>
         <div className="post-body-container">
           <div className="report-container">
+            <p><b>Report: </b></p>
           <p className="report">{post.report}</p>
           </div>
-          <div className="post-footer-container">
+          <div className="bottom-container">
+         <div className="comment-list-container">
+            <CommentList id={post.id} />
+          </div>
+         <div className="post-footer-container">
             <PostFooter id={post.id} likes={post.up_vote} />
           </div>
-          <div className="comment-list-container">
-            <CommentList id={post.id} />
           </div>
         </div>
       </div>
