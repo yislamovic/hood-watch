@@ -44,6 +44,7 @@ function Comment(props) {
   return (
     <div className="comment-form">
       <form onSubmit={handleSubmit}>
+        <h2>Make A Comment: </h2>
         <textarea
           name="comment"
           className="post-textarea"

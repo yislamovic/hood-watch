@@ -37,10 +37,10 @@ function CommentList(props) {
 
   return (
     <>
+    <Comment id={props.id} addComment={addComment}/>
     <div className="comment-list">
       {commentList}
     </div>
-    <Comment id={props.id} addComment={addComment}/>
     </>
  
 
