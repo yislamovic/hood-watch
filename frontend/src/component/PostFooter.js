@@ -34,8 +34,8 @@ function PostFooter(props) {
     <div className="post-footer">
       <p>Likes: {counter}</p>
       <div className='Button-Group'>
-        <span className="upvote" onClick={() => upVoteBool && upVote()} src={Image} alt="UpVote">String.fromCodePoint()</span>
-        <span className="downvote" onClick={() => downVoteBool && downVote()} src={Image} alt="DownVote"></span>
+        <img className="upvote" onClick={() => upVoteBool && upVote()} src={Image} alt="UpVote" />
+        <img className="downvote" onClick={() => downVoteBool && downVote()} src={Image} alt="DownVote" />
       </div>
     </div>
   );

@@ -21,17 +21,28 @@ function Post(props) {
   console.log(info, 'this is info from post')
   const posts = info.map(post => {
     return (
-      <div className='post'>
-        <PostHeader 
-        first_name={post.first_name} 
-        last_name={post.last_name}
-        title={post.title}
-        date_time={post.date_time}
-        />
-        <p>{post.report}</p>
-        <PostFooter id={post.id} likes={post.up_vote} />
-        <CommentList id={post.id} />
+      <div className='all-post-container'>
+      <div className='post-container'>
+        <div className='post-header-container'>
+          <PostHeader 
+          first_name={post.first_name} 
+          last_name={post.last_name}
+          title={post.title}
+          date_time={post.date_time}
+          />
+          </div>
+        <div className="post-body-container">
+          <p className="report">{post.report}</p>
+          <div className="post-footer-container">
+            <PostFooter id={post.id} likes={post.up_vote} />
+          </div>
+          <div className="comment-list-container">
+            <CommentList id={post.id} />
+          </div>
+        </div>
       </div>
+    </div>
+    
     );
   });
 
