@@ -22,10 +22,11 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  background-color: rgb(128, 23, 133);
 }
 
 .post-header-container {
-  border: 2px solid red;
+  border-bottom: 2px solid rgb(237, 183, 234);;
   width: 95%;
   margin: 0.5% 0;
   
@@ -39,11 +40,12 @@
 
 #header-name {
   border: 2px solid blue;
-  width: 215px;
+  width: 200px;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(237, 183, 234);
 
 }
 
@@ -54,15 +56,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(237, 183, 234);
 }
 
 #header-date {
   border: 2px solid blue;
   height: 40px;
-  width: 200px;
+  width: 265px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(237, 183, 234);
 
 }
 
@@ -75,21 +79,24 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  background-color: #8f69e9;
 }
 
 .report-container {
   border: 2px solid blue;
-  width: 90%;
+  width: 97%;
   margin: 1% 0;
+  background-color: rgb(237, 183, 234);
 }
 
 .bottom-container {
   border: 2px solid purple;
-  width: 1100px;
+  width: 1130px;
   height: 350px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 1.5% 0;
+  background-color:rgb(237, 183, 234);
 }
 
 .comment-list-container {
@@ -98,11 +105,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0.5%;
 }
 
 .comment-list {
   border: 2px solid blue;
-  height: 100%;
+  background-color: rgb(128, 23, 133);
+  height: 95%;
   width: 98%;
   display: flex;
   flex-direction: column;
@@ -114,6 +123,7 @@
 .comment {
   border: 2px solid red;
   width: 90%;
+  background-color: white;
 }
 
 .comment-form {
@@ -146,5 +156,6 @@
   justify-content: center;
   align-items: center;
   height: 40%;
+  margin: 0.5%;
 }
 

@@ -3,9 +3,9 @@
  function PostHeader (props){
   return(
     <div className='post-header'>
-      <p id="header-name">{`${props.first_name} ${props.last_name}`}</p>
-      <h3 id="header-title">{props.title}</h3>
-      <p id="header-date">{props.date_time}</p>
+      <p id="header-name">By: {`${props.first_name} ${props.last_name}`}</p>
+      <b><p id="header-title">{props.title}</p></b>
+      <p id="header-date">Created: {props.date_time}</p>
     </div>
   );
  }
