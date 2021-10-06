@@ -149,12 +149,11 @@ app.get("/map", async(req, res) => {
 app.delete("/delete/:id", async(req, res) => {
   try{
     const { id } = req.params;
-    const { report_id } = req.body;
     const delete_record = await pool.query(
       `DELETE FROM report
-       WHERE person_id = $1 AND id = $2;`, [id, report_id]
+       WHERE id = $1;`, [id]
       )
-      res.json(delete_record.rows[0]);
+      res.json(delete_record.rows);
       console.log(req.body);
   } catch(err) {
     console.log(err.message)
