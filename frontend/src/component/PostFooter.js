@@ -31,7 +31,7 @@ function PostFooter(props) {
     setUpVoteBool(true)
   }
   return (
-    <div className="post-footer">
+    <div className="post-footer-container">
       <p>Likes: {counter}</p>
       <div className='Button-Group'>
         <img className="upvote" onClick={() => upVoteBool && upVote()} src={Image} alt="UpVote" />

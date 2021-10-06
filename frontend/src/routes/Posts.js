@@ -41,9 +41,7 @@ function Post(props) {
          <div className="comment-list-container">
             <CommentList id={post.id} />
           </div>
-         <div className="post-footer-container">
-            <PostFooter id={post.id} likes={post.up_vote} />
-          </div>
+          <PostFooter id={post.id} likes={post.up_vote} />
           </div>
         </div>
       </div>
