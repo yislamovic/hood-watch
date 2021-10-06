@@ -34,7 +34,7 @@ function Post(props) {
           </div>
         <div className="post-body-container">
           <div className="report-container">
-            <p><b>Report: </b></p>
+            <p className="report-colon"><b>Report: </b></p>
           <p className="report">{post.report}</p>
           </div>
           <div className="bottom-container">
