@@ -44,8 +44,9 @@ function Comment(props) {
   return (
     <div className="comment-form">
       <form onSubmit={handleSubmit}>
-        <input
-          name='comment'
+        <textarea
+          name="comment"
+          className="post-textarea"
           type="text"
           placeholder={'Write your comment here'}
           value={comment}

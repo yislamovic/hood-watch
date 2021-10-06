@@ -9,12 +9,14 @@ function Button(props) {
   //   });
 
    return (
+     <div className="post-comment-button">
       <button
         onClick={props.onClick}
         disabled={props.disabled}
       >
         {props.children}
       </button>
+      </div>
     );
 }
 export default Button;
