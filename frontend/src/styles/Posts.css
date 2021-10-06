@@ -84,7 +84,7 @@
   border: 3px solid black;
   width: 97%;
   margin: 1% 0;
-  background-color: rgb(237, 183, 234);
+  background-color: rgb(243, 174, 240);
 }
 
 .report-colon {
@@ -106,7 +106,7 @@
 }
 
 .comment-list-container {
-  /* border: 2px solid grey; */
+  border: 2px solid grey;
   width: 90%;
   display: flex;
   justify-content: center;
@@ -202,12 +202,18 @@
 }
 
 .post-footer-container {
-  /* border: 2px solid black; */
+  border: 2px solid black;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 40%;
+  width: 23%;
+  height: 95%;
   margin: 0.5%;
+  align-self: center;
 }
 
+.vote-title-container {
+  border: 2px solid black;
+  justify-self: flex-start;
+}

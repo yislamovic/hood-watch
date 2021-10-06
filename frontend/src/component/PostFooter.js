@@ -31,13 +31,18 @@ function PostFooter(props) {
     setUpVoteBool(true)
   }
   return (
+    <>
     <div className="post-footer-container">
+    <div className="vote-title-container">
+    <h2>Upvote/Downvote</h2>
+    </div>
       <p>Likes: {counter}</p>
       <div className='Button-Group'>
         <img className="upvote" onClick={() => upVoteBool && upVote()} src={Image} alt="UpVote" />
         <img className="downvote" onClick={() => downVoteBool && downVote()} src={Image} alt="DownVote" />
       </div>
     </div>
+  </>
   );
 }
 export default PostFooter;

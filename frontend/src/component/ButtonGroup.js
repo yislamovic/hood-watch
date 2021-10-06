@@ -11,10 +11,11 @@ function ButtonGroup(props) {
   //   });
 
    return (
-        <div className='Button-Group'>
+     <div className='Button-Group'>
           <img className="upvote" onClick={() => console.log("click")} src={Image} alt="UpVote"/>
           <img className="downvote" onClick={() => console.log("click")} src={Image} alt="DownVote"/>
         </div>
+     
     );
 }
 export default ButtonGroup;
