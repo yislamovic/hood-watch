@@ -88,7 +88,7 @@ app.get("/reports", async(req, res) => {
       JOIN person ON report.person_id = person.id
       ORDER BY report.id;`)
     
-      // console.log(allPosts.rows, 'this is all reports')
+      console.log('GET /REPORTS ALL REPORTS --->',allPosts.rows)
       res.json(allPosts.rows);
       // console.log(req.body)
   } catch (err) {
@@ -213,21 +213,6 @@ app.put("/update/:id", async(req, res) => {
   }
 });
 
-app.get("/upvote/:id/:vote", async(req, res) => {
-  try {
-    const { id } = req.params;
-    console.log(req.params);
-    console.log("I AM REQ BODY 222",req.body)
-    const getUpvoteData = await pool.query(
-      `SELECT * FROM report
-      WHERE person_id = $1;`,
-      [id]);
-    console.log("I AM DATA POTATOES",getUpvoteData.rows[0]);
-  } catch (err) {
-    console.log(err.message);
-  }
-});
-
 app.put("/upvote/:id/:vote", async(req, res) => {
   try {
     const { id, vote } = req.params;
@@ -238,7 +223,7 @@ app.put("/upvote/:id/:vote", async(req, res) => {
       WHERE id = $1;`,
       [id, vote]);
     res.json(updateCounter.rows);
-    // console.log(req.body);
+    console.log(req.body);
   } catch (err) {
     console.log(err.message);
   }
