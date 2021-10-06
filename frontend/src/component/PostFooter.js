@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonGroup from "../component/ButtonGroup";
+import LikedByContainer from "./LikedByContainer";
 import Image from "../assets/vote.jpeg"
 // import "../styles/PostFooter.css"
 import "../styles/ButtonGroup.css"
@@ -37,6 +37,9 @@ function PostFooter(props) {
     <h2>Upvote/Downvote</h2>
     </div>
       <p>Likes: {counter}</p>
+      <div className="liked-by-container">
+        <LikedByContainer />
+      </div>
       <div className='Button-Group'>
         <img className="upvote" onClick={() => upVoteBool && upVote()} src={Image} alt="UpVote" />
         <img className="downvote" onClick={() => downVoteBool && downVote()} src={Image} alt="DownVote" />

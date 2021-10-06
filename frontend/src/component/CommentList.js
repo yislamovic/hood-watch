@@ -45,10 +45,7 @@ function CommentList(props) {
     </div>
     </div>
     </>
- 
-
-    
-  );
+   );
 }
 
 export default CommentList;

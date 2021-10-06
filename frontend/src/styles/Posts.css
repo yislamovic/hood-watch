@@ -207,7 +207,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 23%;
+  width: 20%;
   height: 95%;
   margin: 0.5%;
   align-self: center;
@@ -279,4 +279,18 @@
   flex-direction: column;
   justify-content: space-evenly;
   height: 30%;
+}
+.liked-by-container {
+  border: 2px solid black;
+  width: 100%;
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.liked-by {
+  border: 2px solid red;
+  width: 100%;
+  height: 85%;
 }

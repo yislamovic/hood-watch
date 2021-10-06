@@ -7,12 +7,29 @@ nav{
   color: white;
   width: 100%;
 }
+
+
+
+
 .nav-links{
-  width: 50%;
+  width: 70%;
+  height: 70px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   list-style: none;
+  /* border: 2px solid black; */
+}
+
+.link {
+  font-size: 18px;
+  transition: font-size 0.3s ease;
+  color: white;
+}
+
+.link:hover {
+  font-size: 20px;
+  color: rgb(237, 183, 234);
 }
 
 .owl {

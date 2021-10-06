@@ -26,7 +26,7 @@ app.get("/users/:id", async (req, res) => {
        WHERE id = $1;`, [id]
     )
     res.json(user.rows[0]);
-    console.log(req.body)
+    // console.log(req.body)
   } catch (err) {
     console.log(err.message)
   }
@@ -41,7 +41,7 @@ app.post("/register", async(req, res) => {
        RETURNING *;`
       , [first_name, last_name, email, password, address]);
     res.json(newUser);
-    console.log(req.body.values);
+    // console.log(req.body.values);
   } catch (err) {
     console.log(err.message);
   }
@@ -55,8 +55,8 @@ app.post("/login", async(req, res) => {
       `SELECT * FROM person 
        WHERE email = $1 AND person_password = $2;`
       ,[email,password]);
-    console.log('RES.ROWS 58 --->', loginUser.rows);
-    console.log('RES.ROWS[0] 59 --->', loginUser.rows[0]);
+    // console.log('RES.ROWS 58 --->', loginUser.rows);
+    // console.log('RES.ROWS[0] 59 --->', loginUser.rows[0]);
     return res.json(loginUser.rows[0]);
   } catch (err) {
     console.log(err.message);
@@ -86,12 +86,11 @@ app.get("/reports", async(req, res) => {
       `SELECT report.id, person_id, report.*, first_name, last_name
       FROM report
       JOIN person ON report.person_id = person.id
-      ORDER BY report.id;
-      `
-      )
-      console.log(allPosts.rows, 'this is all reports')
+      ORDER BY report.id;`)
+    
+      console.log('GET /REPORTS ALL REPORTS --->',allPosts.rows)
       res.json(allPosts.rows);
-      console.log(req.body)
+      // console.log(req.body)
   } catch (err) {
     console.log(err.message)
   }
@@ -125,8 +124,8 @@ app.get("/reports/:id", async(req, res) => {
       WHERE person_id = $1
       ORDER BY report.id;`, [id]
     );
-    res.json(singlePost.rows);
-    console.log(req.body);
+    res.json("SINGLE POST",singlePost.rows);
+    // console.log(req.body);
   } catch (err) {
     console.log(err.message);
   }
@@ -217,7 +216,7 @@ app.put("/update/:id", async(req, res) => {
 app.put("/upvote/:id/:vote", async(req, res) => {
   try {
     const { id, vote } = req.params;
-    console.log(req.params)
+    console.log(req.params);
     const updateCounter = await pool.query(
       `UPDATE report
       SET up_vote = $2

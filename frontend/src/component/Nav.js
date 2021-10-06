@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import Image from '../assets/logo.png'
 import {  useContext, useEffect } from 'react';
 import { authContext } from '../providers/AuthProvider';
-import { useHistory } from 'react-router-dom';
+
 
 function Nav() {
   const navStyle = {
@@ -10,7 +10,7 @@ function Nav() {
   };
   
   const { logout, user, setUser } = useContext(authContext);
-  const history = useHistory();
+  
 
   useEffect(() => {
     let userObj = JSON.parse(localStorage.getItem('user'))
@@ -25,18 +25,18 @@ function Nav() {
       <nav> 
         <a className="owl" href='/'>🦉</a>
         <ul className='nav-links'>
-          <Link style={navStyle} to='/posts'>
-            <li>See Posts</li>
-          </Link>
-          <Link style={navStyle} to='/map'>
-            <li>View Map</li>
-          </Link>
-          <Link style={navStyle}>
-          <li>{user.email}</li>
-          </Link>
-          <Link style={navStyle} to='/login'>
-            <li onClick={logout}>Logout</li>
-          </Link>
+         <span style={navStyle}>
+          <li className="link">{user.email}</li>
+          </span>
+          <span style={navStyle}>
+            <li><a className="link" href='/posts'>See Posts</a></li>
+          </span>
+          <span style={navStyle} to='/map'>
+           <li><a className="link" href='/map'>View Map</a></li>
+          </span>
+          <span style={navStyle} to='/login'>
+           <li onClick={logout}><a className="link" href='/login'>Logout</a></li>
+          </span>
         </ul>
     </nav>
     );
@@ -45,15 +45,15 @@ function Nav() {
       <nav>
         <a className="owl" href='/'>🦉</a>
         <ul className='nav-links'>
-          <Link style={navStyle} to='/map'>
-            <li>View Map</li>
-          </Link>
-          <Link style={navStyle} to='/login'>
-            <li>Login</li>
-          </Link>
-          <Link style={navStyle} to='/register'>
-            <li>Register</li>
-          </Link>
+          <span style={navStyle}>
+            <li><a className="link" href='/map'>View Map</a></li>
+          </span>
+          <span style={navStyle}>
+            <li><a className="link" href='/login'>Login</a></li>
+          </span>
+          <span style={navStyle}>
+            <li><a className="link" href='/register'>Register</a></li>
+          </span>
         </ul>
     </nav>
     );
