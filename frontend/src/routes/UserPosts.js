@@ -40,51 +40,56 @@ function UserPosts(props) {
 
   const posts = info && info.map(post => {
     return (
-      <div className='post'>
-        <div >
-          <PostHeader
-            first_name={post.first_name}
-            last_name={post.last_name}
-            title={post.title}
-            date_time={post.date_time}
-          />
+      <div className='user-post-container'>
+        <div className="user-header-container">
+          <div className='user-header'>
+            <span>{post.first_name + ' ' + post.last_name}</span>
+            <span>{post.title}</span>
+            <span>{post.date_time}</span>
+          </div>
         </div>
 
-        <p>{post.report}</p>
-        <PostFooter id={post.id} likes={post.up_vote} />
+        <div className='post-report-body'>
+          <p>{post.report}</p>
+        </div>
 
-        <div>
+
+        <div className='update-and-delete-container'>
           <span onClick={() => updatePost(post.id)}>📝 Update</span>
           <span onClick={() => deletePost(post.id)}>🗑️ Delete</span>
         </div>
 
         {state && <div >
           <p onClick={() => setState(false)}>click me</p>
-          <form className='form'>
-            <div className='title-select'>
-              <label>Edit Title:
+          <form className='user-form'>
+            <div className='user-title-label-container'>
+              <div className='user-category-title'>
+                <label>Edit Title:
+                </label>
                 <textarea
                   rows="3" cols="15">
                   {post.title}
                 </textarea>
-              </label>
-              <label>Category:</label>
-              <select name="category">
-                <option value="trending">Trending</option>
-                <option value="celebrate">Celebrate</option>
-                <option value="caution">Caution</option>
-                <option value="report-crime">Report A Petty Crime</option>
-                <option value="community-news">Community News</option>
-                <option value="community-question">Question</option>
-                <option value="other">Other</option>
-              </select>
+              </div>
             </div>
+            <label>Category:</label>
+            <select name="category">
+              <option value="trending">Trending</option>
+              <option value="celebrate">Celebrate</option>
+              <option value="caution">Caution</option>
+              <option value="report-crime">Report A Petty Crime</option>
+              <option value="community-news">Community News</option>
+              <option value="community-question">Question</option>
+              <option value="other">Other</option>
+            </select>
+
             <label>Edit Body:
-              <textarea
-                rows="5" cols="33">
-                {post.report}
-              </textarea>
             </label>
+            <textarea
+              rows="5" cols="33">
+              {post.report}
+            </textarea>
+
           </form>
         </div>}
 
