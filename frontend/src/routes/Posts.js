@@ -5,14 +5,14 @@ import { useState, useEffect } from 'react';
 import CommentList from "../component/CommentList";
 import axios from "axios";
 import PostHeader from "../component/PostHeader";
+import { useLocation } from "react-router-dom";
 function Post(props) {
-  const api = `http://localhost:8000/reports`
   const [info, setInfo] = useState([])
+  const api = `http://localhost:8000/reports`
 
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(api)
-      
       setInfo(request.data)
       return request.data
     }

@@ -74,7 +74,7 @@ function Home() {
             <h3>Your Reports</h3>
           </div>
           <div className="visit-text-down">
-            <p className="more-info" id="delete-point-1">Click <a href="/reports/:id">here</a> to view the reports you've submitted.</p>
+            <p className="more-info" id="delete-point-1">Click <a href="/userposts">here</a> to view the reports you've submitted.</p>
             <p className="more-info" id="delete-point-2">All reports appear in a list! 📝</p>
             <p className="more-info" id="delete-point-3">View all of your reports! 🏃</p>
           </div>
