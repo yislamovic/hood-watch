@@ -38,8 +38,11 @@ function CommentList(props) {
   return (
     <>
     <Comment id={props.id} addComment={addComment}/>
+    <div className="right-comment-list-container">
+    <h2 className="comments-title">View Other Comments Below</h2>
     <div className="comment-list">
       {commentList}
+    </div>
     </div>
     </>
  
