@@ -40,20 +40,29 @@
 #header-name {
   border: 2px solid blue;
   width: 215px;
+  height: 40px;
   display: flex;
   justify-content: center;
+  align-items: center;
 
 }
 
 #header-title {
   border: 2px solid blue;
   width: 525px;
+  height: 40px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 #header-date {
   border: 2px solid blue;
+  height: 40px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 
