@@ -7,6 +7,7 @@ import Login from './routes/Login'
 import Register from './routes/Register'
 import Posts from './routes/Posts'
 import Map from './routes/Map'
+import UserPosts from './routes/UserPosts'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import React, { useState } from 'react';
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/register" component={Register} />
           <Route path="/new" component={New} />
           <Route path="/posts" component={Posts} />
+          <Route path="/userposts" component={UserPosts} />
           <Route path="/map" component={Map} />
         </Switch>
       </div>
