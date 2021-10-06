@@ -6,9 +6,11 @@ import CommentList from "../component/CommentList";
 import axios from "axios";
 import PostHeader from "../component/PostHeader";
 import { useLocation } from "react-router-dom";
-function Post(props) {
+
+function UserPosts(props) {
   const [info, setInfo] = useState([])
-  const api = `http://localhost:8000/reports`
+  const userObj = JSON.parse(localStorage.getItem("user"))
+  const api = `http://localhost:8000/reports/${userObj.id}`
 
   useEffect(() => {
     async function fetchData() {
@@ -42,4 +44,4 @@ function Post(props) {
     </div>
   );
 }
-export default Post;
+export default UserPosts;
