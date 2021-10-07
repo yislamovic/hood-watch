@@ -6,6 +6,7 @@ import CommentList from "../component/CommentList";
 import axios from "axios";
 import PostHeader from "../component/PostHeader";
 import { useLocation } from "react-router-dom";
+import { formatDate } from '../helper/helperFormatDate.js'
 function Post(props) {
   const [info, setInfo] = useState([])
   const api = `http://localhost:8000/reports`
@@ -29,7 +30,7 @@ function Post(props) {
           first_name={post.first_name} 
           last_name={post.last_name}
           title={post.title}
-          date_time={post.date_time}
+          date_time={formatDate(post.date_time)}
           />
           </div>
         <div className="post-body-container">

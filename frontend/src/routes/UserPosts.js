@@ -6,6 +6,7 @@ import PostHeader from "../component/PostHeader";
 import { useLocation } from "react-router-dom";
 import useForm from "../hooks/useForm";
 import "../styles/Posts.css"
+import { formatDate } from '../helper/helperFormatDate.js'
 function UserPosts(props) {
   const { handleChange, handleSubmit, values, setValues } = useForm(updatePost);
   const [info, setInfo] = useState([])
@@ -62,7 +63,7 @@ function UserPosts(props) {
           <div className='user-header'>
             <span>{post.first_name + ' ' + post.last_name}</span>
             <span>{post.title}</span>
-            <span>{post.date_time}</span>
+            <span>{'Created: ' + formatDate(post.date_time)}</span>
           </div>
         </div>
 
@@ -118,9 +119,9 @@ function UserPosts(props) {
 
 
   return (
-    <>
+    <div className="user-posts-container-master">
       {posts}
-    </>
+    </div>
   );
 }
 export default UserPosts;
