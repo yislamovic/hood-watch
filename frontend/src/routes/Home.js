@@ -1,8 +1,17 @@
 import "../styles/Home.css";
 import neighbourhoodImage from "../assets/cartoon-street.jpeg"
-
+import { useHistory } from "react-router-dom" 
 function Home() {
-
+  const history = useHistory()
+function handleUndefined(){
+  const userObject = JSON.parse(localStorage.getItem('user'))
+  if(!userObject){
+    alert("You have to be logged in to use this page.")
+  }
+  if(userObject){
+    history.push('/userposts')
+  }
+}
   return (
     <>
     <div className="home-container">
@@ -74,7 +83,7 @@ function Home() {
             <h3>Your Reports</h3>
           </div>
           <div className="visit-text-down">
-            <p className="more-info" id="delete-point-1"><b>Click <a href="/userposts">here</a> to view the reports you've submitted.</b></p>
+            <p className="more-info" id="delete-point-1"><b>Click <span className="span-link" onClick={handleUndefined}>here</span> to view the reports you've submitted.</b></p>
             <p className="more-info" id="delete-point-2">All reports appear in a list! 📝</p>
             <p className="more-info" id="delete-point-3">View all of your reports! 🏃</p>
             <p className="more-info" id="delete-point-4">Delete reports that you don't want public anymore!</p>

@@ -358,5 +358,9 @@ html, body {
     align-self: flex-end;
 }
 
-
+.span-link{
+    text-decoration: underline;
+    cursor: pointer;
+    color: #543895;
+}
   
