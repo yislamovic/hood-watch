@@ -36,14 +36,11 @@ function PostFooter(props) {
     <div className="vote-title-container">
     <h2>Upvote/Downvote</h2>
     </div>
-      <p>Likes: {counter}</p>
-      <div className="liked-by-container">
-        <LikedByContainer />
-      </div>
-      <div className='Button-Group'>
+    <div className='Button-Group'>
         <img className="upvote" onClick={() => upVoteBool && upVote()} src={Image} alt="UpVote" />
         <img className="downvote" onClick={() => downVoteBool && downVote()} src={Image} alt="DownVote" />
       </div>
+      <p>Likes: {counter}</p>
     </div>
   </>
   );
