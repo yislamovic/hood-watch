@@ -1,11 +1,13 @@
-.login-container {
-   
+.register-container {
    width: 400px;
    height: 400px;
-  
    display: flex;
    flex-direction: column;
    align-items: center;
+}
+
+#login-container {
+   height: 1000px;
 }
 
 .form-container {
@@ -14,4 +16,16 @@
    display: flex;
    
 }
+
+#login-form-container {
+   height: 500px;
+}
+
+#login-form {
+   justify-content: space-evenly;
+}
+
+
+
+
 

@@ -63,22 +63,22 @@ export default function Login() {
 
   return (
     <>
-    <div className="login-container">
+    <div className="register-container" id="login-container">
         <h1 className="header">Login</h1>
-        <div className="form-container">
-          <form onSubmit={handleSubmit} >
-            <div className="form-group">
-              <label>Email: </label>
-              <input type="email" name="email" placeholder="email" onChange={handleChange} required></input>
+        <div className="register-form-container" id="login-form-container">
+          <form className="register-form" id="login-form" onSubmit={handleSubmit} >
+            <div className="register-form-group" id="login-email-group">
+              <label className="register-label" id="email-label">Email:</label>
+              <input className="register-box" type="email" name="email" placeholder="email" onChange={handleChange} required></input>
               {errors.email && <span className="error-message">{errors.email}</span>}
             </div>
-            <div className="form-group">
-              <label>Password: </label>
-              <input type="password" name="password" placeholder="password" onChange={handleChange} required></input>
+            <div className="register-form-group" id="login-password-group">
+              <label className="register-label">Password:</label>
+              <input className="register-box" type="password" name="password" placeholder="password" onChange={handleChange} required></input>
               {errors.password && <span className="error-message">{errors.password}</span>}
             </div>
             <div className="button-container">
-              <button type="submit" className="btn" disabled={isDisabled} onClick={userLogin}>Login</button>
+              <button className="register-btn" type="submit" disabled={isDisabled} onClick={userLogin}>Login</button>
             </div>
           </form>
         </div>
