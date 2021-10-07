@@ -124,7 +124,7 @@ app.get("/reports/:id", async(req, res) => {
       WHERE person_id = $1
       ORDER BY report.id;`, [id]
     );
-    res.json("SINGLE POST",singlePost.rows);
+    res.json(singlePost.rows);
     // console.log(req.body);
   } catch (err) {
     console.log(err.message);

@@ -77,6 +77,8 @@ function Home() {
             <p className="more-info" id="delete-point-1">Click <a href="/userposts">here</a> to view the reports you've submitted.</p>
             <p className="more-info" id="delete-point-2">All reports appear in a list! 📝</p>
             <p className="more-info" id="delete-point-3">View all of your reports! 🏃</p>
+            <p className="more-info" id="delete-point-4">Delete reports that you don't want public anymore!</p>
+            <p className="more-info" id="delete-point-5">Update any of your reports! </p>
           </div>
         </div>
       <div className="update-box">
