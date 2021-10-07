@@ -7,10 +7,80 @@ import { useLocation } from "react-router-dom";
 import useForm from "../hooks/useForm";
 import "../styles/Posts.css"
 import { formatDate } from '../helper/helperFormatDate.js'
-function UserPosts(props) {
-  const { handleChange, handleSubmit, values, setValues } = useForm(updatePost);
-  const [info, setInfo] = useState([])
+const Form = (props) => {
+  const { post, deletePost, submitUpdate } = props
+  const { handleChange, handleSubmit, values, setValues } = useForm(updatePost, post);
   const [state, setState] = useState(false)
+
+  function updatePost() {
+    console.log('axios request')
+    submitUpdate(post, values)
+    setState(false)
+
+  }
+  return (
+    <div className='user-post-container' key={post.id}>
+      <div className="user-header-container">
+        <div className='user-header'>
+          <span>{post.first_name + ' ' + post.last_name}</span>
+          <span>{post.title}</span>
+          <span>{'Created: ' + formatDate(post.date_time)}</span>
+        </div>
+      </div>
+
+      <div className='post-report-body'>
+        <p>{post.report}</p>
+      </div>
+
+
+      <div className='update-and-delete-container'>
+        <span className='user-update' onClick={() => setState(true)}>📝 Update</span>
+        <span className='user-delete' onClick={() => deletePost(post.id)}>🗑️ Delete</span>
+      </div>
+
+      {state && <div >
+        <form className='user-form' onSubmit={handleSubmit}>
+
+          <div className='user-category-title'>
+            <label>Edit Title:
+            </label>
+            <textarea
+              name='title'
+              onChange={handleChange}
+              rows="3" cols="15">
+              {post.title}
+            </textarea>
+            <label>Category:</label>
+            <select name="category" onChange={handleChange}>
+              <option value="trending">Trending</option>
+              <option value="celebrate">Celebrate</option>
+              <option value="caution">Caution</option>
+              <option value="report-crime">Report A Petty Crime</option>
+              <option value="community-news">Community News</option>
+              <option value="community-question">Question</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <label>Edit Body:
+          </label>
+          <textarea
+            name='report'
+            onChange={handleChange}
+            rows="5" cols="33">
+            {post.report}
+          </textarea>
+          <button type='submit' >Submit Edit</button>
+        </form>
+      </div>}
+
+    </div>
+  );
+}
+function UserPosts(props) {
+
+  const [info, setInfo] = useState([])
+
   const userObj = JSON.parse(localStorage.getItem("user"))
   const api = `http://localhost:8000/reports/${userObj.id}`
 
@@ -24,7 +94,7 @@ function UserPosts(props) {
   }, [api]);
   console.log(info, 'this is info from post')
 
-  function submitUpdate(postObj) {
+  function submitUpdate(postObj, values) {
     console.log(info, 'this is info before map!!!')
     console.log(values, 'this is values before map!!!')
     const update = info && info.map(post => {
@@ -36,11 +106,6 @@ function UserPosts(props) {
       }
     });
     setInfo(info)
-  }
-
-  function updatePost() {
-    console.log('axios request')
-    setState(false)
   }
 
   function deletePost(postID) {
@@ -57,64 +122,7 @@ function UserPosts(props) {
   }
 
   const posts = info && info.map(post => {
-    return (
-      <div className='user-post-container' key={post.id}>
-        <div className="user-header-container">
-          <div className='user-header'>
-            <span>{post.first_name + ' ' + post.last_name}</span>
-            <span>{post.title}</span>
-            <span>{'Created: ' + formatDate(post.date_time)}</span>
-          </div>
-        </div>
-
-        <div className='post-report-body'>
-          <p>{post.report}</p>
-        </div>
-
-
-        <div className='update-and-delete-container'>
-          <span className='user-update' onClick={() => setState(true)}>📝 Update</span>
-          <span className='user-delete' onClick={() => deletePost(post.id)}>🗑️ Delete</span>
-        </div>
-
-        {state && <div >
-          <form className='user-form' onSubmit={handleSubmit}>
-
-            <div className='user-category-title'>
-              <label>Edit Title:
-              </label>
-              <textarea
-                name='title'
-                onChange={handleChange}
-                rows="3" cols="15">
-                {post.title}
-              </textarea>
-              <label>Category:</label>
-              <select name="category" onChange={handleChange}>
-                <option value="trending">Trending</option>
-                <option value="celebrate">Celebrate</option>
-                <option value="caution">Caution</option>
-                <option value="report-crime">Report A Petty Crime</option>
-                <option value="community-news">Community News</option>
-                <option value="community-question">Question</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-
-            <label>Edit Body:
-            </label>
-            <textarea
-              name='report'
-              onChange={handleChange}
-              rows="5" cols="33">
-              {post.report}
-            </textarea>
-            <button type='submit' onClick={() => submitUpdate(post)}>Submit Edit</button>
-          </form>
-        </div>}
-
-      </div>
-    );
+    return (<Form post={post} deletePost={deletePost} submitUpdate={submitUpdate}></Form>)
   });
 
 

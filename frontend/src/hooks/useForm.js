@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-export default function useForm(callback){
-    const [values,setValues] = useState({})
+export default function useForm(callback, initValues={}){
+    const [values,setValues] = useState(initValues)
 
     const handleChange = e => {
         // grabbing the values of the inputs we put in, this works because of the 'name' in the register form
