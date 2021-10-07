@@ -124,7 +124,7 @@ app.get("/reports/:id", async(req, res) => {
       WHERE person_id = $1
       ORDER BY report.id;`, [id]
     );
-    res.json("SINGLE POST",singlePost.rows);
+    res.json(singlePost.rows);
     // console.log(req.body);
   } catch (err) {
     console.log(err.message);
@@ -178,34 +178,33 @@ app.post("/new", async(req, res) => {
   }
 });
 
-app.get("/update/:id", async(req, res) => {
-  try {
-    const { person_id } =  req.params;
-    const { report_id } =  req.body.values;
-    const get_report = await pool.query(
-      `SELECT title, category, report, report_address 
-      FROM report
-      JOIN person ON person_id = person.id
-      WHERE person.id = $1 AND report.id = $2;`, [person_id,report_id]);
-    res.json(get_report);
-    console.log(req.body);
-  } catch (err) {
-    console.log(err.message);
-  }
-});
+// app.get("/update/:id", async(req, res) => {
+//   try {
+//     const { person_id } =  req.params;
+//     const { report_id } =  req.body.values;
+//     const get_report = await pool.query(
+//       `SELECT title, category, report, report_address 
+//       FROM report
+//       JOIN person ON person_id = person.id
+//       WHERE person.id = $1 AND report.id = $2;`, [person_id,report_id]);
+//     res.json(get_report);
+//     console.log(req.body);
+//   } catch (err) {
+//     console.log(err.message);
+//   }
+// });
 
 app.put("/update/:id", async(req, res) => {
   try {
     const id = req.params;
-    const { title, category, report, report_address } = req.body;
+    const { title, category, report } = req.body;
     const update_report = await pool.query(
       `UPDATE report
       SET title = $1
       category = $2
       report = $3
-      report_address = $4
       WHERE report_id = ${id};`,
-      [title, category, report, report_address]);
+      [title, category, report]);
     res.json(update_report);
     console.log(req.body);
   } catch (err) {

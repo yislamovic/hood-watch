@@ -219,15 +219,26 @@
 }
 
 .update-and-delete-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
   border: solid;
   background-color: blanchedalmond;
   align-self: flex-end;
+  margin: 2%;
+  cursor: pointer;
+}
+
+.user-update, 
+.user-delete{
+  padding: 5px;
 }
 
 .post-report-body{
   border: solid;
   background-color: blanchedalmond;
-  
+  width: 95%;
 }
 
 .user-post-container {
@@ -239,34 +250,43 @@
   justify-content: space-around;
   align-items: center;
   background-color: rgb(128, 23, 133);
-  margin: 2% 0;
+  margin: 2% 10%;
   overflow: hidden;
+  background-color: rgb(237, 183, 234);
 }
 
 .user-header-container{
+  height: 100px;
   width: 95%;
   border: solid;
   display: flex;
   justify-content: center;
+  align-items: center;
+  background-color: rgb(128, 23, 133);
 }
 
 .user-header{
+  font-size: 18px;
+  height: 50%;
   width: 85%;
   border: solid;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  background-color: blanchedalmond;
 }
 
 .user-form{
   display: flex;
   flex-direction: column;
-  border: solid;
-  width: 400px;
-  height: 300px;
+  justify-content: space-between;
+  
+  width: 600px;
+  height: 400px;
 }
 
 .user-category-title-container{
-  border: solid;
+  
   display: flex;
   flex-direction: column;
   height: 40%;
@@ -274,7 +294,7 @@
 }
 
 .user-category-title{
-  border: 3px solid green;
+  
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
