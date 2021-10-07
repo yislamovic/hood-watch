@@ -70,7 +70,7 @@ html, body {
 .about-container:hover {
     height: 470px;
     background-color: rgb(128, 23, 133);
-    border: 5px solid rgb(237, 183, 234);
+    border: none;
 }
 
 .about-container:hover .about-header {
